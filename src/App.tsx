@@ -1,5 +1,6 @@
 import "./App.css";
-import LoginForm from "./components/LoginForm/LoginForm";
+
+import NewHikeForm from "./components/NewHikeForm/NewHikeForm";
 import RegisterForm from "./components/RegisterForm/RegisterForm";
 
 function App(): JSX.Element {
@@ -7,7 +8,8 @@ function App(): JSX.Element {
     <div className="App">
       <h1>HOLA MUNDO!!!</h1>
       <RegisterForm />
-      <LoginForm />
+
+      <NewHikeForm />
     </div>
   );
 }
