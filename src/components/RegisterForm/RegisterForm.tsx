@@ -50,7 +50,9 @@ const RegisterForm = (): JSX.Element => {
       >
         <h5 className="register__title">Register</h5>
         <div className="register__container">
-          <label className="register__nameLabel">Name</label>
+          <label className="register__nameLabel" htmlFor="name">
+            Name
+          </label>
           <input
             type="text"
             className="register__name"
@@ -59,7 +61,9 @@ const RegisterForm = (): JSX.Element => {
             value={userData.name}
             onChange={(evt) => onChange(evt)}
           />
-          <label className="register__passwordLabel">Password</label>
+          <label className="register__passwordLabel" htmlFor="password">
+            Password
+          </label>
           <input
             type="password"
             className="register__password"
@@ -68,7 +72,9 @@ const RegisterForm = (): JSX.Element => {
             value={userData.password}
             onChange={(evt) => onChange(evt)}
           />
-          <label className="register__emailLabel">Email</label>
+          <label className="register__emailLabel" htmlFor="email">
+            Email
+          </label>
           <input
             type="email"
             className="register__email"
