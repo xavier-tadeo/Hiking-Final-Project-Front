@@ -1,13 +1,13 @@
 import { render, screen } from "@testing-library/react";
 
-import userEvent from "@testing-library/user-event";
+// import userEvent from "@testing-library/user-event";
 import NewHikeForm from "./NewHikeForm";
 
 describe("Given a NewHikeForm component", () => {
   describe("When it is render", () => {
     test("Then it should render a form with a 9 inputs and labels, and a button", () => {
       const labelTitle = "Title";
-      const labelDistance = "Distance";
+      // const labelDistance = "Distance";
       const labelDificulty = "Dificulty";
       const labelElevation = "Elevation";
       const labelTime = "Time";
