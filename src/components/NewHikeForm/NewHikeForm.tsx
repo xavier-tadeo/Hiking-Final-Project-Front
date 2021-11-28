@@ -25,26 +25,26 @@ interface IForm {
 const NewHikeForm = (): JSX.Element => {
   const initialData: IForm = {
     title: "",
-    description: "",
-    map: { latitude: 0, longitude: 0 },
     stadistics: { distance: "", time: "", elevation: "", dificulty: 1 },
+    map: { latitude: 1, longitude: 1 },
     images: [""],
+    description: "",
   };
 
-  const [userData, setUserData] = useState(initialData);
+  const [userData, setUserData] = useState<IForm>(initialData);
   const [isDisable, setIsDisable] = useState(true);
 
   const checkForm = () => {
     if (
       userData.title !== "" &&
-      userData.description !== "" &&
-      userData.map.latitude !== 0 &&
-      userData.map.longitude !== 0 &&
       userData.stadistics.distance !== "" &&
       userData.stadistics.elevation !== "" &&
       userData.stadistics.dificulty !== 0 &&
       userData.stadistics.time !== "" &&
-      userData.images !== [""]
+      userData.images !== [""] &&
+      userData.map.latitude !== 0 &&
+      userData.map.longitude !== 0 &&
+      userData.description !== ""
     ) {
       setIsDisable(false);
     }
@@ -53,6 +53,8 @@ const NewHikeForm = (): JSX.Element => {
   const onChange = (evt: any) => {
     setUserData({
       ...userData,
+      ...userData.map,
+      ...userData.stadistics,
       [evt.target.id]: evt.target.value,
     });
     checkForm();
@@ -92,7 +94,7 @@ const NewHikeForm = (): JSX.Element => {
           <input
             type="text"
             className="create-route__distancie"
-            id="stadistics.distance"
+            id="stadistics"
             placeholder="Distance"
             value={userData.stadistics.distance}
             onChange={(evt) => onChange(evt)}
@@ -132,13 +134,13 @@ const NewHikeForm = (): JSX.Element => {
             value={userData.stadistics.time}
             onChange={(evt) => onChange(evt)}
           />
-          <label className="create-route__longitude-label" htmlFor="longitude">
+          <label className="create-route__longitude-label" htmlFor="map">
             Map Longitude
           </label>
           <input
             type="number"
             className="create-route__longitude"
-            id="longitude"
+            id="map"
             placeholder="Longitude"
             value={userData.map.longitude}
             onChange={(evt) => onChange(evt)}
@@ -177,7 +179,7 @@ const NewHikeForm = (): JSX.Element => {
             className="create-route__description"
             id="description"
             placeholder="Description"
-            value={userData.images}
+            value={userData.description}
             onChange={(evt) => onChange(evt)}
           />
           <div className="form__button">
