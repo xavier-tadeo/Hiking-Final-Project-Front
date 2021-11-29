@@ -1,5 +1,6 @@
 import { useState } from "react";
 import useUser from "../../hooks/useUser";
+import "./LoginForm.scss";
 
 type FormElement = React.FormEvent<HTMLFormElement>;
 
@@ -41,7 +42,7 @@ const LoginForm = (): JSX.Element => {
   return (
     <>
       <form
-        className="LoginForm"
+        className="loginForm"
         noValidate
         autoComplete="off"
         onSubmit={onLoginUp}
