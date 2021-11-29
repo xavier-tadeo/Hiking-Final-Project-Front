@@ -1,0 +1,22 @@
+.homepage__container {
+  display: flex;
+}
+
+.homepage__description-container {
+  width: 283px;
+  height: 53px;
+}
+
+.homepage__description {
+  font-size: 18px;
+  font-family: "Josefin Sans";
+  padding-left: 12px;
+}
+
+.homepage__button {
+  position: absolute;
+  width: 67px;
+  height: 38px;
+  top: 144px;
+  right: 10px;
+}
