@@ -25,8 +25,8 @@ interface IForm {
 const NewHikeForm = (): JSX.Element => {
   const initialData: IForm = {
     title: "",
-    stadistics: { distance: "", time: "", elevation: "", dificulty: 1 },
-    map: { latitude: 1, longitude: 1 },
+    stadistics: { distance: "", time: "", elevation: "", dificulty: 0 },
+    map: { latitude: 0, longitude: 0 },
     images: [""],
     description: "",
   };
@@ -53,9 +53,29 @@ const NewHikeForm = (): JSX.Element => {
   const onChange = (evt: any) => {
     setUserData({
       ...userData,
-      ...userData.map,
-      ...userData.stadistics,
       [evt.target.id]: evt.target.value,
+    });
+    checkForm();
+  };
+
+  const onChangeStadistics = (evt: any) => {
+    setUserData({
+      ...userData,
+      stadistics: {
+        ...userData.stadistics,
+        [evt.target.id]: evt.target.value,
+      },
+    });
+    checkForm();
+  };
+
+  const onChangeMap = (evt: any) => {
+    setUserData({
+      ...userData,
+      map: {
+        ...userData.map,
+        [evt.target.id]: evt.target.value,
+      },
     });
     checkForm();
   };
@@ -85,19 +105,16 @@ const NewHikeForm = (): JSX.Element => {
             value={userData.title}
             onChange={(evt) => onChange(evt)}
           />
-          <label
-            className="create-route__distance-label"
-            htmlFor="stadistics.distance"
-          >
+          <label className="create-route__distance-label" htmlFor="distance">
             Distance
           </label>
           <input
             type="text"
             className="create-route__distancie"
-            id="stadistics"
+            id="distance"
             placeholder="Distance"
             value={userData.stadistics.distance}
-            onChange={(evt) => onChange(evt)}
+            onChange={(evt) => onChangeStadistics(evt)}
           />
           <label className="create-route__dificulty-label" htmlFor="dificulty">
             Dificulty
@@ -110,7 +127,7 @@ const NewHikeForm = (): JSX.Element => {
             id="dificulty"
             placeholder="Distance"
             value={userData.stadistics.dificulty}
-            onChange={(evt) => onChange(evt)}
+            onChange={(evt) => onChangeStadistics(evt)}
           />
           <label className="create-route__elevation-label" htmlFor="elevation">
             Elevation
@@ -121,7 +138,7 @@ const NewHikeForm = (): JSX.Element => {
             id="elevation"
             placeholder="Elevation"
             value={userData.stadistics.elevation}
-            onChange={(evt) => onChange(evt)}
+            onChange={(evt) => onChangeStadistics(evt)}
           />
           <label className="create-route__time-label" htmlFor="time">
             Time
@@ -132,21 +149,21 @@ const NewHikeForm = (): JSX.Element => {
             id="time"
             placeholder="Time"
             value={userData.stadistics.time}
-            onChange={(evt) => onChange(evt)}
+            onChange={(evt) => onChangeStadistics(evt)}
           />
-          <label className="create-route__longitude-label" htmlFor="map">
-            Map Longitude
+          <label className="create-route__longitude-label" htmlFor="longitude">
+            Longitude
           </label>
           <input
             type="number"
             className="create-route__longitude"
-            id="map"
+            id="longitude"
             placeholder="Longitude"
             value={userData.map.longitude}
-            onChange={(evt) => onChange(evt)}
+            onChange={(evt) => onChangeMap(evt)}
           />
           <label className="create-route__latitude-label" htmlFor="latitude">
-            Map Latitude
+            Latitude
           </label>
           <input
             type="number"
@@ -154,7 +171,7 @@ const NewHikeForm = (): JSX.Element => {
             id="latitude"
             placeholder="Latitude"
             value={userData.map.latitude}
-            onChange={(evt) => onChange(evt)}
+            onChange={(evt) => onChangeMap(evt)}
           />
           <label className="create-route__images-label" htmlFor="images">
             Images
