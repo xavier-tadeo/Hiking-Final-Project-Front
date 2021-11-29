@@ -3,8 +3,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 import HeaderHike from "./components/HeaderHike/HeaderHike";
 import LinkComponent from "./components/LinkComponent/LinkComponent";
-import LoginForm from "./components/LoginForm/LoginForm";
+
 import HomePage from "./pages/HomePage/HomePage";
+import LoginPage from "./pages/LoginPage/LoginPage";
 
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
 import paths from "./paths/pathsHike";
@@ -21,7 +22,7 @@ function App(): JSX.Element {
             path={paths.registerFormPage}
             element={<RegisterPage />}
           ></Route>
-          <Route path={paths.loginFormPage} element={<LoginForm />}></Route>
+          <Route path={paths.loginFormPage} element={<LoginPage />}></Route>
         </Routes>
       </BrowserRouter>
     </>
