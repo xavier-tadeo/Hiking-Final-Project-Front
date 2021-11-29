@@ -1,0 +1,20 @@
+.links__container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.nav-link {
+  margin-top: 10px;
+  padding: 10px;
+  text-decoration: none;
+  font-family: "Source Code Pro";
+  font-size: 16px;
+  color: #fff;
+  border: 2px solid black;
+  border-radius: 50%;
+  background-color: #0c7c59;
+}
+
+:hover.nav-link {
+  background-color: chartreuse;
+}
