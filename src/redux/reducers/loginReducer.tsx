@@ -5,16 +5,10 @@ interface IAction {
   user: Object;
 }
 
-interface ILogin {
-  user: Object;
-  isAuthenticated: Boolean;
-  action: IAction;
-}
-
-const loginReducer = ({
+const loginReducer = (
   user = { isAuthenticated: false, user: {} },
-  action,
-}: ILogin) => {
+  action: IAction
+) => {
   let newUser;
 
   switch (action.type) {
