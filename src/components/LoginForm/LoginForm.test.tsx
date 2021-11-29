@@ -1,15 +1,22 @@
 import { render, screen } from "@testing-library/react";
 
 import userEvent from "@testing-library/user-event";
+import { Provider } from "react-redux";
+import configureStore from "../../redux/store";
 import LoginForm from "./LoginForm";
 
+const store = configureStore();
 describe("Given a LoginForm component", () => {
   describe("When it is render", () => {
     test("Then it should render a form with a 2 inputs and labels, and a button", () => {
       const labelName = "Name";
       const labelPassword = "Password";
 
-      render(<LoginForm />);
+      render(
+        <Provider store={store}>
+          <LoginForm />
+        </Provider>
+      );
 
       const name = screen.getByLabelText(labelName);
       const password = screen.getByLabelText(labelPassword);
@@ -21,7 +28,11 @@ describe("Given a LoginForm component", () => {
 
   describe("When the user hasn't typed a name", () => {
     test("Then it should have a disabled button", () => {
-      render(<LoginForm />);
+      render(
+        <Provider store={store}>
+          <LoginForm />
+        </Provider>
+      );
       const addButton = screen.getByRole("button", {
         name: "Login",
       });
@@ -35,7 +46,11 @@ describe("Given a LoginForm component", () => {
       const labelName = "Name";
       const labelPassword = "Password";
 
-      render(<LoginForm />);
+      render(
+        <Provider store={store}>
+          <LoginForm />
+        </Provider>
+      );
 
       const nameInput = screen.getByPlaceholderText(labelName);
       const passwordInput = screen.getByPlaceholderText(labelPassword);

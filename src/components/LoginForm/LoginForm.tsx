@@ -1,4 +1,5 @@
 import { useState } from "react";
+import useUser from "../../hooks/useUser";
 
 type FormElement = React.FormEvent<HTMLFormElement>;
 
@@ -12,6 +13,8 @@ const LoginForm = (): JSX.Element => {
     name: "",
     password: "",
   };
+
+  const { loginUser } = useUser();
 
   const [userData, setUserData] = useState(initialData);
   const [isDisable, setIsDisable] = useState(true);
@@ -32,6 +35,7 @@ const LoginForm = (): JSX.Element => {
 
   const onLoginUp = (evt: FormElement) => {
     evt.preventDefault();
+    loginUser(userData);
   };
 
   return (
