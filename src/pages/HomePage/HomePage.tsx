@@ -1,15 +1,12 @@
 import ButtonHike from "../../components/ButtonHike/ButtonHike";
-import HeaderHike from "../../components/HeaderHike/HeaderHike";
+
 import "./HomePage.scss";
 
 const HomePage = (): JSX.Element => {
-  const handlerButton = () => {
-    console.log("Hola");
-  };
+  const handlerButton = () => {};
 
   return (
     <>
-      <HeaderHike />
       <section className="homepage__container">
         <div className="homepage__description-container">
           <h4 className="homepage__description">
