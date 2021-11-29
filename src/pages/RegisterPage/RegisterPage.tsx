@@ -1,6 +1,6 @@
 import RegisterForm from "../../components/RegisterForm/RegisterForm";
 
-const RegisterPage = () => {
+const RegisterPage = (): JSX.Element => {
   return (
     <>
       <h3 className="register__title">Register</h3>

@@ -1,6 +1,6 @@
 import LoginForm from "../../components/LoginForm/LoginForm";
 
-const LoginPage = () => {
+const LoginPage = (): JSX.Element => {
   return (
     <>
       <h3 className="Login__title">Register</h3>
