@@ -46,7 +46,6 @@ const LoginForm = (): JSX.Element => {
         autoComplete="off"
         onSubmit={onLoginUp}
       >
-        <h5 className="login__title">Login</h5>
         <div className="login__container">
           <label className="login__nameLabel" htmlFor="name">
             Name

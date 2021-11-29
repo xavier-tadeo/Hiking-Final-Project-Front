@@ -48,7 +48,6 @@ const RegisterForm = (): JSX.Element => {
         autoComplete="off"
         onSubmit={onSignUp}
       >
-        <h5 className="register__title">Register</h5>
         <div className="register__container">
           <label className="register__nameLabel" htmlFor="name">
             Name
