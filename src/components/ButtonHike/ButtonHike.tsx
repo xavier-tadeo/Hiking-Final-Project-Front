@@ -1,13 +1,11 @@
-import { MouseEventHandler } from "react";
-
 interface IButton {
   text: string;
-  onClick: MouseEventHandler;
+  click: React.MouseEventHandler<HTMLButtonElement>;
 }
 
-const ButtonHike = ({ text, onClick }: IButton) => {
+const ButtonHike = ({ text, click }: IButton) => {
   return (
-    <button type="button" className="btn-lg" onClick={onClick}>
+    <button type="button" className="btn-lg" onClick={click}>
       {text}
     </button>
   );

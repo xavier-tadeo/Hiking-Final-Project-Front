@@ -1,17 +1,12 @@
 import "./App.css";
-import HeaderHike from "./components/HeaderHike/HeaderHike";
 
-import NewHikeForm from "./components/NewHikeForm/NewHikeForm";
-import RegisterForm from "./components/RegisterForm/RegisterForm";
+import HomePage from "./pages/HomePage/HomePage";
 
 function App(): JSX.Element {
   return (
-    <div className="App">
-      <HeaderHike />
-      <RegisterForm />
-
-      <NewHikeForm />
-    </div>
+    <>
+      <HomePage />
+    </>
   );
 }
 
