@@ -1,8 +1,16 @@
+import "./HeaderHike.scss";
+
 const HeaderHike = (): JSX.Element => {
   return (
-    <header>
-      <h1 className="title">hiKing</h1>
-      <img src="hikingIcon.png" alt="logo hiking" />
+    <header className="container__header">
+      <div className="header__icon">
+        <img
+          src="hikingIcon.png"
+          alt="logo hiking"
+          className="header__icon-logo"
+        />
+      </div>
+      <h1 className="header__title">hiKing</h1>
     </header>
   );
 };
