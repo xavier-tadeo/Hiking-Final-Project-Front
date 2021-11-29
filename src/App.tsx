@@ -1,4 +1,5 @@
 import "./App.css";
+import HeaderHike from "./components/HeaderHike/HeaderHike";
 
 import NewHikeForm from "./components/NewHikeForm/NewHikeForm";
 import RegisterForm from "./components/RegisterForm/RegisterForm";
@@ -6,7 +7,7 @@ import RegisterForm from "./components/RegisterForm/RegisterForm";
 function App(): JSX.Element {
   return (
     <div className="App">
-      <h1>HOLA MUNDO!!!</h1>
+      <HeaderHike />
       <RegisterForm />
 
       <NewHikeForm />
