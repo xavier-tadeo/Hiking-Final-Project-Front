@@ -1,11 +1,23 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./App.css";
+import HeaderHike from "./components/HeaderHike/HeaderHike";
 
-import HomePage from "./pages/HomePage/HomePage";
+import RegisterPage from "./pages/RegisterPage/RegisterPage";
+import paths from "./paths/pathsHike";
 
 function App(): JSX.Element {
   return (
     <>
-      <HomePage />
+      <HeaderHike />
+      <BrowserRouter>
+        <Routes>
+          <Route
+            path={paths.registerFormPage}
+            element={<RegisterPage />}
+          ></Route>
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }
