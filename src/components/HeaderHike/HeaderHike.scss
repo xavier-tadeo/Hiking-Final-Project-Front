@@ -1,0 +1,25 @@
+@import "../../styles/variables";
+
+.container__header {
+  background-color: #55ffbb;
+  opacity: 60%;
+  display: flex;
+  justify-content: center;
+  height: 129px;
+}
+
+.header__icon {
+  padding-top: 50px;
+  padding-right: 20px;
+}
+
+.header__title {
+  font-size: $font-title-mobile;
+  font-family: "Source Code Pro";
+  color: #0c7c59;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0.15em;
+  text-shadow: 6px 4px 4px;
+  padding-top: 25px;
+}
