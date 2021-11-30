@@ -27,8 +27,8 @@ export const registerUserThunks = (user: any) => async (dispatch: any) => {
   }
 };
 
-export const getHikeThunks = (hike: any) => async (dispatch: any) => {
-  const hikings = await axios.get(`${urlApi}hike/get`, hike);
+export const getHikeThunks = () => async (dispatch: any) => {
+  const hikings = await axios.get(`${urlApi}hike/get`);
 
   dispatch(getHikesAction(hikings.data));
 };

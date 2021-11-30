@@ -1,3 +1,4 @@
+import { useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   getHikeThunks,
@@ -21,9 +22,9 @@ const useUser = () => {
     dispatch(registerUserThunks(userRegister));
   };
 
-  const getHiking = (hikingGet: any) => {
-    dispatch(getHikeThunks(hikingGet));
-  };
+  const getHiking = useCallback(() => {
+    dispatch(getHikeThunks());
+  }, [dispatch]);
 
   return {
     login,
