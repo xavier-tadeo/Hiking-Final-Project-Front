@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import CardHike from "../../components/CardHike/CardHike";
 import useUser from "../../hooks/useUser";
 import "./HomePage.scss";
+import "@fontsource/architects-daughter";
 
 const HomePage = (): JSX.Element => {
   const { hiking, getHiking } = useUser();
@@ -9,8 +10,6 @@ const HomePage = (): JSX.Element => {
   useEffect(() => {
     getHiking();
   }, [getHiking]);
-
-  console.log(hiking);
 
   return (
     <>

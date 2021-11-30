@@ -10,7 +10,7 @@
   justify-content: space-between;
   font-size: 20px;
   border-radius: 20px;
-  font-family: "Josefin Sans", Arial, Helvetica, sans-serif;
+  font-family: "Source Code Pro", Arial, Helvetica, sans-serif;
 }
 
 .registerForm input {
@@ -36,17 +36,16 @@
 }
 
 .register__container::placeholder {
-  font-family: "Josefin Sans", Arial, Helvetica, sans-serif;
+  font-family: "Source Code Pro", Arial, Helvetica, sans-serif;
 }
 
 .form__button {
   font-family: inherit;
-  font-weight: 800;
   color: #fff;
   background-color: #0c7c59;
-  border: 3px solid #55ffbb;
-  padding: 20px 20px;
-  border-radius: 30px;
+  border: 1px solid #55ffbb;
+  padding: 8px 8px;
+  border-radius: 50%;
   cursor: pointer;
 }
 

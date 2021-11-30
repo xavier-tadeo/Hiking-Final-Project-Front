@@ -4,6 +4,7 @@ const HeaderHike = (): JSX.Element => {
   return (
     <header className="container__header">
       <div className="header__icon">
+        
         <img
           src="hikingIcon.png"
           alt="logo hiking"
