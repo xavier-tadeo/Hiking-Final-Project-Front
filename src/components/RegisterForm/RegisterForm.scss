@@ -1,0 +1,62 @@
+.registerForm {
+  width: 280px;
+  height: 430px;
+  padding: 30px;
+  margin: 50px auto 0 auto;
+  background-color: #ccfccb;
+  color: #0c7c59;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 20px;
+  border-radius: 20px;
+  font-family: "Josefin Sans", Arial, Helvetica, sans-serif;
+}
+
+.registerForm input {
+  height: 30px;
+  width: 95%;
+  margin-bottom: 25px;
+  color: black;
+  background-color: #dadada;
+  border: 2px solid #0c7c59;
+  border-radius: 5px;
+  padding: 0 5px;
+}
+
+.loginForm input:focus-visible {
+  outline: none;
+}
+
+.register__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.register__container::placeholder {
+  font-family: "Josefin Sans", Arial, Helvetica, sans-serif;
+}
+
+.form__button {
+  font-family: inherit;
+  font-weight: 800;
+  color: #fff;
+  background-color: #0c7c59;
+  border: 3px solid #55ffbb;
+  padding: 20px 20px;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.form__button:hover {
+  color: rgb(112, 6, 6);
+  background-color: #0feb46;
+}
+
+.form__button:disabled {
+  background-color: #dadada;
+  color: #dadada;
+  cursor: default;
+}
