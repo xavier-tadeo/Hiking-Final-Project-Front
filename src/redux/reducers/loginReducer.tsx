@@ -3,7 +3,7 @@ import actionsTypes from "../actions/actionTypes";
 export interface IAction {
   type: String;
   user: Object;
-  hike: Array<Object>;
+  hikes: Array<Object>;
 }
 
 const loginReducer = (

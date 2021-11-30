@@ -10,6 +10,8 @@ const HomePage = (): JSX.Element => {
     getHiking();
   }, [getHiking]);
 
+  console.log(hiking);
+
   return (
     <>
       <section className="homepage__container">
@@ -21,7 +23,7 @@ const HomePage = (): JSX.Element => {
         <h3 className="homepage__title">The best routes</h3>
         <div className="homepage__card">
           {hiking.map((hike: any) => (
-            <CardHike hike={hike} />
+            <CardHike hike={hike} key={hike.id} />
           ))}
         </div>
       </section>
