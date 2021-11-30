@@ -1,4 +1,5 @@
 import RegisterForm from "../../components/RegisterForm/RegisterForm";
+import "./RegisterPage.scss";
 
 const RegisterPage = (): JSX.Element => {
   return (
