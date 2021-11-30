@@ -5,10 +5,12 @@ const HomePage = (): JSX.Element => {
     <>
       <section className="homepage__container">
         <div className="homepage__description-container">
-          <h4 className="homepage__description">
+          <h3 className="homepage__description">
             Welcome to the best walking routes, where you can enjoy nature.
-          </h4>
+          </h3>
         </div>
+        <h3 className="homepage__title">The best routes</h3>
+        <div className="homepage__card"></div>
       </section>
     </>
   );
