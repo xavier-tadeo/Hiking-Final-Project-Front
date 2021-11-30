@@ -19,16 +19,16 @@ const LinkComponent = (): JSX.Element => {
         {/* ) : ( */}
         {/* <> */}
         <Link className="nav-link" to={paths.homePage}>
-          HOME
+          Home
         </Link>
         <Link className="nav-link" to={paths.registerFormPage}>
-          REGISTER
+          Register
         </Link>
         <Link className="nav-link" to={paths.loginFormPage}>
-          LOGIN
+          Login
         </Link>
         <Link className="nav-link" to={paths.mapPage}>
-          MAP
+          Map
         </Link>
       </>
       {/* )} */}

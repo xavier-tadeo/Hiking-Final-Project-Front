@@ -1,12 +1,13 @@
 .homepage__description-container {
-  width: 283px;
+  margin-top: 10px;
+  padding: 10px;
   height: 53px;
 }
 
 .homepage__description {
   font-size: 18px;
-  font-family: "Josefin Sans";
-  padding-left: 12px;
+  font-family: "Roboto";
+  padding: 5px;
 }
 
 .homepage__button {
@@ -18,7 +19,14 @@
 }
 
 .homepage__title {
-  font-family: "Josefin Sans", Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 25px;
+  font-family: "Architects Daughter", Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 22px;
   text-align: center;
+  padding-top: 10px;
+  text-decoration: overline;
+  color: #0c7c59;
+}
+
+.homepage__card {
+  margin-top: 50px;
 }

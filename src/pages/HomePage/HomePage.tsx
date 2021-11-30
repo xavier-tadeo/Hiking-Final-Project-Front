@@ -2,6 +2,8 @@ import { useEffect } from "react";
 import CardHike from "../../components/CardHike/CardHike";
 import useUser from "../../hooks/useUser";
 import "./HomePage.scss";
+import "@fontsource/architects-daughter";
+import "@fontsource/roboto";
 
 const HomePage = (): JSX.Element => {
   const { hiking, getHiking } = useUser();
@@ -9,8 +11,6 @@ const HomePage = (): JSX.Element => {
   useEffect(() => {
     getHiking();
   }, [getHiking]);
-
-  console.log(hiking);
 
   return (
     <>

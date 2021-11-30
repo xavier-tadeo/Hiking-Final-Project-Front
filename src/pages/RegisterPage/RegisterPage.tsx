@@ -1,5 +1,6 @@
 import RegisterForm from "../../components/RegisterForm/RegisterForm";
 import "./RegisterPage.scss";
+import "@fontsource/architects-daughter";
 
 const RegisterPage = (): JSX.Element => {
   return (
