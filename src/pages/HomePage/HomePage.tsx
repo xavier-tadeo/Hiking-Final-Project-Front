@@ -3,6 +3,7 @@ import CardHike from "../../components/CardHike/CardHike";
 import useUser from "../../hooks/useUser";
 import "./HomePage.scss";
 import "@fontsource/architects-daughter";
+import "@fontsource/roboto";
 
 const HomePage = (): JSX.Element => {
   const { hiking, getHiking } = useUser();

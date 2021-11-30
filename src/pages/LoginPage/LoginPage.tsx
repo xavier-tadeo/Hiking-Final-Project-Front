@@ -1,5 +1,6 @@
 import LoginForm from "../../components/LoginForm/LoginForm";
 import "./LoginPage.scss";
+import "@fontsource/architects-daughter";
 
 const LoginPage = (): JSX.Element => {
   return (

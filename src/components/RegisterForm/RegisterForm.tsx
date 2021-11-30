@@ -1,6 +1,7 @@
 import { useState } from "react";
 import useUser from "../../hooks/useUser";
 import "./RegisterForm.scss";
+import "@fontsource/roboto";
 
 type FormElement = React.FormEvent<HTMLFormElement>;
 
