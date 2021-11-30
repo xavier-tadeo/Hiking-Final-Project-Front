@@ -1,4 +1,5 @@
 import LoginForm from "../../components/LoginForm/LoginForm";
+import "./LoginPage.scss";
 
 const LoginPage = (): JSX.Element => {
   return (

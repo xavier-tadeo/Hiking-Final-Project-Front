@@ -1,5 +1,5 @@
 .loginForm {
-  width: 336px;
+  width: 280px;
   height: 430px;
   padding: 30px;
   margin: 50px auto 0 auto;
@@ -10,7 +10,7 @@
   justify-content: space-between;
   font-size: 20px;
   border-radius: 20px;
-  font-family: "Josefin Sans";
+  font-family: "Josefin Sans", Arial, Helvetica, sans-serif;
 }
 
 .loginForm input {
@@ -36,7 +36,7 @@
 }
 
 .login__container::placeholder {
-  font-family: "Josefin Sans";
+  font-family: "Josefin Sans", Arial, Helvetica, sans-serif;
 }
 
 .form__button {
@@ -56,7 +56,7 @@
 }
 
 .form__button:disabled {
-  background-color: #55ffbb38;
-  color: #815d69;
+  background-color: #dadada;
+  color: #dadada;
   cursor: default;
 }
