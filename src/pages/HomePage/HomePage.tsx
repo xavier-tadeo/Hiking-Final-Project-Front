@@ -1,6 +1,15 @@
+import { useEffect } from "react";
+import CardHike from "../../components/CardHike/CardHike";
+import useUser from "../../hooks/useUser";
 import "./HomePage.scss";
 
 const HomePage = (): JSX.Element => {
+  const { hiking, getHiking } = useUser();
+
+  useEffect(() => {
+    getHiking();
+  }, [getHiking]);
+
   return (
     <>
       <section className="homepage__container">
@@ -10,7 +19,11 @@ const HomePage = (): JSX.Element => {
           </h3>
         </div>
         <h3 className="homepage__title">The best routes</h3>
-        <div className="homepage__card"></div>
+        <div className="homepage__card">
+          {hiking.map((hike: any) => (
+            <CardHike hike={hike} />
+          ))}
+        </div>
       </section>
     </>
   );

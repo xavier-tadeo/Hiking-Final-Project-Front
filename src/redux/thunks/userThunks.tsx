@@ -1,6 +1,10 @@
 import axios from "axios";
 import jwtDecode from "jwt-decode";
-import { loginUserAction, registerUserAction } from "../actions/actionCreator";
+import {
+  getHikesAction,
+  loginUserAction,
+  registerUserAction,
+} from "../actions/actionCreator";
 
 const urlApi = process.env.REACT_APP_URL;
 
@@ -21,4 +25,10 @@ export const registerUserThunks = (user: any) => async (dispatch: any) => {
   if (response.status === 200) {
     dispatch(registerUserAction(response.data));
   }
+};
+
+export const getHikeThunks = () => async (dispatch: any) => {
+  const hikings = await axios.get(`${urlApi}hike/get`);
+
+  dispatch(getHikesAction(hikings.data));
 };
