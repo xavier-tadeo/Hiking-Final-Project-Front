@@ -1,4 +1,5 @@
 import { useState } from "react";
+import useUser from "../../hooks/useUser";
 import "./RegisterForm.scss";
 
 type FormElement = React.FormEvent<HTMLFormElement>;
@@ -15,6 +16,7 @@ const RegisterForm = (): JSX.Element => {
     password: "",
     email: "",
   };
+  const { registerUser } = useUser();
 
   const [userData, setUserData] = useState(initialData);
   const [isDisable, setIsDisable] = useState(true);
@@ -39,6 +41,7 @@ const RegisterForm = (): JSX.Element => {
 
   const onSignUp = (evt: FormElement) => {
     evt.preventDefault();
+    registerUser(userData);
   };
 
   return (
