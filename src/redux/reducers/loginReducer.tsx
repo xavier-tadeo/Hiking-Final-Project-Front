@@ -1,8 +1,9 @@
 import actionsTypes from "../actions/actionTypes";
 
-interface IAction {
+export interface IAction {
   type: String;
   user: Object;
+  hike: Array<Object>;
 }
 
 const loginReducer = (
