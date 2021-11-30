@@ -6,7 +6,7 @@ import "./LinkComponent.scss";
 const LinkComponent = (): JSX.Element => {
   // const { register } = useUser();
   return (
-    <header className="links__container">
+    <nav className="links__container">
       {/* {register.isAuthenticated ? ( */}
       <>
         {/* <Link className="nav-link" to={paths.homePage}>
@@ -32,7 +32,7 @@ const LinkComponent = (): JSX.Element => {
         </Link>
       </>
       {/* )} */}
-    </header>
+    </nav>
   );
 };
 
