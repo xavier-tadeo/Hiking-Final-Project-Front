@@ -1,0 +1,43 @@
+.constainer__hike {
+  background-color: #ccfccb;
+  width: 340px;
+  margin: 10px auto 0 auto;
+}
+
+.cardHike__title {
+  padding: 5px;
+  text-align: center;
+  margin: 0;
+}
+
+.cardHike__info {
+  display: flex;
+}
+
+.cardHike__images {
+  padding: 8px;
+}
+
+.cardHike__stadistics p {
+  margin: 0;
+}
+
+.cardHike__stadistics-title {
+  font-family: "Josefin Sans", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16px;
+  text-align: center;
+  color: #0c7c59;
+}
+
+.stadistics {
+  font-family: "Josefin Sans", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16px;
+  text-align: center;
+}
+
+.cardHike__author {
+  margin: 0;
+  padding: 0 0 5px 20px;
+  font-family: "Josefin Sans", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16px;
+}
