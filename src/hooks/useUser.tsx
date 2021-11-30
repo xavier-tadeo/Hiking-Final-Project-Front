@@ -1,5 +1,8 @@
 import { useDispatch, useSelector } from "react-redux";
-import { loginUserThunks } from "../redux/thunks/userThunks";
+import {
+  loginUserThunks,
+  registerUserThunks,
+} from "../redux/thunks/userThunks";
 
 const useUser = () => {
   const { login } = useSelector(({ login }: any) => ({
@@ -12,9 +15,14 @@ const useUser = () => {
     dispatch(loginUserThunks(userLogin));
   };
 
+  const registerUser = (userRegister: any) => {
+    dispatch(registerUserThunks(userRegister));
+  };
+
   return {
     login,
     loginUser,
+    registerUser,
   };
 };
 

@@ -13,6 +13,11 @@ export const getHikesAction = ({ hikes }: IHikes) => ({
   hikes,
 });
 
+export const registerUserAction = ({ user }: IUser) => ({
+  type: actionTypes.registerUser,
+  user,
+});
+
 export const loginUserAction = ({ user }: IUser) => ({
   type: actionTypes.loginUser,
   user,
