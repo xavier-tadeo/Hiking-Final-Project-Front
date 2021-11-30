@@ -8,7 +8,7 @@ const CardHike = ({ hike }: IHike): JSX.Element => {
       <div className="cardHike">
         <h4 className="cardHike__title">{hike.title}</h4>
         <div className="cardHike__info">
-          <img src={hike.image[0]} alt="hike montain" />
+          <img src={hike.images[0]} alt="hike montain" />
           <span className="cardHike__stadistics">
             <p className="cardHike__stadistics-distance">
               Distance: {hike.stadistics.distance}

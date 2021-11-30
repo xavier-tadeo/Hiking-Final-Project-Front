@@ -6,7 +6,7 @@ const hikeReducer = (hike = [], action: IAction) => {
 
   switch (action.type) {
     case actionsTypes.getHikes:
-      newHike = [...action.hike];
+      newHike = [...action.hikes];
       break;
     default:
       newHike = hike;

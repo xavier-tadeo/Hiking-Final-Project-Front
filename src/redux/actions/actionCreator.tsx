@@ -8,8 +8,9 @@ interface IUser {
   user: Object;
 }
 
-export const getHikesAction = ({ hikes }: IHikes) => ({
+export const getHikesAction = (hikes: IHikes) => ({
   type: actionTypes.getHikes,
+
   hikes,
 });
 
