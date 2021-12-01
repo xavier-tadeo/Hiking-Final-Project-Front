@@ -3,6 +3,7 @@ const paths = {
   loginFormPage: "/login",
   registerFormPage: "/register",
   mapPage: "/map",
+  hikeCard: "/hike/get/:id",
 };
 
 export default paths;
