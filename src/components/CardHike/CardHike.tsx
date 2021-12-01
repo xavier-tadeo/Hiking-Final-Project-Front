@@ -34,7 +34,7 @@ const CardHike = ({ hike }: IHike): JSX.Element => {
             </p>
           </span>
         </div>
-        <p className="cardHike__author">Name: {hike.user.name}</p>
+        <p className="cardHike__author">Author: {hike.user.name}</p>
       </div>
     </section>
   );
