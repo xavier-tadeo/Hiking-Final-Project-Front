@@ -1,5 +1,10 @@
 import { render, screen } from "@testing-library/react";
+import { Provider } from "react-redux";
+import configureStore from "../../redux/store";
+import { BrowserRouter } from "react-router-dom";
 import CardHike from "./CardHike";
+
+const store = configureStore();
 
 describe("Given a CardHike component", () => {
   describe("When it renderer", () => {
@@ -18,7 +23,13 @@ describe("Given a CardHike component", () => {
         },
       };
 
-      render(<CardHike hike={hikeTest} />);
+      render(
+        <Provider store={store}>
+          <BrowserRouter>
+            <CardHike hike={hikeTest} />
+          </BrowserRouter>
+        </Provider>
+      );
       const expectTitle = screen.getByText(hikeTest.title);
       const expectDistance = screen.getByText(hikeTest.stadistics.distance);
       const expectTime = screen.getByText(hikeTest.stadistics.time);
