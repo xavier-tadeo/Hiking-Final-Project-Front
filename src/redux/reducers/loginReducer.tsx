@@ -2,7 +2,7 @@ import actionsTypes from "../actions/actionTypes";
 
 export interface IAction {
   type: string;
-  user: Object;
+  user?: Object;
   hikes: Array<Object>;
 }
 

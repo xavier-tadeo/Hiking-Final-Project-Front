@@ -1,6 +1,6 @@
 import actionTypes from "./actionTypes";
 
-interface IHikes {
+export interface IHikes {
   hikes: Array<Object>;
 }
 
