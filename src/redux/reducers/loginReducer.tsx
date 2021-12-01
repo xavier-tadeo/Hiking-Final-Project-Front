@@ -5,6 +5,7 @@ export interface IAction {
   user?: Object;
   hikes: Array<Object>;
   currentHike?: Object;
+  hike?: object;
 }
 
 const loginReducer = (

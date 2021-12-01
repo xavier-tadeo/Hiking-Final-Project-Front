@@ -32,9 +32,12 @@ const useUser = () => {
     dispatch(getHikeThunks());
   }, [dispatch]);
 
-  const getCurrentHike = useCallback(() => {
-    dispatch(getCurrentHikeThunk());
-  }, [dispatch]);
+  const getCurrentHike = useCallback(
+    (id) => {
+      dispatch(getCurrentHikeThunk(id));
+    },
+    [dispatch]
+  );
 
   return {
     userInfo,

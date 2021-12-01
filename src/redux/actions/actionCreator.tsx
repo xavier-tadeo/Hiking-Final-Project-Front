@@ -30,5 +30,5 @@ export const loginUserAction = ({ user }: IUser) => ({
 
 export const currentHikeAction = (hike: IHike) => ({
   type: actionTypes.currentHike,
-  currentHike: hike,
+  hike,
 });
