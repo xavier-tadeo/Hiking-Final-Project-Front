@@ -12,7 +12,7 @@ export const handlers = [
     }
   ),
   rest.post(
-    "https://proyecto-final-xavi-back.herokuapp.com/user/login",
+    "https://proyecto-final-xavi-back.herokuapp.com/user/register",
     async (req, res, ctx) => {
       const respons = res(ctx.json(mockId));
       return respons;

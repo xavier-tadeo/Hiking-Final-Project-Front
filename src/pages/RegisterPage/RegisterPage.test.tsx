@@ -2,7 +2,7 @@ import { render, screen } from "@testing-library/react";
 import { Provider } from "react-redux";
 import { server } from "../../mocks/server";
 import configureStore from "../../redux/store";
-import LoginPage from "./LoginPage";
+import RegisterPage from "./RegisterPage";
 
 beforeAll(() => {
   server.listen();
@@ -17,21 +17,19 @@ afterAll(() => {
 });
 const store = configureStore();
 
-describe("Given a LoginPage component", () => {
+describe("Given a RegisterPage component", () => {
   describe("When it render", () => {
-    test("It should rendered a one placeholder inside 'Name''", () => {
-      const h3Name = "Name";
-
+    test("It should rendered a one tag <h3> with name 'Register'", () => {
       render(
         <Provider store={store}>
-          <LoginPage />
+          <RegisterPage />
         </Provider>
       );
-      const expectedTitle = screen.getByRole("heading", { name: "Login" });
-      const expectedPlaceholder = screen.getByPlaceholderText(h3Name);
+      const expectedTitle = screen.getByRole("heading", { name: "Register" });
+      const expectedText = screen.getByRole("textbox", { name: "Name" });
 
       expect(expectedTitle).toBeInTheDocument();
-      expect(expectedPlaceholder).toBeInTheDocument();
+      expect(expectedText).toBeInTheDocument();
     });
   });
 });
