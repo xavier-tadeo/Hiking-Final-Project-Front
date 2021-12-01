@@ -1,3 +1,5 @@
+import { useNavigate } from "react-router";
+
 import "./CardHike.scss";
 
 export interface IHike {
@@ -5,8 +7,15 @@ export interface IHike {
 }
 
 const CardHike = ({ hike }: IHike): JSX.Element => {
+  let navigate = useNavigate();
+
+  const onClick = (hike: any) => {
+    navigate(`/hike/get/${hike.id}`);
+    console.log(hike.id);
+  };
+
   return (
-    <section className="constainer__hike">
+    <section className="constainer__hike" onClick={() => onClick(hike)}>
       <div className="cardHike">
         <h4 className="cardHike__title">{hike.title}</h4>
         <div className="cardHike__info">

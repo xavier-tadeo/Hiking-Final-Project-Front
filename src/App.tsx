@@ -10,6 +10,7 @@ import MapPage from "./pages/MapPage/MapPage";
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
 import paths from "./paths/pathsHike";
 import { Toaster } from "react-hot-toast";
+import CardPageDetails from "./pages/CardPageDetails/CardPageDetails";
 
 function App(): JSX.Element {
   return (
@@ -26,6 +27,7 @@ function App(): JSX.Element {
           ></Route>
           <Route path={paths.loginFormPage} element={<LoginPage />}></Route>
           <Route path={paths.mapPage} element={<MapPage />}></Route>
+          <Route path={paths.hikeCard} element={<CardPageDetails />}></Route>
         </Routes>
       </BrowserRouter>
     </>
