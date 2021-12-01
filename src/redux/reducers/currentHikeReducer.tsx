@@ -6,7 +6,7 @@ const curretHikeReducer = (currentHike = {}, action: IAction) => {
 
   switch (action.type) {
     case actionTypes.currentHike:
-      newHike = { ...action.currentHike };
+      newHike = { ...action.hike };
       break;
 
     default:

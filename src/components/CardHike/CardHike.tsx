@@ -11,7 +11,6 @@ const CardHike = ({ hike }: IHike): JSX.Element => {
 
   const onClick = (hike: any) => {
     navigate(`/hike/get/${hike.id}`);
-    console.log(hike.id);
   };
 
   return (
