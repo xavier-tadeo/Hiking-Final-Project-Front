@@ -1,13 +1,12 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import "./App.css";
 import HeaderHike from "./components/HeaderHike/HeaderHike";
 import LinkComponent from "./components/LinkComponent/LinkComponent";
 
 import HomePage from "./pages/HomePage/HomePage";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import MapPage from "./pages/MapPage/MapPage";
-import "./App.css";
+
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
 import paths from "./paths/pathsHike";
 import { Toaster } from "react-hot-toast";

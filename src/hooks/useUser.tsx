@@ -7,10 +7,12 @@ import {
 } from "../redux/thunks/userThunks";
 
 const useUser = () => {
-  const { login, hiking } = useSelector(({ login, hiking }: any) => ({
-    login,
-    hiking,
-  }));
+  const { login: userInfo, hiking: hikingInfo } = useSelector(
+    ({ login, hiking }: any) => ({
+      login,
+      hiking,
+    })
+  );
 
   const dispatch = useDispatch();
 
@@ -27,8 +29,8 @@ const useUser = () => {
   }, [dispatch]);
 
   return {
-    login,
-    hiking,
+    userInfo,
+    hikingInfo,
     loginUser,
     registerUser,
     getHiking,
