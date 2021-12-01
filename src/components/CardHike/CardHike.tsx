@@ -1,6 +1,6 @@
 import "./CardHike.scss";
 
-interface IHike {
+export interface IHike {
   hike: any;
 }
 
