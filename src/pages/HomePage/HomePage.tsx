@@ -6,7 +6,7 @@ import "@fontsource/architects-daughter";
 import "@fontsource/roboto";
 
 const HomePage = (): JSX.Element => {
-  const { hiking, getHiking } = useUser();
+  const { hikingInfo, getHiking } = useUser();
 
   useEffect(() => {
     getHiking();
@@ -22,7 +22,7 @@ const HomePage = (): JSX.Element => {
         </div>
         <h3 className="homepage__title">The best routes</h3>
         <div className="homepage__card">
-          {hiking.map((hike: any) => (
+          {hikingInfo.map((hike: any) => (
             <CardHike hike={hike} key={hike.id} />
           ))}
         </div>
