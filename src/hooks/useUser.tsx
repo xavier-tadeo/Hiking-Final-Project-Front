@@ -1,18 +1,22 @@
 import { useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
+  getCurrentHikeThunk,
   getHikeThunks,
   loginUserThunks,
   registerUserThunks,
 } from "../redux/thunks/userThunks";
 
 const useUser = () => {
-  const { login: userInfo, hiking: hikingInfo } = useSelector(
-    ({ login, hiking }: any) => ({
-      login,
-      hiking,
-    })
-  );
+  const {
+    login: userInfo,
+    hiking: hikingInfo,
+    currentHike,
+  } = useSelector(({ login, hiking, currentHike }: any) => ({
+    login,
+    hiking,
+    currentHike,
+  }));
 
   const dispatch = useDispatch();
 
@@ -28,12 +32,18 @@ const useUser = () => {
     dispatch(getHikeThunks());
   }, [dispatch]);
 
+  const getCurrentHike = useCallback(() => {
+    dispatch(getCurrentHikeThunk());
+  }, [dispatch]);
+
   return {
     userInfo,
     hikingInfo,
+    currentHike,
     loginUser,
     registerUser,
     getHiking,
+    getCurrentHike,
   };
 };
 

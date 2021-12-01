@@ -1,7 +1,9 @@
 import axios from "axios";
 import jwtDecode from "jwt-decode";
 import toast from "react-hot-toast";
+
 import {
+  currentHikeAction,
   getHikesAction,
   loginUserAction,
   registerUserAction,
@@ -36,4 +38,10 @@ export const getHikeThunks = () => async (dispatch: any) => {
   const hikings = await axios.get(`${urlApi}hike/get`);
 
   dispatch(getHikesAction(hikings.data));
+};
+
+export const getCurrentHikeThunk = () => async (dispatch: any) => {
+  const currentHike = await axios.get(`${urlApi}hike/get/:id`);
+
+  dispatch(currentHikeAction(currentHike.data));
 };
