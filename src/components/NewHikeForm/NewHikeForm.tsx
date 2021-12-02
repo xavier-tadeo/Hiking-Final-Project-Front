@@ -80,7 +80,7 @@ const NewHikeForm = (): JSX.Element => {
     checkForm();
   };
 
-  const onSignUp = (evt: FormElement) => {
+  const newHikeCreate = (evt: FormElement) => {
     evt.preventDefault();
   };
 
@@ -90,7 +90,7 @@ const NewHikeForm = (): JSX.Element => {
         className="registerForm"
         noValidate
         autoComplete="off"
-        onSubmit={onSignUp}
+        onSubmit={newHikeCreate}
       >
         <h5 className="create-route__title">Create your Route</h5>
         <div className="create-route__container">
