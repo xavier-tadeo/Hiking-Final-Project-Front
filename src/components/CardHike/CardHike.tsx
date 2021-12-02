@@ -22,6 +22,8 @@ const CardHike = ({ hike }: IHike): JSX.Element => {
             src={hike.images[0]}
             alt="hike montain"
             className="cardHike__images"
+            width="200"
+            height="150"
           />
           <span className="cardHike__stadistics">
             <p className="cardHike__stadistics-title">Distance</p>

@@ -8,6 +8,7 @@
   padding: 5px;
   text-align: center;
   margin: 0;
+  height: 55px;
 }
 
 .cardHike__info {
@@ -40,4 +41,10 @@
   padding: 0 0 5px 20px;
   font-family: "Josefin Sans", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-size: 16px;
+}
+
+@media (min-width: 992px) {
+  .constainer__hike {
+    margin-top: 20px;
+  }
 }
