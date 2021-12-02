@@ -4,6 +4,7 @@ import {
   getCurrentHikeThunk,
   getHikeThunks,
   loginUserThunks,
+  postHikeThunk,
   registerUserThunks,
 } from "../redux/thunks/userThunks";
 
@@ -39,6 +40,10 @@ const useUser = () => {
     [dispatch]
   );
 
+  const postCurretHike = (hike: object) => {
+    dispatch(postHikeThunk(hike));
+  };
+
   return {
     userInfo,
     hikingInfo,
@@ -47,6 +52,7 @@ const useUser = () => {
     registerUser,
     getHiking,
     getCurrentHike,
+    postCurretHike,
   };
 };
 
