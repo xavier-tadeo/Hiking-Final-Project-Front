@@ -3,6 +3,7 @@ import { Provider } from "react-redux";
 import { server } from "../../mocks/server";
 import configureStore from "../../redux/store";
 import LoginPage from "./LoginPage";
+import { BrowserRouter } from "react-router-dom";
 
 beforeAll(() => {
   server.listen();
@@ -24,7 +25,9 @@ describe("Given a LoginPage component", () => {
 
       render(
         <Provider store={store}>
-          <LoginPage />
+          <BrowserRouter>
+            <LoginPage />
+          </BrowserRouter>
         </Provider>
       );
       const expectedTitle = screen.getByRole("heading", { name: "Login" });

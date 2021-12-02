@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-
+import { BrowserRouter } from "react-router-dom";
 import userEvent from "@testing-library/user-event";
 import { Provider } from "react-redux";
 import configureStore from "../../redux/store";
@@ -14,7 +14,9 @@ describe("Given a LoginForm component", () => {
 
       render(
         <Provider store={store}>
-          <LoginForm />
+          <BrowserRouter>
+            <LoginForm />
+          </BrowserRouter>
         </Provider>
       );
 
@@ -30,7 +32,9 @@ describe("Given a LoginForm component", () => {
     test("Then it should have a disabled button", () => {
       render(
         <Provider store={store}>
-          <LoginForm />
+          <BrowserRouter>
+            <LoginForm />
+          </BrowserRouter>
         </Provider>
       );
       const addButton = screen.getByRole("button", {
@@ -48,7 +52,9 @@ describe("Given a LoginForm component", () => {
 
       render(
         <Provider store={store}>
-          <LoginForm />
+          <BrowserRouter>
+            <LoginForm />
+          </BrowserRouter>
         </Provider>
       );
 

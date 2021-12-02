@@ -3,6 +3,7 @@ import RegisterForm from "./RegisterForm";
 import userEvent from "@testing-library/user-event";
 import { Provider } from "react-redux";
 import configureStore from "../../redux/store";
+import { BrowserRouter } from "react-router-dom";
 
 const store = configureStore();
 
@@ -11,7 +12,9 @@ describe("Given a RegisterForm component", () => {
     test("Then it should render a form with a 3 inputs and labels, and a button", () => {
       render(
         <Provider store={store}>
-          <RegisterForm />
+          <BrowserRouter>
+            <RegisterForm />
+          </BrowserRouter>
         </Provider>
       );
 
@@ -29,7 +32,9 @@ describe("Given a RegisterForm component", () => {
     test("Then it should have a disabled button", () => {
       render(
         <Provider store={store}>
-          <RegisterForm />
+          <BrowserRouter>
+            <RegisterForm />
+          </BrowserRouter>
         </Provider>
       );
       const addButton = screen.getByRole("button", {
@@ -44,7 +49,9 @@ describe("Given a RegisterForm component", () => {
     test("Then login button should not be clickable", () => {
       render(
         <Provider store={store}>
-          <RegisterForm />
+          <BrowserRouter>
+            <RegisterForm />
+          </BrowserRouter>
         </Provider>
       );
 
