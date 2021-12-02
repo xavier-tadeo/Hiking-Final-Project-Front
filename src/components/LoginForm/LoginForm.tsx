@@ -42,7 +42,6 @@ const LoginForm = (): JSX.Element => {
     evt.preventDefault();
     loginUser(userData);
     setUserData(initialData);
-    console.log(paths);
     navigate(paths.userProfile);
   };
 

@@ -3,6 +3,7 @@ import { Provider } from "react-redux";
 import { server } from "../../mocks/server";
 import configureStore from "../../redux/store";
 import RegisterPage from "./RegisterPage";
+import { BrowserRouter } from "react-router-dom";
 
 beforeAll(() => {
   server.listen();
@@ -22,7 +23,9 @@ describe("Given a RegisterPage component", () => {
     test("It should rendered a one tag <h3> with name 'Register'", () => {
       render(
         <Provider store={store}>
-          <RegisterPage />
+          <BrowserRouter>
+            <RegisterPage />
+          </BrowserRouter>
         </Provider>
       );
       const expectedTitle = screen.getByRole("heading", { name: "Register" });
