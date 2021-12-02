@@ -22,3 +22,19 @@
   text-shadow: 6px 4px 4px;
   padding-top: 25px;
 }
+
+@media (min-width: 992px) {
+  .header__title {
+    font-size: 45px;
+    padding-top: 0;
+  }
+
+  .header__icon {
+    padding-top: 30px;
+    padding-right: 20px;
+  }
+
+  .header__icon-logo {
+    height: 30px;
+  }
+}

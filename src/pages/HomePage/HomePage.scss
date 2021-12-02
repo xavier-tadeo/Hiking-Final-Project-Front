@@ -29,4 +29,22 @@
 
 .homepage__card {
   margin-top: 50px;
+  width: 100vw;
+}
+
+@media (min-width: 992px) {
+  .homepage__card {
+    display: flex;
+    justify-content: space-between;
+    width: 100vw;
+    flex-wrap: wrap;
+  }
+
+  .homepage__description {
+    font-size: 23px;
+    margin-left: 30px;
+  }
+  .homepage__title {
+    font-size: 26px;
+  }
 }

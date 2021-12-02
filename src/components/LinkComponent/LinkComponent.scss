@@ -20,3 +20,11 @@
 :hover.nav-link {
   background-color: #b8c4c4;
 }
+
+@media (min-width: 992px) {
+  .nav-link {
+    font-size: 18px;
+    width: 80px;
+    height: 25px;
+  }
+}

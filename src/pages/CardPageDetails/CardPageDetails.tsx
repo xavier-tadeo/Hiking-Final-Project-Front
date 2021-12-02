@@ -47,6 +47,8 @@ const CardPageDetails = () => {
               alt="hike montain"
               className="cardpage__image"
               key={index}
+              width="200"
+              height="150"
             />
           ))}
         </div>
