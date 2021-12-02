@@ -2,6 +2,8 @@ import { useState } from "react";
 import useUser from "../../hooks/useUser";
 import "./RegisterForm.scss";
 import "@fontsource/roboto";
+import paths from "../../paths/pathsHike";
+import { useNavigate } from "react-router";
 
 type FormElement = React.FormEvent<HTMLFormElement>;
 
@@ -40,9 +42,13 @@ const RegisterForm = (): JSX.Element => {
     checkForm();
   };
 
+  let navigate = useNavigate();
+
   const onSignUp = (evt: FormElement) => {
     evt.preventDefault();
     registerUser(userData);
+    setUserData(initialData);
+    navigate(paths.loginFormPage);
   };
 
   return (
