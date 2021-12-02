@@ -11,6 +11,8 @@ import RegisterPage from "./pages/RegisterPage/RegisterPage";
 import paths from "./paths/pathsHike";
 import { Toaster } from "react-hot-toast";
 import CardPageDetails from "./pages/CardPageDetails/CardPageDetails";
+import CreateHikePage from "./pages/CreateHikePage/CreateHikePage";
+import ProfilePage from "./pages/ProfilePage/ProfilePage";
 
 function App(): JSX.Element {
   return (
@@ -28,6 +30,8 @@ function App(): JSX.Element {
           <Route path={paths.loginFormPage} element={<LoginPage />}></Route>
           <Route path={paths.mapPage} element={<MapPage />}></Route>
           <Route path={paths.hikeCard} element={<CardPageDetails />}></Route>
+          <Route path={paths.createHike} element={<CreateHikePage />}></Route>
+          <Route path={paths.userProfile} element={<ProfilePage />}></Route>
         </Routes>
       </BrowserRouter>
     </>
