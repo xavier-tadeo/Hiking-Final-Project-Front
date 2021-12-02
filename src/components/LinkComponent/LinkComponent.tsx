@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import useUser from "../../hooks/useUser";
-import paths from "../../paths/pathsHike";
+import pathsHike from "../../paths/pathsHike";
 import "./LinkComponent.scss";
 
 const LinkComponent = (): JSX.Element => {
@@ -10,31 +10,31 @@ const LinkComponent = (): JSX.Element => {
     <nav className="links__container">
       {userInfo.isAuthenticated ? (
         <>
-          <Link className="nav-link" to={paths.homePage}>
+          <Link className="nav-link" to={pathsHike.homePage}>
             Home
           </Link>
-          <Link className="nav-link" to={paths.userProfile}>
+          <Link className="nav-link" to={pathsHike.userProfile}>
             Profile
           </Link>
-          <Link className="nav-link" to={paths.createHike}>
+          <Link className="nav-link" to={pathsHike.createHike}>
             Create
           </Link>
-          <Link className="nav-link" to={paths.mapPage}>
+          <Link className="nav-link" to={pathsHike.mapPage}>
             Map
           </Link>
         </>
       ) : (
         <>
-          <Link className="nav-link" to={paths.homePage}>
+          <Link className="nav-link" to={pathsHike.homePage}>
             Home
           </Link>
-          <Link className="nav-link" to={paths.registerFormPage}>
+          <Link className="nav-link" to={pathsHike.registerFormPage}>
             Register
           </Link>
-          <Link className="nav-link" to={paths.loginFormPage}>
+          <Link className="nav-link" to={pathsHike.loginFormPage}>
             Login
           </Link>
-          <Link className="nav-link" to={paths.mapPage}>
+          <Link className="nav-link" to={pathsHike.mapPage}>
             Map
           </Link>
         </>

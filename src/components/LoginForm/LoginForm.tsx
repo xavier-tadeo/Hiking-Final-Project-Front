@@ -1,7 +1,7 @@
 import { useState } from "react";
 import useUser from "../../hooks/useUser";
 import "./LoginForm.scss";
-import paths from "../../paths/pathsHike";
+import pathsHike from "../../paths/pathsHike";
 import { useNavigate } from "react-router";
 
 type FormElement = React.FormEvent<HTMLFormElement>;
@@ -42,7 +42,7 @@ const LoginForm = (): JSX.Element => {
     evt.preventDefault();
     loginUser(userData);
     setUserData(initialData);
-    navigate(paths.userProfile);
+    navigate(pathsHike.userProfile);
   };
 
   return (
