@@ -9,7 +9,7 @@ const CardPageDetails = () => {
   useEffect(() => {
     getCurrentHike(id);
   }, [getCurrentHike, id]);
-  console.log(currentHike);
+
   return (
     <>
       <section className="cardpage__container">
@@ -23,48 +23,33 @@ const CardPageDetails = () => {
           </p>
         </div>
         <div className="cardpage__stadistics">
-          <p className="cardHike__stadistics-title">Distance</p>
-          <p className="cardHike__stadistics-distance stadistics">
+          <p className="cardpage__stadistics-title">Distance</p>
+          <p className="cardpage__stadistics-distance stadistics">
             {currentHike.stadistics?.distance}
           </p>
-          <p className="cardHike__stadistics-title">Time</p>
-          <p className="cardHike__stadistics-time stadistics">
+          <p className="cardpage__stadistics-title">Time</p>
+          <p className="cardpage__stadistics-time stadistics">
             {currentHike.stadistics?.time}
           </p>
-          <p className="cardHike__stadistics-title">Dificulty</p>
-          <p className="cardHike__stadistics-dificulty stadistics">
+          <p className="cardpage__stadistics-title">Dificulty</p>
+          <p className="cardpage__stadistics-dificulty stadistics">
             {currentHike.stadistics?.dificulty}
           </p>
-          <p className="cardHike__stadistics-title">Elevation</p>
-          <p className="cardHike__stadistics-elevation stadistics">
+          <p className="cardpage__stadistics-title">Elevation</p>
+          <p className="cardpage__stadistics-elevation stadistics">
             {currentHike.stadistics?.elevation}
           </p>
         </div>
-        {/* <img
-          src={currentHike.images[0]}
-          alt="hike montain"
-          className="cardHike__images"
-        />
-        <img
-          src={currentHike.images[1]}
-          alt="hike montain"
-          className="cardHike__images"
-        />
-        <img
-          src={currentHike.images[2]}
-          alt="hike montain"
-          className="cardHike__images"
-        />
-        <img
-          src={currentHike.images[3]}
-          alt="hike montain"
-          className="cardHike__images"
-        />
-        <img
-          src={currentHike.images[4]}
-          alt="hike montain"
-          className="cardHike__images"
-        /> */}
+        <div className="cardpage__images">
+          {currentHike.images?.map((hike: string, index: number) => (
+            <img
+              src={hike}
+              alt="hike montain"
+              className="cardpage__image"
+              key={index}
+            />
+          ))}
+        </div>
       </section>
     </>
   );
