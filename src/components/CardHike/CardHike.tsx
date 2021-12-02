@@ -9,8 +9,8 @@ export interface IHike {
 const CardHike = ({ hike }: IHike): JSX.Element => {
   let navigate = useNavigate();
 
-  const onClick = (hike: any) => {
-    navigate(`/hike/get/${hike.id}`);
+  const onClick = (hikeId: any) => {
+    navigate(`/hike/get/${hikeId.id}`);
   };
 
   return (
