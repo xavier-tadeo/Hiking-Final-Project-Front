@@ -48,7 +48,13 @@ export const getCurrentHikeThunk = (id: string) => async (dispatch: any) => {
 };
 
 export const postHikeThunk = (hike: object) => async (dispatch: any) => {
-  const createHike = await axios.post(`${urlApi}hike/create`, hike);
+  const storageUser: any = localStorage.getItem("tokenStorage");
+  const { token } = JSON.parse(storageUser);
+  const createHike = await axios.post(`${urlApi}hike/create`, hike, {
+    headers: {
+      Authorization: "Bearer " + token,
+    },
+  });
 
   if (createHike.status === 200) {
     dispatch(postHikeAction(createHike.data));
