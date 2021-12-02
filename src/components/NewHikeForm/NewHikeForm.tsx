@@ -1,17 +1,18 @@
 import { useState } from "react";
+import useUser from "../../hooks/useUser";
 
 type FormElement = React.FormEvent<HTMLFormElement>;
 
 interface Maping {
-  latitude: number;
-  longitude: number;
+  latitude: number | any;
+  longitude: number | any;
 }
 
 interface Stadistics {
   distance: string;
   time: string;
   elevation: string;
-  dificulty: number;
+  dificulty: number | any;
 }
 
 interface IForm {
@@ -19,7 +20,7 @@ interface IForm {
   description: string;
   map: Maping;
   stadistics: Stadistics;
-  images: [string];
+  // images: [string] | any;
 }
 
 const NewHikeForm = (): JSX.Element => {
@@ -27,7 +28,7 @@ const NewHikeForm = (): JSX.Element => {
     title: "",
     stadistics: { distance: "", time: "", elevation: "", dificulty: 0 },
     map: { latitude: 0, longitude: 0 },
-    images: [""],
+    // images: [""],
     description: "",
   };
 
@@ -39,9 +40,9 @@ const NewHikeForm = (): JSX.Element => {
       userData.title !== "" &&
       userData.stadistics.distance !== "" &&
       userData.stadistics.elevation !== "" &&
-      userData.stadistics.dificulty !== 0 &&
+      userData.stadistics.dificulty !== "" &&
       userData.stadistics.time !== "" &&
-      userData.images !== [""] &&
+      // userData.images !== [""] &&
       userData.map.latitude !== 0 &&
       userData.map.longitude !== 0 &&
       userData.description !== ""
@@ -55,6 +56,7 @@ const NewHikeForm = (): JSX.Element => {
       ...userData,
       [evt.target.id]: evt.target.value,
     });
+
     checkForm();
   };
 
@@ -66,6 +68,7 @@ const NewHikeForm = (): JSX.Element => {
         [evt.target.id]: evt.target.value,
       },
     });
+
     checkForm();
   };
 
@@ -80,8 +83,22 @@ const NewHikeForm = (): JSX.Element => {
     checkForm();
   };
 
-  const onSignUp = (evt: FormElement) => {
+  const { postCurretHike } = useUser();
+
+  const newHikeCreate = async (evt: FormElement) => {
     evt.preventDefault();
+    const formData = new FormData();
+    formData.append("title", userData.title);
+    formData.append("stadistics[distance]", userData.stadistics.distance);
+    formData.append("stadistics[elevation]", userData.stadistics.elevation);
+    formData.append("stadistics[dificulty]", userData.stadistics.dificulty);
+    formData.append("stadistics[time]", userData.stadistics.time);
+    // formData.append("images", userData.images);
+    formData.append("map[latitude]", userData.map.latitude);
+    formData.append("map[longitude]", userData.map.longitude);
+    formData.append("description", userData.description);
+
+    await postCurretHike(formData);
   };
 
   return (
@@ -90,7 +107,7 @@ const NewHikeForm = (): JSX.Element => {
         className="registerForm"
         noValidate
         autoComplete="off"
-        onSubmit={onSignUp}
+        onSubmit={newHikeCreate}
       >
         <h5 className="create-route__title">Create your Route</h5>
         <div className="create-route__container">
@@ -173,17 +190,18 @@ const NewHikeForm = (): JSX.Element => {
             value={userData.map.latitude}
             onChange={(evt) => onChangeMap(evt)}
           />
-          <label className="create-route__images-label" htmlFor="images">
+          {/* <label className="create-route__images-label" htmlFor="images">
             Images
           </label>
           <input
             type="file"
+            multiple
             className="create-route__images"
             id="images"
             placeholder="Images"
             value={userData.images}
             onChange={(evt) => onChange(evt)}
-          />
+          /> */}
           <label
             className="create-route__description-label"
             htmlFor="description"

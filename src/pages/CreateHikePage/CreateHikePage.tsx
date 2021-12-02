@@ -1,5 +1,19 @@
+import NewHikeForm from "../../components/NewHikeForm/NewHikeForm";
+
 const CreateHikePage = (): JSX.Element => {
-  return <h1>Creando rutas</h1>;
+  return (
+    <>
+      <section className="createhike__container">
+        <div className="createhike__description-container">
+          <h3 className="createhike__description">Create your own hike</h3>
+        </div>
+
+        <div className="createhike__form">
+          <NewHikeForm />
+        </div>
+      </section>
+    </>
+  );
 };
 
 export default CreateHikePage;
