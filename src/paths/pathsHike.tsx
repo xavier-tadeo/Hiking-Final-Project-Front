@@ -1,4 +1,4 @@
-const paths = {
+const pathsHike = {
   homePage: "/",
   loginFormPage: "/login",
   registerFormPage: "/register",
@@ -8,4 +8,4 @@ const paths = {
   createHike: "/user/create",
 };
 
-export default paths;
+export default pathsHike;

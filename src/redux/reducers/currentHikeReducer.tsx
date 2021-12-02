@@ -1,7 +1,7 @@
 import actionTypes from "../actions/actionTypes";
 import { IAction } from "./loginReducer";
 
-const curretHikeReducer = (currentHike = {}, action: IAction) => {
+const currentHikeReducer = (currentHike = {}, action: IAction) => {
   let newHike;
 
   switch (action.type) {
@@ -17,4 +17,4 @@ const curretHikeReducer = (currentHike = {}, action: IAction) => {
   return newHike;
 };
 
-export default curretHikeReducer;
+export default currentHikeReducer;
