@@ -1,6 +1,8 @@
 import { useState } from "react";
 import useUser from "../../hooks/useUser";
 import "./LoginForm.scss";
+import paths from "../../paths/pathsHike";
+import { useNavigate } from "react-router";
 
 type FormElement = React.FormEvent<HTMLFormElement>;
 
@@ -34,9 +36,14 @@ const LoginForm = (): JSX.Element => {
     checkForm();
   };
 
+  let navigate = useNavigate();
+
   const onLoginUp = (evt: FormElement) => {
     evt.preventDefault();
     loginUser(userData);
+    setUserData(initialData);
+    console.log(paths);
+    navigate(paths.userProfile);
   };
 
   return (
