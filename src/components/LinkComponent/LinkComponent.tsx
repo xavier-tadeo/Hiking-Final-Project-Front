@@ -13,6 +13,12 @@ const LinkComponent = (): JSX.Element => {
           <Link className="nav-link" to={paths.homePage}>
             Home
           </Link>
+          <Link className="nav-link" to={paths.userProfile}>
+            Profile
+          </Link>
+          <Link className="nav-link" to={paths.createHike}>
+            Create
+          </Link>
           <Link className="nav-link" to={paths.mapPage}>
             Map
           </Link>
