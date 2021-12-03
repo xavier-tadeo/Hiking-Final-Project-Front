@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useParams } from "react-router";
+import jwtDecode from "jwt-decode";
 import useUser from "../../hooks/useUser";
 
 const CardPageDetails = () => {
@@ -10,12 +11,25 @@ const CardPageDetails = () => {
     getCurrentHike(id);
   }, [getCurrentHike, id]);
 
+  const tokenUser: any = localStorage.getItem("tokenStorage");
+  let token;
+  let idUserHike;
+  let idHike;
+  if (tokenUser) {
+    const userToken = JSON.parse(tokenUser);
+    token = userToken.token;
+    const tokenDecode: any = jwtDecode(token);
+    idUserHike = tokenDecode.id;
+    idHike = currentHike.user;
+  }
+
   return (
     <>
       <section className="cardpage__container">
         <div className="cardpage__description-container">
           <h3 className="cardpage__description">Details Hike</h3>
         </div>
+        {idUserHike === idHike ? <button>Hola</button> : ""}
         <h4 className="cardpage__title">{currentHike.title}</h4>
         <div className="cardpage__description">
           <p className="cardpage__description-paragraph">
