@@ -15,7 +15,7 @@ interface Stadistics {
   dificulty: number | any;
 }
 
-interface IForm {
+export interface IForm {
   title: string;
   description: string;
   map: Maping;
