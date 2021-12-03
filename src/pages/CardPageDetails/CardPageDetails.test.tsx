@@ -1,10 +1,13 @@
 import { render, screen } from "@testing-library/react";
+
 import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
 import configureStore from "../../redux/store";
 import CardPageDetails from "./CardPageDetails";
 
 const store = configureStore();
+
+jest.mock("jwt-decode");
 
 describe("Given a CardPageDetails component", () => {
   describe("When it render", () => {
