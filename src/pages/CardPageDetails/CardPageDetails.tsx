@@ -18,7 +18,7 @@ const CardPageDetails = () => {
         </div>
         <h4 className="cardpage__title">{currentHike.title}</h4>
         <div className="cardpage__description">
-          <p className="cardpage__description-parraf">
+          <p className="cardpage__description-paragraph">
             {currentHike.description}
           </p>
         </div>
