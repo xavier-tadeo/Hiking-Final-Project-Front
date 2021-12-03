@@ -37,3 +37,8 @@ export const postHikeAction = (hike: IHike) => ({
   type: actionTypes.postHike,
   hike,
 });
+
+export const updateHikeAction = (hike: IHike) => ({
+  type: actionTypes.updateHike,
+  hike,
+});
