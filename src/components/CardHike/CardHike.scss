@@ -1,11 +1,13 @@
 .constainer__hike {
-  background-color: #cfeae875;
+  background-color: #fafafa;
   width: 340px;
   margin: 10px auto 0 auto;
+  border-radius: 20px;
+  box-shadow: 7px 4px 18px -7px rgb(0 0 0 / 95%);
 }
 
 .cardHike__title {
-  padding: 5px;
+  padding: 15px 5px 0 5px;
   text-align: center;
   margin: 0;
   height: 55px;
@@ -16,11 +18,12 @@
 }
 
 .cardHike__images {
-  padding: 8px;
+  padding: 5px 0 0 25px;
 }
 
 .cardHike__stadistics p {
   margin: 0;
+  width: 110px;
 }
 
 .cardHike__stadistics-title {

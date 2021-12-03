@@ -1,14 +1,14 @@
 @import "../../styles/variables";
 
 .container__header {
-  background-color: azure;
+  background-color: #b5cbbf;
   display: flex;
   justify-content: center;
-  height: 129px;
+  height: 90px;
 }
 
 .header__icon {
-  padding-top: 50px;
+  padding-top: 30px;
   padding-right: 20px;
 }
 
@@ -20,7 +20,7 @@
   font-style: normal;
   letter-spacing: 0.15em;
   text-shadow: 6px 4px 4px;
-  padding-top: 25px;
+  padding-top: 10px;
 }
 
 @media (min-width: 992px) {
