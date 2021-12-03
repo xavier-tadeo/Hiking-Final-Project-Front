@@ -3,6 +3,7 @@ import { useParams } from "react-router";
 import jwtDecode from "jwt-decode";
 import useUser from "../../hooks/useUser";
 import { IForm } from "../../components/NewHikeForm/NewHikeForm";
+import "./CardPageDetails.scss";
 
 const CardPageDetails = () => {
   const { currentHike, getCurrentHike } = useUser();
@@ -106,13 +107,13 @@ const CardPageDetails = () => {
     <>
       <section className="cardpage__container">
         <div className="cardpage__description-container">
-          <h3 className="cardpage__description">Details Hike</h3>
+          <h3 className="cardpage__description--title">Details Hike</h3>
         </div>
         {idUserHike === idHike ? <button>Hola</button> : ""}
         <h4 className="cardpage__title">{currentHike.title}</h4>
 
         <div className="cardpage__description">
-          <p className="cardpage__description-paragraph">
+          <p className="cardpage__description--paragraph">
             {currentHike.description}
           </p>
         </div>
@@ -136,14 +137,17 @@ const CardPageDetails = () => {
         </div>
         <div className="cardpage__images">
           {currentHike.images?.map((hike: string, index: number) => (
-            <img
-              src={hike}
-              alt="hike montain"
-              className="cardpage__image"
-              key={index}
-              width="200"
-              height="150"
-            />
+            <div className="container__image">
+              {" "}
+              <img
+                src={hike}
+                alt="hike montain"
+                className="cardpage__image"
+                key={index}
+                width="200"
+                height="150"
+              />
+            </div>
           ))}
         </div>
         {hikeData.title === undefined ? (
