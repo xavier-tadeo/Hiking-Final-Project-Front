@@ -57,7 +57,6 @@ const CardPageDetails = () => {
 
     description: currentHike.description,
   };
-  console.log(initialHike);
 
   const [hikeData, setHikeData] = useState(initialHike);
 
@@ -111,7 +110,7 @@ const CardPageDetails = () => {
         </div>
         {idUserHike === idHike ? <button>Hola</button> : ""}
         <h4 className="cardpage__title">{currentHike.title}</h4>
-        {console.log(currentHike.title)}
+
         <div className="cardpage__description">
           <p className="cardpage__description-paragraph">
             {currentHike.description}
