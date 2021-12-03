@@ -20,7 +20,7 @@ interface IForm {
   description: string;
   map: Maping;
   stadistics: Stadistics;
-  // images: [string] | any;
+  images?: any;
 }
 
 const NewHikeForm = (): JSX.Element => {
@@ -28,7 +28,7 @@ const NewHikeForm = (): JSX.Element => {
     title: "",
     stadistics: { distance: "", time: "", elevation: "", dificulty: 0 },
     map: { latitude: 0, longitude: 0 },
-    // images: [""],
+
     description: "",
   };
 
@@ -42,7 +42,6 @@ const NewHikeForm = (): JSX.Element => {
       userData.stadistics.elevation !== "" &&
       userData.stadistics.dificulty !== "" &&
       userData.stadistics.time !== "" &&
-      // userData.images !== [""] &&
       userData.map.latitude !== 0 &&
       userData.map.longitude !== 0 &&
       userData.description !== ""
@@ -54,9 +53,9 @@ const NewHikeForm = (): JSX.Element => {
   const onChange = (evt: any) => {
     setUserData({
       ...userData,
-      [evt.target.id]: evt.target.value,
+      [evt.target.id]:
+        evt.target.type === "file" ? evt.target.files[0] : evt.target.value,
     });
-
     checkForm();
   };
 
@@ -93,7 +92,7 @@ const NewHikeForm = (): JSX.Element => {
     formData.append("stadistics[elevation]", userData.stadistics.elevation);
     formData.append("stadistics[dificulty]", userData.stadistics.dificulty);
     formData.append("stadistics[time]", userData.stadistics.time);
-    // formData.append("images", userData.images);
+    formData.append("images", userData.images);
     formData.append("map[latitude]", userData.map.latitude);
     formData.append("map[longitude]", userData.map.longitude);
     formData.append("description", userData.description);
@@ -190,18 +189,18 @@ const NewHikeForm = (): JSX.Element => {
             value={userData.map.latitude}
             onChange={(evt) => onChangeMap(evt)}
           />
-          {/* <label className="create-route__images-label" htmlFor="images">
+          <label className="create-route__images-label" htmlFor="images">
             Images
           </label>
           <input
             type="file"
+            name="filefield"
             multiple
             className="create-route__images"
             id="images"
             placeholder="Images"
-            value={userData.images}
             onChange={(evt) => onChange(evt)}
-          /> */}
+          />
           <label
             className="create-route__description-label"
             htmlFor="description"
