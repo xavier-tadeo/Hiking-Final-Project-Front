@@ -1,11 +1,12 @@
+import { IHike } from "../actions/actionCreator";
 import actionsTypes from "../actions/actionTypes";
 
 export interface IAction {
   type: string;
   user?: Object;
-  hikes: Array<Object>;
+  hikes?: any;
   currentHike?: Object;
-  hike?: object;
+  hike?: IHike;
 }
 
 const loginReducer = (

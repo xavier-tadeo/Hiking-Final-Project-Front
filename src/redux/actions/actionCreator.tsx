@@ -8,8 +8,8 @@ interface IUser {
   user: Object;
 }
 
-interface IHike {
-  hike: Object;
+export interface IHike {
+  hike: any;
 }
 
 export const getHikesAction = (hikes: IHikes) => ({

@@ -1,10 +1,7 @@
 import { useNavigate } from "react-router";
+import { IHike } from "../../redux/actions/actionCreator";
 
 import "./CardHike.scss";
-
-export interface IHike {
-  hike: any;
-}
 
 const CardHike = ({ hike }: IHike): JSX.Element => {
   let navigate = useNavigate();
