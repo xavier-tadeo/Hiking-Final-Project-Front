@@ -6,6 +6,7 @@ const actionTypes = {
   registerUser: "REGISTER_USER",
   loginUser: "LOGIN_USER",
   currentHike: "GET_HIKE",
+  deleteHike: "DELETE_HIKE",
 };
 
 export default actionTypes;
