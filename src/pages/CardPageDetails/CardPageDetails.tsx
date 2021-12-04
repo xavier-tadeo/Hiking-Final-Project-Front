@@ -80,19 +80,10 @@ const CardPageDetails = () => {
 
   const newHikeCreate = async (evt: FormElement) => {
     evt.preventDefault();
-    const formData = new FormData();
-    formData.append("title", hikeData.title);
-    formData.append("stadistics[distance]", hikeData.stadistics.distance);
-    formData.append("stadistics[elevation]", hikeData.stadistics.elevation);
-    formData.append("stadistics[dificulty]", hikeData.stadistics.dificulty);
-    formData.append("stadistics[time]", hikeData.stadistics.time);
-    formData.append("images", hikeData.images);
-    formData.append("map[latitude]", hikeData.map.latitude);
-    formData.append("map[longitude]", hikeData.map.longitude);
-    formData.append("description", hikeData.description);
-
-    await updateCurrentHike(formData, id as string);
+    await updateCurrentHike(hikeData, id as string);
   };
+
+  // const [updateWant setUpdateWant]
 
   return (
     <>
@@ -100,7 +91,15 @@ const CardPageDetails = () => {
         <div className="cardpage__description-container">
           <h3 className="cardpage__description--title">Details Hike</h3>
         </div>
-        {idUserHike === idHike ? <button>Hola</button> : ""}
+        {idUserHike === idHike ? (
+          <div>
+            <button>Update</button>
+            <button>Delete</button>
+          </div>
+        ) : (
+          ""
+        )}
+
         <h4 className="cardpage__title">{currentHike.title}</h4>
 
         <div className="cardpage__description">
@@ -245,18 +244,6 @@ const CardPageDetails = () => {
                 placeholder="Latitude"
                 value={hikeData.map.latitude}
                 onChange={(evt) => onChangeMap(evt)}
-              />
-              <label className="create-route__images-label" htmlFor="images">
-                Images
-              </label>
-              <input
-                type="file"
-                name="filefield"
-                multiple
-                className="create-route__images"
-                id="images"
-                placeholder="Images"
-                onChange={(evt) => onChange(evt)}
               />
               <label
                 className="create-route__description-label"
