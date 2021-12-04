@@ -4,6 +4,7 @@ import {
   deleteHikeThunk,
   getCurrentHikeThunk,
   getHikeThunks,
+  getUserThunk,
   loginUserThunks,
   postHikeThunk,
   registerUserThunks,
@@ -15,10 +16,12 @@ const useUser = () => {
     login: userInfo,
     hiking: hikingInfo,
     currentHike,
-  } = useSelector(({ login, hiking, currentHike }: any) => ({
+    user,
+  } = useSelector(({ login, hiking, currentHike, user }: any) => ({
     login,
     hiking,
     currentHike,
+    user,
   }));
 
   const dispatch = useDispatch();
@@ -54,7 +57,12 @@ const useUser = () => {
     dispatch(deleteHikeThunk(id));
   };
 
+  const getUser = (id: string) => {
+    dispatch(getUserThunk(id));
+  };
+
   return {
+    user,
     userInfo,
     hikingInfo,
     currentHike,
@@ -65,6 +73,7 @@ const useUser = () => {
     postCurretHike,
     updateCurrentHike,
     deleteCurrentHike,
+    getUser,
   };
 };
 

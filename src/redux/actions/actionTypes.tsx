@@ -2,7 +2,7 @@ const actionTypes = {
   getHikes: "GET_HIKES",
   postHike: "POST_HIKE",
   updateHike: "UPDATE_HIKE",
-  getUsers: "GET_USERS",
+  getUser: "GET_USER",
   registerUser: "REGISTER_USER",
   loginUser: "LOGIN_USER",
   currentHike: "GET_HIKE",
