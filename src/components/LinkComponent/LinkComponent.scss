@@ -10,17 +10,14 @@
   padding: 10px;
   text-decoration: none;
   font-family: "Source Code Pro", Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 14px;
+  font-size: 17px;
   color: #fff;
-  border-radius: 50%;
-  background-color: #0c7c59;
   width: 60px;
-  height: 20px;
   text-align: center;
 }
 
 :hover.nav-link {
-  background-color: #b8c4c4;
+  color: #0c7c59;
 }
 
 @media (min-width: 992px) {
