@@ -1,6 +1,7 @@
 import { useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
+  deleteHikeThunk,
   getCurrentHikeThunk,
   getHikeThunks,
   loginUserThunks,
@@ -49,6 +50,10 @@ const useUser = () => {
     dispatch(updateHikeTunk(hike, id));
   };
 
+  const deleteCurrentHike = (id: string) => {
+    dispatch(deleteHikeThunk(id));
+  };
+
   return {
     userInfo,
     hikingInfo,
@@ -59,6 +64,7 @@ const useUser = () => {
     getCurrentHike,
     postCurretHike,
     updateCurrentHike,
+    deleteCurrentHike,
   };
 };
 

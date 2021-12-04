@@ -49,30 +49,58 @@ export const getCurrentHikeThunk = (id: string) => async (dispatch: any) => {
 };
 
 export const postHikeThunk = (hike: object) => async (dispatch: any) => {
-  const storageUser: any = localStorage.getItem("tokenStorage");
-  const { token } = JSON.parse(storageUser);
-  const createHike = await axios.post(`${urlApi}hike/create`, hike, {
-    headers: {
-      Authorization: "Bearer " + token,
-    },
-  });
-
-  if (createHike.status === 200) {
-    dispatch(postHikeAction(createHike.data));
-  }
-};
-
-export const updateHikeTunk =
-  (hike: any, id: string) => async (dispatch: any) => {
+  try {
     const storageUser: any = localStorage.getItem("tokenStorage");
     const { token } = JSON.parse(storageUser);
-    const createHike = await axios.patch(`${urlApi}hike/update/${id}`, hike, {
+    const createHike = await axios.post(`${urlApi}hike/create`, hike, {
       headers: {
         Authorization: "Bearer " + token,
       },
     });
 
     if (createHike.status === 200) {
-      dispatch(updateHikeAction(createHike.data));
+      dispatch(postHikeAction(createHike.data));
+      toast.success("Successfully Create Hike");
+    }
+  } catch {
+    toast.error("You don't can't");
+  }
+};
+
+export const updateHikeTunk =
+  (hike: any, id: string) => async (dispatch: any) => {
+    try {
+      const storageUser: any = localStorage.getItem("tokenStorage");
+      const { token } = JSON.parse(storageUser);
+      const createHike = await axios.patch(`${urlApi}hike/update/${id}`, hike, {
+        headers: {
+          Authorization: "Bearer " + token,
+        },
+      });
+
+      if (createHike.status === 200) {
+        dispatch(updateHikeAction(createHike.data));
+        toast.success("Successfully Hike Update");
+      }
+    } catch {
+      toast.error("You don't can't");
     }
   };
+
+export const deleteHikeThunk = (id: string) => async (dispatch: any) => {
+  try {
+    const storageUser: any = localStorage.getItem("tokenStorage");
+    const { token } = JSON.parse(storageUser);
+    const deleteHike = await axios.delete(`${urlApi}hike/delete/${id}`, {
+      headers: {
+        Authorization: "Bearer " + token,
+      },
+    });
+    if (deleteHike.status === 200) {
+      dispatch(updateHikeAction(deleteHike.data));
+      toast.success("Successfully Hike Delete");
+    }
+  } catch {
+    toast.error("You don't can't");
+  }
+};

@@ -14,6 +14,9 @@ const currentHikeReducer = (currentHike = {}, action: IAction) => {
     case actionTypes.updateHike:
       newHike = { ...action.hike };
       break;
+    case actionTypes.deleteHike:
+      newHike = { ...action.hike };
+      break;
     default:
       newHike = currentHike;
   }

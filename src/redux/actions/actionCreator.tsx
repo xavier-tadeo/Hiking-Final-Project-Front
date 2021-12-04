@@ -42,3 +42,8 @@ export const updateHikeAction = (hike: IHike) => ({
   type: actionTypes.updateHike,
   hike,
 });
+
+export const deleteHikeAction = (id: string) => ({
+  type: actionTypes.deleteHike,
+  id,
+});
