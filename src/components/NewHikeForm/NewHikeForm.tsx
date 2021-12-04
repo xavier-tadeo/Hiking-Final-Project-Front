@@ -213,7 +213,7 @@ const NewHikeForm = (): JSX.Element => {
             Description
           </label>
           <textarea
-            maxLength={200}
+            maxLength={1000}
             minLength={30}
             className="create-route__description"
             id="description"
