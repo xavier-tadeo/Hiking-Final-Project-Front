@@ -86,3 +86,21 @@ export const updateHikeTunk =
       toast.error("You don't can't");
     }
   };
+
+export const deleteHikeThunk = (id: string) => async (dispatch: any) => {
+  try {
+    const storageUser: any = localStorage.getItem("tokenStorage");
+    const { token } = JSON.parse(storageUser);
+    const deleteHike = await axios.delete(`${urlApi}hike/delete/${id}`, {
+      headers: {
+        Authorization: "Bearer " + token,
+      },
+    });
+    if (deleteHike.status === 200) {
+      dispatch(updateHikeAction(deleteHike.data));
+      toast.success("Successfully Hike Delete");
+    }
+  } catch {
+    toast.error("You don't can't");
+  }
+};
