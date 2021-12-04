@@ -5,6 +5,7 @@ import toast from "react-hot-toast";
 import {
   currentHikeAction,
   getHikesAction,
+  getUserAction,
   loginUserAction,
   postHikeAction,
   registerUserAction,
@@ -102,5 +103,18 @@ export const deleteHikeThunk = (id: string) => async (dispatch: any) => {
     }
   } catch {
     toast.error("You don't can't");
+  }
+};
+
+export const getUserThunk = (id: string) => async (dispatch: any) => {
+  const storageUser: any = localStorage.getItem("tokenStorage");
+  const { token } = JSON.parse(storageUser);
+  const getUser = await axios.get(`${urlApi}oneUser/:idUser${id}`, {
+    headers: {
+      Authorization: "Bearer " + token,
+    },
+  });
+  if (getUser.status === 200) {
+    dispatch(getUserAction(getUser.data));
   }
 };
