@@ -5,9 +5,11 @@ import "@fontsource/architects-daughter";
 const LoginPage = (): JSX.Element => {
   return (
     <>
-      <h3 className="Login__title">Login</h3>
-      <div className="Login__form">
-        <LoginForm />
+      <div className="container__loginform">
+        <h3 className="Login__title">Login</h3>
+        <div className="Login__form">
+          <LoginForm />
+        </div>
       </div>
     </>
   );

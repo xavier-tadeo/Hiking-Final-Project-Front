@@ -1,4 +1,5 @@
 import NewHikeForm from "../../components/NewHikeForm/NewHikeForm";
+import "./CreateHikePage.scss";
 
 const CreateHikePage = (): JSX.Element => {
   return (

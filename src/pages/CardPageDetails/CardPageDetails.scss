@@ -5,6 +5,14 @@
   background-attachment: fixed;
 }
 
+.container__form {
+  background-image: url("https://images.pexels.com/photos/7694127/pexels-photo-7694127.jpeg?cs=srgb&dl=pexels-dmitriy-ganin-7694127.jpg&fm=jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  padding: 50px;
+}
+
 .cardpage__description--title {
   font-family: "Architects Daughter", Verdana, Geneva, Tahoma, sans-serif;
   font-size: 30px;
@@ -13,6 +21,33 @@
   text-decoration: overline;
   color: #ffffff;
   margin: 0;
+}
+
+.container__button-update-delete {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 10px;
+}
+
+.button__delete {
+  background: bottom;
+  border: aliceblue;
+  color: #0c7c59;
+  font-size: 22px;
+  padding: 5px;
+  font-family: "Architects Daughter", "Gill Sans", "Gill Sans MT", Calibri,
+    "Trebuchet MS", sans-serif;
+}
+
+.button__update {
+  background: bottom;
+  border: aliceblue;
+  color: #0c7c59;
+  font-size: 22px;
+  padding: 5px;
+  font-family: "Architects Daughter", "Gill Sans", "Gill Sans MT", Calibri,
+    "Trebuchet MS", sans-serif;
 }
 
 .cardpage__title {
@@ -55,13 +90,12 @@
 
 .container__image {
   background-color: #fafafa;
-  width: 220px;
+  width: 208px;
   margin: 10px auto 0 auto;
   border-radius: 20px;
-  box-shadow: 7px 4px 18px -7px rgb(0 0 0 / 95%);
   display: flex;
   justify-content: center;
-  height: 165px;
+  height: 158px;
   align-items: center;
 }
 

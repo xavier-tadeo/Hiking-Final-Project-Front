@@ -1,17 +1,14 @@
-.container__registerform {
+.createhike__container {
   background-image: url("https://images.pexels.com/photos/7694127/pexels-photo-7694127.jpeg?cs=srgb&dl=pexels-dmitriy-ganin-7694127.jpg&fm=jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-  height: 600px;
+  padding: 50px;
 }
 
-.register__title {
-  font-family: "Architects Daughter", Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 22px;
+.createhike__description-container {
+  font-size: 18px;
+  font-family: "Roboto", Verdana, Geneva, Tahoma, sans-serif;
+  padding: 5px;
   text-align: center;
-  padding-top: 10px;
-  text-decoration: overline;
-  color: #0c7c59;
-  margin: 0;
 }
