@@ -66,15 +66,11 @@ export const updateHikeTunk =
   (hike: any, id: string) => async (dispatch: any) => {
     const storageUser: any = localStorage.getItem("tokenStorage");
     const { token } = JSON.parse(storageUser);
-    const createHike = await axios.patch(
-      `http://localhost:6660/hike/update/${id}`,
-      hike,
-      {
-        headers: {
-          Authorization: "Bearer " + token,
-        },
-      }
-    );
+    const createHike = await axios.patch(`${urlApi}hike/update/${id}`, hike, {
+      headers: {
+        Authorization: "Bearer " + token,
+      },
+    });
 
     if (createHike.status === 200) {
       dispatch(updateHikeAction(createHike.data));

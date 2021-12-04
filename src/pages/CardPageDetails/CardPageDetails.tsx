@@ -80,208 +80,194 @@ const CardPageDetails = () => {
 
   const newHikeCreate = async (evt: FormElement) => {
     evt.preventDefault();
-    const formData = new FormData();
-    formData.append("title", hikeData.title);
-    formData.append("stadistics[distance]", hikeData.stadistics.distance);
-    formData.append("stadistics[elevation]", hikeData.stadistics.elevation);
-    formData.append("stadistics[dificulty]", hikeData.stadistics.dificulty);
-    formData.append("stadistics[time]", hikeData.stadistics.time);
-    formData.append("images", hikeData.images);
-    formData.append("map[latitude]", hikeData.map.latitude);
-    formData.append("map[longitude]", hikeData.map.longitude);
-    formData.append("description", hikeData.description);
-
-    await updateCurrentHike(formData, id as string);
+    setUpdateWant(false);
+    await updateCurrentHike(hikeData, id as string);
   };
+
+  const [updateWant, setUpdateWant] = useState(false);
 
   return (
     <>
-      <section className="cardpage__container">
-        <div className="cardpage__description-container">
-          <h3 className="cardpage__description--title">Details Hike</h3>
-        </div>
-        {idUserHike === idHike ? <button>Hola</button> : ""}
-        <h4 className="cardpage__title">{currentHike.title}</h4>
+      {updateWant === false ? (
+        <section className="cardpage__container">
+          <div className="cardpage__description-container">
+            <h3 className="cardpage__description--title">Details Hike</h3>
+          </div>
+          {idUserHike === idHike ? (
+            <div className="container__button-update-delete">
+              <button
+                className="button__update"
+                onClick={() => setUpdateWant(true)}
+              >
+                Update
+              </button>
+              <button className="button__delete">Delete</button>
+            </div>
+          ) : (
+            ""
+          )}
 
-        <div className="cardpage__description">
-          <p className="cardpage__description--paragraph">
-            {currentHike.description}
-          </p>
-        </div>
-        <div className="cardpage__stadistics">
-          <p className="cardpage__stadistics-title">Distance</p>
-          <p className="cardpage__stadistics-distance stadistics">
-            {currentHike.stadistics?.distance}
-          </p>
-          <p className="cardpage__stadistics-title">Time</p>
-          <p className="cardpage__stadistics-time stadistics">
-            {currentHike.stadistics?.time}
-          </p>
-          <p className="cardpage__stadistics-title">Dificulty</p>
-          <p className="cardpage__stadistics-dificulty stadistics">
-            {currentHike.stadistics?.dificulty}
-          </p>
-          <p className="cardpage__stadistics-title">Elevation</p>
-          <p className="cardpage__stadistics-elevation stadistics">
-            {currentHike.stadistics?.elevation}
-          </p>
-        </div>
-        <div className="cardpage__images">
-          {currentHike.images?.map((hike: string, index: number) => (
-            <div className="container__image">
-              {" "}
-              <img
-                src={hike}
-                alt="hike montain"
-                className="cardpage__image"
-                key={index}
-                width="200"
-                height="150"
-              />
-            </div>
-          ))}
-        </div>
-        {hikeData.title === undefined ? (
-          ""
-        ) : (
-          <form
-            className="registerForm"
-            noValidate
-            autoComplete="off"
-            onSubmit={newHikeCreate}
-          >
-            <h5 className="create-route__title">Create your Route</h5>
-            <div className="create-route__container">
-              <label className="create-route__title-label" htmlFor="title">
-                Title
-              </label>
-              <input
-                type="text"
-                className="create-route__title"
-                id="title"
-                placeholder="Title"
-                value={hikeData.title}
-                onChange={(evt) => onChange(evt)}
-              />
-              <label
-                className="create-route__distance-label"
-                htmlFor="distance"
-              >
-                Distance
-              </label>
-              <input
-                type="text"
-                className="create-route__distancie"
-                id="distance"
-                placeholder="Distance"
-                value={hikeData.stadistics.distance}
-                onChange={(evt) => onChangeStadistics(evt)}
-              />
-              <label
-                className="create-route__dificulty-label"
-                htmlFor="dificulty"
-              >
-                Dificulty
-              </label>
-              <input
-                type="text"
-                min="1"
-                max="5"
-                className="create-route__dificulty"
-                id="dificulty"
-                placeholder="Distance"
-                value={hikeData.stadistics.dificulty}
-                onChange={(evt) => onChangeStadistics(evt)}
-              />
-              <label
-                className="create-route__elevation-label"
-                htmlFor="elevation"
-              >
-                Elevation
-              </label>
-              <input
-                type="text"
-                className="create-route__elevation"
-                id="elevation"
-                placeholder="Elevation"
-                value={hikeData.stadistics.elevation}
-                onChange={(evt) => onChangeStadistics(evt)}
-              />
-              <label className="create-route__time-label" htmlFor="time">
-                Time
-              </label>
-              <input
-                type="text"
-                className="create-route__time"
-                id="time"
-                placeholder="Time"
-                value={hikeData.stadistics.time}
-                onChange={(evt) => onChangeStadistics(evt)}
-              />
-              <label
-                className="create-route__longitude-label"
-                htmlFor="longitude"
-              >
-                Longitude
-              </label>
-              <input
-                type="text"
-                className="create-route__longitude"
-                id="longitude"
-                placeholder="Longitude"
-                value={hikeData.map.longitude}
-                onChange={(evt) => onChangeMap(evt)}
-              />
-              <label
-                className="create-route__latitude-label"
-                htmlFor="latitude"
-              >
-                Latitude
-              </label>
-              <input
-                type="text"
-                className="create-route__latitude"
-                id="latitude"
-                placeholder="Latitude"
-                value={hikeData.map.latitude}
-                onChange={(evt) => onChangeMap(evt)}
-              />
-              <label className="create-route__images-label" htmlFor="images">
-                Images
-              </label>
-              <input
-                type="file"
-                name="filefield"
-                multiple
-                className="create-route__images"
-                id="images"
-                placeholder="Images"
-                onChange={(evt) => onChange(evt)}
-              />
-              <label
-                className="create-route__description-label"
-                htmlFor="description"
-              >
-                Description
-              </label>
-              <textarea
-                maxLength={200}
-                minLength={30}
-                className="create-route__description"
-                id="description"
-                placeholder="Description"
-                value={hikeData.description}
-                onChange={(evt) => onChange(evt)}
-              />
-              <div className="form__button">
-                <button type="submit" className="form__button">
-                  Update
-                </button>
+          <h4 className="cardpage__title">{currentHike.title}</h4>
+
+          <div className="cardpage__description">
+            <p className="cardpage__description--paragraph">
+              {currentHike.description}
+            </p>
+          </div>
+          <div className="cardpage__stadistics">
+            <p className="cardpage__stadistics-title">Distance</p>
+            <p className="cardpage__stadistics-distance stadistics">
+              {currentHike.stadistics?.distance}
+            </p>
+            <p className="cardpage__stadistics-title">Time</p>
+            <p className="cardpage__stadistics-time stadistics">
+              {currentHike.stadistics?.time}
+            </p>
+            <p className="cardpage__stadistics-title">Dificulty</p>
+            <p className="cardpage__stadistics-dificulty stadistics">
+              {currentHike.stadistics?.dificulty}
+            </p>
+            <p className="cardpage__stadistics-title">Elevation</p>
+            <p className="cardpage__stadistics-elevation stadistics">
+              {currentHike.stadistics?.elevation}
+            </p>
+          </div>
+          <div className="cardpage__images">
+            {currentHike.images?.map((hike: string, index: number) => (
+              <div className="container__image">
+                {" "}
+                <img
+                  src={hike}
+                  alt="hike montain"
+                  className="cardpage__image"
+                  key={index}
+                  width="200"
+                  height="150"
+                />
               </div>
+            ))}
+          </div>
+        </section>
+      ) : (
+        <form
+          className="registerForm"
+          noValidate
+          autoComplete="off"
+          onSubmit={newHikeCreate}
+        >
+          <h5 className="create-route__title">Create your Route</h5>
+          <div className="create-route__container">
+            <label className="create-route__title-label" htmlFor="title">
+              Title
+            </label>
+            <input
+              type="text"
+              className="create-route__title"
+              id="title"
+              placeholder="Title"
+              value={hikeData.title}
+              onChange={(evt) => onChange(evt)}
+            />
+            <label className="create-route__distance-label" htmlFor="distance">
+              Distance
+            </label>
+            <input
+              type="text"
+              className="create-route__distancie"
+              id="distance"
+              placeholder="Distance"
+              value={hikeData.stadistics.distance}
+              onChange={(evt) => onChangeStadistics(evt)}
+            />
+            <label
+              className="create-route__dificulty-label"
+              htmlFor="dificulty"
+            >
+              Dificulty
+            </label>
+            <input
+              type="text"
+              min="1"
+              max="5"
+              className="create-route__dificulty"
+              id="dificulty"
+              placeholder="Distance"
+              value={hikeData.stadistics.dificulty}
+              onChange={(evt) => onChangeStadistics(evt)}
+            />
+            <label
+              className="create-route__elevation-label"
+              htmlFor="elevation"
+            >
+              Elevation
+            </label>
+            <input
+              type="text"
+              className="create-route__elevation"
+              id="elevation"
+              placeholder="Elevation"
+              value={hikeData.stadistics.elevation}
+              onChange={(evt) => onChangeStadistics(evt)}
+            />
+            <label className="create-route__time-label" htmlFor="time">
+              Time
+            </label>
+            <input
+              type="text"
+              className="create-route__time"
+              id="time"
+              placeholder="Time"
+              value={hikeData.stadistics.time}
+              onChange={(evt) => onChangeStadistics(evt)}
+            />
+            <label
+              className="create-route__longitude-label"
+              htmlFor="longitude"
+            >
+              Longitude
+            </label>
+            <input
+              type="text"
+              className="create-route__longitude"
+              id="longitude"
+              placeholder="Longitude"
+              value={hikeData.map.longitude}
+              onChange={(evt) => onChangeMap(evt)}
+            />
+            <label className="create-route__latitude-label" htmlFor="latitude">
+              Latitude
+            </label>
+            <input
+              type="text"
+              className="create-route__latitude"
+              id="latitude"
+              placeholder="Latitude"
+              value={hikeData.map.latitude}
+              onChange={(evt) => onChangeMap(evt)}
+            />
+            <label
+              className="create-route__description-label"
+              htmlFor="description"
+            >
+              Description
+            </label>
+            <textarea
+              maxLength={200}
+              minLength={30}
+              className="create-route__description"
+              id="description"
+              placeholder="Description"
+              value={hikeData.description}
+              onChange={(evt) => onChange(evt)}
+            />
+            <div className="form__button">
+              <button type="submit" className="form__button">
+                Update
+              </button>
             </div>
-          </form>
-        )}
-      </section>
+          </div>
+        </form>
+      )}
     </>
   );
 };
