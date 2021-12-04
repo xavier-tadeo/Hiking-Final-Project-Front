@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-
+import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import configureStore from "../../redux/store";
 import NewHikeForm from "./NewHikeForm";
@@ -21,7 +21,9 @@ describe("Given a NewHikeForm component", () => {
 
       render(
         <Provider store={store}>
-          <NewHikeForm />
+          <BrowserRouter>
+            <NewHikeForm />
+          </BrowserRouter>
         </Provider>
       );
 
@@ -51,7 +53,9 @@ describe("Given a NewHikeForm component", () => {
     test("Then it should have a disabled button", () => {
       render(
         <Provider store={store}>
-          <NewHikeForm />
+          <BrowserRouter>
+            <NewHikeForm />
+          </BrowserRouter>
         </Provider>
       );
       const addButton = screen.getByRole("button", {
