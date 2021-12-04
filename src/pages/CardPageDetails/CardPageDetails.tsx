@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router";
+import { useNavigate, useParams } from "react-router";
 import jwtDecode from "jwt-decode";
 import useUser from "../../hooks/useUser";
 import { IForm } from "../../components/NewHikeForm/NewHikeForm";
 import "./CardPageDetails.scss";
 import { FormElement } from "../../components/LoginForm/LoginForm";
+import pathsHike from "../../paths/pathsHike";
 
 const CardPageDetails = () => {
   const { currentHike, getCurrentHike } = useUser();
@@ -77,6 +78,7 @@ const CardPageDetails = () => {
   };
 
   const { updateCurrentHike } = useUser();
+  let navigate = useNavigate();
 
   const newHikeCreate = async (evt: FormElement) => {
     evt.preventDefault();
@@ -90,6 +92,7 @@ const CardPageDetails = () => {
 
   const deleteActionHike = async () => {
     await deleteCurrentHike(id as string);
+    navigate(pathsHike.userProfile);
   };
 
   return (

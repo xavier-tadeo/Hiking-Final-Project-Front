@@ -1,6 +1,8 @@
 import { useState } from "react";
+import { useNavigate } from "react-router";
 
 import useUser from "../../hooks/useUser";
+import pathsHike from "../../paths/pathsHike";
 
 type FormElement = React.FormEvent<HTMLFormElement>;
 
@@ -84,6 +86,7 @@ const NewHikeForm = (): JSX.Element => {
   };
 
   const { postCurretHike } = useUser();
+  let navigate = useNavigate();
 
   const newHikeCreate = async (evt: FormElement) => {
     evt.preventDefault();
@@ -99,6 +102,7 @@ const NewHikeForm = (): JSX.Element => {
     formData.append("description", userData.description);
 
     await postCurretHike(formData);
+    navigate(pathsHike.userProfile);
   };
 
   return (

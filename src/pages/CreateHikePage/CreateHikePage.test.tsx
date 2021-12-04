@@ -1,5 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import { Provider } from "react-redux";
+import { BrowserRouter } from "react-router-dom";
 import configureStore from "../../redux/store";
 import CreateHikePage from "./CreateHikePage";
 
@@ -11,7 +12,9 @@ describe("Given a CreateHikePage component", () => {
 
       render(
         <Provider store={store}>
-          <CreateHikePage />
+          <BrowserRouter>
+            <CreateHikePage />
+          </BrowserRouter>
         </Provider>
       );
 

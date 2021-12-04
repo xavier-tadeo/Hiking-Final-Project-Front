@@ -58,9 +58,9 @@ export const postHikeThunk = (hike: object) => async (dispatch: any) => {
       },
     });
 
-    if (createHike.status === 200) {
-      dispatch(postHikeAction(createHike.data));
+    if (createHike.status === 201) {
       toast.success("Successfully Create Hike");
+      dispatch(postHikeAction(createHike.data));
     }
   } catch {
     toast.error("You don't can't");
