@@ -12,10 +12,9 @@ export interface IHike {
   hike: any;
 }
 
-export const getHikesAction = (hikes: IHikes) => ({
-  type: actionTypes.getHikes,
-
-  hikes,
+export const getUser = (userId: string) => ({
+  type: actionTypes.getUser,
+  userId,
 });
 
 export const registerUserAction = ({ user }: IUser) => ({
@@ -26,6 +25,12 @@ export const registerUserAction = ({ user }: IUser) => ({
 export const loginUserAction = ({ user }: IUser) => ({
   type: actionTypes.loginUser,
   user,
+});
+
+export const getHikesAction = (hikes: IHikes) => ({
+  type: actionTypes.getHikes,
+
+  hikes,
 });
 
 export const currentHikeAction = (hike: IHike) => ({
