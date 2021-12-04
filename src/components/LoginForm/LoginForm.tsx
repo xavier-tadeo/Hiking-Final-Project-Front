@@ -4,7 +4,7 @@ import "./LoginForm.scss";
 import pathsHike from "../../paths/pathsHike";
 import { useNavigate } from "react-router";
 
-type FormElement = React.FormEvent<HTMLFormElement>;
+export type FormElement = React.FormEvent<HTMLFormElement>;
 
 interface IForm {
   name: string;

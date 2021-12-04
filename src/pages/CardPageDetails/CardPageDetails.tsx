@@ -4,6 +4,7 @@ import jwtDecode from "jwt-decode";
 import useUser from "../../hooks/useUser";
 import { IForm } from "../../components/NewHikeForm/NewHikeForm";
 import "./CardPageDetails.scss";
+import { FormElement } from "../../components/LoginForm/LoginForm";
 
 const CardPageDetails = () => {
   const { currentHike, getCurrentHike } = useUser();
@@ -25,24 +26,6 @@ const CardPageDetails = () => {
     idHike = currentHike.user;
   }
 
-  // useEffect(() => {
-  //   setTimeout(() => ({
-  //  initialHike = { title: currentHike.title,
-  //   stadistics: {
-  //     distance: currentHike.stadistics?.distance,
-  //     time: currentHike.stadistics?.time,
-  //     elevation: currentHike.stadistics?.elevation,
-  //     dificulty: currentHike.stadistics?.dificulty,
-  //   },
-  //   map: {
-  //     latitude: currentHike.map?.latitude,
-  //     longitude: currentHike.map?.longitude,
-  //   },
-
-  //   description: currentHike.description,}
-  // }))
-  // })
-
   let initialHike: IForm = {
     title: currentHike.title,
     stadistics: {
@@ -60,6 +43,10 @@ const CardPageDetails = () => {
   };
 
   const [hikeData, setHikeData] = useState(initialHike);
+
+  useEffect(() => {
+    setHikeData(currentHike);
+  }, [currentHike]);
 
   const onChange = (evt: any) => {
     setHikeData({
@@ -89,19 +76,23 @@ const CardPageDetails = () => {
     });
   };
 
-  // const newHikeCreate = async (evt: FormElement) => {
-  //   evt.preventDefault();
-  //   const formData = new FormData();
-  //   formData.append("title", userData.title);
-  //   formData.append("stadistics[distance]", userData.stadistics.distance);
-  //   formData.append("stadistics[elevation]", userData.stadistics.elevation);
-  //   formData.append("stadistics[dificulty]", userData.stadistics.dificulty);
-  //   formData.append("stadistics[time]", userData.stadistics.time);
-  //   formData.append("images", userData.images);
-  //   formData.append("map[latitude]", userData.map.latitude);
-  //   formData.append("map[longitude]", userData.map.longitude);
-  //   formData.append("description", userData.description);
-  // };
+  const { updateCurrentHike } = useUser();
+
+  const newHikeCreate = async (evt: FormElement) => {
+    evt.preventDefault();
+    const formData = new FormData();
+    formData.append("title", hikeData.title);
+    formData.append("stadistics[distance]", hikeData.stadistics.distance);
+    formData.append("stadistics[elevation]", hikeData.stadistics.elevation);
+    formData.append("stadistics[dificulty]", hikeData.stadistics.dificulty);
+    formData.append("stadistics[time]", hikeData.stadistics.time);
+    formData.append("images", hikeData.images);
+    formData.append("map[latitude]", hikeData.map.latitude);
+    formData.append("map[longitude]", hikeData.map.longitude);
+    formData.append("description", hikeData.description);
+
+    await updateCurrentHike(formData, id as string);
+  };
 
   return (
     <>
@@ -157,7 +148,7 @@ const CardPageDetails = () => {
             className="registerForm"
             noValidate
             autoComplete="off"
-            onSubmit={() => {}}
+            onSubmit={newHikeCreate}
           >
             <h5 className="create-route__title">Create your Route</h5>
             <div className="create-route__container">
