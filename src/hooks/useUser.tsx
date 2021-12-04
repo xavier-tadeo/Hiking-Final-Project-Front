@@ -45,8 +45,8 @@ const useUser = () => {
     dispatch(postHikeThunk(hike));
   };
 
-  const updateCurrentHike = (hike: object) => {
-    dispatch(updateHikeTunk(hike));
+  const updateCurrentHike = (hike: object, id: string) => {
+    dispatch(updateHikeTunk(hike, id));
   };
 
   return {
