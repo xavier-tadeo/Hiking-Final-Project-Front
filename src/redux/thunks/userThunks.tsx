@@ -51,15 +51,11 @@ export const getCurrentHikeThunk = (id: string) => async (dispatch: any) => {
 export const postHikeThunk = (hike: object) => async (dispatch: any) => {
   const storageUser: any = localStorage.getItem("tokenStorage");
   const { token } = JSON.parse(storageUser);
-  const createHike = await axios.post(
-    `http://localhost:6660/hike/create`,
-    hike,
-    {
-      headers: {
-        Authorization: "Bearer " + token,
-      },
-    }
-  );
+  const createHike = await axios.post(`${urlApi}hike/create`, hike, {
+    headers: {
+      Authorization: "Bearer " + token,
+    },
+  });
 
   if (createHike.status === 200) {
     dispatch(postHikeAction(createHike.data));
@@ -70,15 +66,11 @@ export const updateHikeTunk =
   (hike: any, id: string) => async (dispatch: any) => {
     const storageUser: any = localStorage.getItem("tokenStorage");
     const { token } = JSON.parse(storageUser);
-    const createHike = await axios.patch(
-      `http://localhost:6660/hike/update/${id}`,
-      hike,
-      {
-        headers: {
-          Authorization: "Bearer " + token,
-        },
-      }
-    );
+    const createHike = await axios.patch(`${urlApi}hike/update/${id}`, hike, {
+      headers: {
+        Authorization: "Bearer " + token,
+      },
+    });
 
     if (createHike.status === 200) {
       dispatch(updateHikeAction(createHike.data));
