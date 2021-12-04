@@ -89,7 +89,6 @@ const CardPageDetails = () => {
   const { deleteCurrentHike } = useUser();
 
   const deleteActionHike = async () => {
-    console.log(id);
     await deleteCurrentHike(id as string);
   };
 
