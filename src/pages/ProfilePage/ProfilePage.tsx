@@ -1,5 +1,6 @@
 import jwtDecode from "jwt-decode";
-import { couldStartTrivia } from "typescript";
+import { useEffect } from "react";
+
 import useUser from "../../hooks/useUser";
 import "./ProfilePage.scss";
 
@@ -8,15 +9,17 @@ const ProfilePage = (): JSX.Element => {
 
   const tokenUser: any = localStorage.getItem("tokenStorage");
   let token;
-  let idUser;
+  let idUser: string;
   if (tokenUser) {
     const userToken = JSON.parse(tokenUser);
     token = userToken.token;
     const tokenDecode: any = jwtDecode(token);
     idUser = tokenDecode.id;
-    console.log(idUser);
   }
-  console.log(user);
+
+  useEffect(() => {
+    getUser(idUser);
+  }, [getUser]);
   return (
     <div className="container__yourprofile">
       <h3 className="yourprofile__title">Your Profile</h3>
