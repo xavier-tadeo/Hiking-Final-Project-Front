@@ -62,6 +62,7 @@ const useUser = () => {
   };
 
   return {
+    user,
     userInfo,
     hikingInfo,
     currentHike,
