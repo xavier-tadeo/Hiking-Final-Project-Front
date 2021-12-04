@@ -1,0 +1,70 @@
+.cardpage__container {
+  background-image: url("https://images.pexels.com/photos/7694127/pexels-photo-7694127.jpeg?cs=srgb&dl=pexels-dmitriy-ganin-7694127.jpg&fm=jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.cardpage__description--title {
+  font-family: "Architects Daughter", Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 30px;
+  text-align: center;
+  padding-top: 10px;
+  text-decoration: overline;
+  color: #ffffff;
+  margin: 0;
+}
+
+.cardpage__title {
+  text-align: center;
+  font-size: 20px;
+}
+
+.cardpage__description {
+  background-color: #fafafa;
+  width: 300px;
+  margin: 10px auto 0 auto;
+  border-radius: 20px;
+  box-shadow: 7px 4px 18px -7px rgb(0 0 0 / 95%);
+  text-align: center;
+}
+
+.cardpage__description--paragraph {
+  padding: 9px;
+}
+
+.cardpage__stadistics {
+  background-color: #fafafa;
+  width: 188px;
+  margin: 10px auto 0 auto;
+  border-radius: 20px;
+  box-shadow: 7px 4px 18px -7px rgb(0 0 0 / 95%);
+  text-align: center;
+}
+.cardpage__stadistics p {
+  color: rgb(1, 39, 13);
+  font-size: 18px;
+  margin: 0;
+  padding: 5px;
+}
+
+.cardpage__images {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.container__image {
+  background-color: #fafafa;
+  width: 220px;
+  margin: 10px auto 0 auto;
+  border-radius: 20px;
+  box-shadow: 7px 4px 18px -7px rgb(0 0 0 / 95%);
+  display: flex;
+  justify-content: center;
+  height: 165px;
+  align-items: center;
+}
+
+.cardpage__image {
+  border-radius: 20px;
+}
