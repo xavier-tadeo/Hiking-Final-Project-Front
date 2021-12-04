@@ -86,6 +86,13 @@ const CardPageDetails = () => {
 
   const [updateWant, setUpdateWant] = useState(false);
 
+  const { deleteCurrentHike } = useUser();
+
+  const deleteActionHike = async () => {
+    console.log(id);
+    await deleteCurrentHike(id as string);
+  };
+
   return (
     <>
       {updateWant === false ? (
@@ -101,7 +108,9 @@ const CardPageDetails = () => {
               >
                 Update
               </button>
-              <button className="button__delete">Delete</button>
+              <button className="button__delete" onClick={deleteActionHike}>
+                Delete
+              </button>
             </div>
           ) : (
             ""
