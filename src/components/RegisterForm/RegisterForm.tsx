@@ -86,12 +86,14 @@ const RegisterForm = (): JSX.Element => {
             Email
           </label>
           <input
-            type="email"
-            className="register__email"
             id="email"
-            placeholder="Email"
+            placeholder="mariogl@mariogl.com"
+            className="register__email"
+            pattern="/^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}
+[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/"
             value={userData.email}
             onChange={(evt) => onChange(evt)}
+            required
           />
           <div className="form__button">
             <button type="submit" className="form__button" disabled={isDisable}>

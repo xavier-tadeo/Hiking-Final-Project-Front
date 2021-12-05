@@ -42,7 +42,7 @@ const LoginForm = (): JSX.Element => {
     evt.preventDefault();
     loginUser(userData);
     setUserData(initialData);
-    navigate(pathsHike.userProfile);
+    navigate(pathsHike.homePage);
   };
 
   return (
