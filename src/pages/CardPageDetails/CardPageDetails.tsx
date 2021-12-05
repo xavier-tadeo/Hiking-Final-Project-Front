@@ -168,7 +168,7 @@ const CardPageDetails = () => {
             autoComplete="off"
             onSubmit={newHikeCreate}
           >
-            <h5 className="create-route__title">Create your Route</h5>
+            <h5 className="create-route__title">Modify your Route</h5>
             <div className="create-route__container">
               <label className="create-route__title-label" htmlFor="title">
                 Title
@@ -202,7 +202,7 @@ const CardPageDetails = () => {
                 Dificulty
               </label>
               <input
-                type="text"
+                type="number"
                 min="1"
                 max="5"
                 className="create-route__dificulty"
@@ -243,7 +243,7 @@ const CardPageDetails = () => {
                 Longitude
               </label>
               <input
-                type="text"
+                type="number"
                 className="create-route__longitude"
                 id="longitude"
                 placeholder="Longitude"
@@ -257,7 +257,7 @@ const CardPageDetails = () => {
                 Latitude
               </label>
               <input
-                type="text"
+                type="number"
                 className="create-route__latitude"
                 id="latitude"
                 placeholder="Latitude"
@@ -273,6 +273,8 @@ const CardPageDetails = () => {
               <textarea
                 maxLength={1000}
                 minLength={30}
+                cols={23}
+                rows={20}
                 className="create-route__description"
                 id="description"
                 placeholder="Description"

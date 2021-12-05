@@ -1,0 +1,16 @@
+.create-route__images::-webkit-file-upload-button {
+  visibility: hidden;
+}
+.create-route__images::before {
+  content: "Select a image";
+  background: linear-gradient(top, #f9f9f9, #e3e3e3);
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 10pt;
+}
+.create-route__images:hover::before {
+  color: rgb(2, 46, 13);
+}
+.create-route__images:active::before {
+  background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+}
