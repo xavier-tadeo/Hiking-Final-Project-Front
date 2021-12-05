@@ -134,4 +134,34 @@ describe("Given a currentHikeReducer", () => {
       expect(result).toEqual(userTest);
     });
   });
+
+  describe("When it receives a id with hike object and action deleteHike", () => {
+    test("Then it should delete hike", () => {
+      const initial = {
+        title: "Guinardo",
+        images: ["imagen1", "imagen2", "imagen3"],
+        stadistics: {
+          distance: "2km",
+          time: "3h",
+          dificulty: 3,
+          elevation: "200m",
+        },
+        user: {
+          name: "arlet",
+        },
+        id: "1234",
+      };
+
+      const userTest = {};
+
+      const action = {
+        type: actionTypes.deleteHike,
+        id: userTest,
+      };
+
+      const result = currentHikeReducer(initial, action);
+
+      expect(result).toEqual(userTest);
+    });
+  });
 });
