@@ -115,7 +115,6 @@ export const getUserThunk = (id: string) => async (dispatch: any) => {
     },
   });
   if (getUser.status === 200) {
-    console.log(getUser.data);
     dispatch(getUserAction(getUser.data));
   }
 };
