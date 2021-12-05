@@ -5,6 +5,10 @@ import "./LinkComponent.scss";
 
 const LinkComponent = (): JSX.Element => {
   const { userInfo } = useUser();
+  const tokenUser: any = localStorage.getItem("tokenStorage");
+  if (tokenUser) {
+    userInfo.isAuthenticated = true;
+  }
 
   return (
     <nav className="links__container">

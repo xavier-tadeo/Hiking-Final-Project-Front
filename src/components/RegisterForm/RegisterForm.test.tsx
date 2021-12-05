@@ -57,7 +57,7 @@ describe("Given a RegisterForm component", () => {
 
       const nameInput = screen.getByPlaceholderText("Name");
       const passwordInput = screen.getByPlaceholderText("Password");
-      const emailInput = screen.getByPlaceholderText("Email");
+      const emailInput = screen.getByPlaceholderText("mariogl@mariogl.com");
       userEvent.type(nameInput, "Arlet");
       userEvent.type(passwordInput, "Arlet");
       userEvent.type(emailInput, "arlet@arlet.com");
