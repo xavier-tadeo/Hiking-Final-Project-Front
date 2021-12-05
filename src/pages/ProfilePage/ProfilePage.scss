@@ -15,7 +15,22 @@
   color: #0c7c59;
   margin: 0;
 }
-.yourprofile__name {
-  color: red;
-  font-size: 18;
+
+.yourprofile__container-info {
+  background-color: #fafafa;
+  width: 214px;
+  margin: 10px auto 0 auto;
+  border-radius: 20px;
+  box-shadow: 7px 4px 18px -7px rgb(0 0 0 / 95%);
+  word-wrap: break-word;
+}
+.title {
+  color: #0c7c59;
+  font-size: 20px;
+  font-family: "Architects Daughter", Verdana, Geneva, Tahoma, sans-serif;
+}
+.info {
+  text-align: center;
+  margin: 0;
+  padding: 5px;
 }

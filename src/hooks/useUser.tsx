@@ -59,7 +59,6 @@ const useUser = () => {
 
   const getUser = useCallback(
     (id: string) => {
-      console.log(id);
       dispatch(getUserThunk(id));
     },
     [dispatch]
