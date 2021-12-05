@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router";
-
+import "./NewHikeForm.scss";
 import useUser from "../../hooks/useUser";
 import pathsHike from "../../paths/pathsHike";
 
@@ -215,6 +215,8 @@ const NewHikeForm = (): JSX.Element => {
           <textarea
             maxLength={1000}
             minLength={30}
+            cols={23}
+            rows={20}
             className="create-route__description"
             id="description"
             placeholder="Description"
