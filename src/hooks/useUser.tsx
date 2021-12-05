@@ -57,10 +57,12 @@ const useUser = () => {
     dispatch(deleteHikeThunk(id));
   };
 
-  const getUser = (id: string) => {
-    dispatch(getUserThunk(id));
-  };
-
+  const getUser = useCallback(
+    (id: string) => {
+      dispatch(getUserThunk(id));
+    },
+    [dispatch]
+  );
   return {
     user,
     userInfo,

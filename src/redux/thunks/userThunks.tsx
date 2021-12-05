@@ -109,7 +109,7 @@ export const deleteHikeThunk = (id: string) => async (dispatch: any) => {
 export const getUserThunk = (id: string) => async (dispatch: any) => {
   const storageUser: any = localStorage.getItem("tokenStorage");
   const { token } = JSON.parse(storageUser);
-  const getUser = await axios.get(`${urlApi}oneUser/${id}`, {
+  const getUser = await axios.get(`${urlApi}user/oneUser/${id}`, {
     headers: {
       Authorization: "Bearer " + token,
     },
