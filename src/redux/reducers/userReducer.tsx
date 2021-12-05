@@ -3,7 +3,7 @@ import { IAction } from "./loginReducer";
 
 const userReducer = (currentUser = {}, action: IAction) => {
   let newCurrentUser;
-
+  console.log(action.user);
   switch (action.type) {
     case actionTypes.getUser:
       newCurrentUser = { ...action.user };

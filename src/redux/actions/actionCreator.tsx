@@ -12,9 +12,9 @@ export interface IHike {
   hike: any;
 }
 
-export const getUserAction = (userId: string) => ({
+export const getUserAction = (user: IUser) => ({
   type: actionTypes.getUser,
-  userId,
+  user,
 });
 
 export const registerUserAction = ({ user }: IUser) => ({

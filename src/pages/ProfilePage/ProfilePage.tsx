@@ -1,22 +1,25 @@
+import jwtDecode from "jwt-decode";
+import { useEffect } from "react";
+import useUser from "../../hooks/useUser";
 import "./ProfilePage.scss";
 
-const ProfilePage = (userInfo: any): JSX.Element => {
-  // const { user, getUser } = useUser();
+const ProfilePage = (): JSX.Element => {
+  const { user, getUser } = useUser();
 
-  // const tokenUser: any = localStorage.getItem("tokenStorage");
-  // let token;
-  // let idUser: string;
+  const tokenUser: any = localStorage.getItem("tokenStorage");
 
-  // const userToken = JSON.parse(tokenUser);
-  // token = userToken.token;
-  // const tokenDecode: any = jwtDecode(token);
-  // idUser = tokenDecode.id;
+  const userToken = JSON.parse(tokenUser);
 
-  // useEffect(() => {
-  //   getUser(idUser);
-  // }, [getUser, idUser]);
+  const token = userToken.token;
+  const tokenDecode: any = jwtDecode(token);
+  const idUser = tokenDecode.id;
 
-  // console.log(userInfo);
+  useEffect(() => {
+    getUser(idUser);
+  }, [getUser, idUser]);
+
+  // c
+  console.log(user);
   return (
     <div className="container__yourprofile">
       <h3 className="yourprofile__title">Your Profile</h3>
