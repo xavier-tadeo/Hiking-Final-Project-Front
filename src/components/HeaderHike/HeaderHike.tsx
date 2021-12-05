@@ -1,6 +1,13 @@
+import useUser from "../../hooks/useUser";
 import "./HeaderHike.scss";
 
 const HeaderHike = (): JSX.Element => {
+  const { userInfo } = useUser();
+
+  const logoutUser = () => {
+    userInfo.isAuthenticated = false;
+    localStorage.removeItem("tokenStorage");
+  };
   return (
     <header className="container__header">
       <div className="header__icon">
@@ -11,7 +18,13 @@ const HeaderHike = (): JSX.Element => {
         />
       </div>
       <h1 className="header__title">hiKing</h1>
-      <button className="button__logout">Logout</button>
+      {userInfo.isAuthenticated === true ? (
+        <button className="button__logout" onClick={logoutUser}>
+          Logout
+        </button>
+      ) : (
+        ""
+      )}
     </header>
   );
 };
