@@ -19,4 +19,24 @@ describe("Given a loginReducer", () => {
       // expect(result).toEqual(userTest);
     });
   });
+
+  describe("When it receives a one user and action login", () => {
+    test("Then it should return a new user", () => {
+      const initial = { isAuthenticated: true, user: {} };
+      const userTest = {
+        isAuthenticated: true,
+        user: { isAuthenticated: true, user: { user: {} } },
+      };
+
+      const action = {
+        type: actionTypes.loginUser,
+        user: userTest,
+      };
+
+      const result = loginReducer(initial, action);
+      console.log(result);
+      console.log(userTest);
+      // expect(result).toEqual(userTest);
+    });
+  });
 });
