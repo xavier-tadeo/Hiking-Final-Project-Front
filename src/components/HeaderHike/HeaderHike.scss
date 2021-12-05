@@ -24,6 +24,25 @@
   padding-top: 10px;
 }
 
+.button__logout {
+  padding: 2px;
+  border: 1px solid #0c7c59;
+  border-radius: 0.25rem;
+  color: #0c7c59;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out;
+  cursor: pointer;
+  width: 50px;
+  height: 30px;
+  background: bottom;
+  position: absolute;
+  top: 25px;
+  right: 8px;
+}
+
+.button__logout:hover {
+  color: #fff;
+  background-color: #007bff;
+}
 @media (min-width: 992px) {
   .header__title {
     font-size: 45px;
