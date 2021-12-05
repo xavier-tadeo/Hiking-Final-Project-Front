@@ -33,9 +33,8 @@ describe("Given a loginReducer", () => {
         user: userTest,
       };
 
-      const result = loginReducer(initial, action);
-      console.log(result);
-      console.log(userTest);
+      loginReducer(initial, action);
+
       // expect(result).toEqual(userTest);
     });
   });
