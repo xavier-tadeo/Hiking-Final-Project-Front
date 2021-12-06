@@ -8,7 +8,7 @@ import { FormElement } from "../../components/LoginForm/LoginForm";
 import pathsHike from "../../paths/pathsHike";
 
 const CardPageDetails = () => {
-  const { currentHike, getCurrentHike } = useUser();
+  const { userInfo, currentHike, getCurrentHike } = useUser();
   const { id } = useParams();
 
   useEffect(() => {
@@ -102,7 +102,7 @@ const CardPageDetails = () => {
           <div className="cardpage__description-container">
             <h3 className="cardpage__description--title">Details Hike</h3>
           </div>
-          {idUserHike === idHike && (
+          {idUserHike === idHike && userInfo.isAuthenticated === true && (
             <div className="container__button-update-delete">
               <button
                 className="button__update"
