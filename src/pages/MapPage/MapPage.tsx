@@ -1,7 +1,8 @@
 import "./MapPage.scss";
 
-import { MapContainer, TileLayer, Marker } from "react-leaflet";
+import { MapContainer, TileLayer } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
+import Markers from "./Markers";
 
 const MapPage = (): JSX.Element => {
   const coordinate = {
@@ -18,6 +19,7 @@ const MapPage = (): JSX.Element => {
               url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
               attribution="&copy; <a href='https://www.openstreetmap.org/copyright'>OpenStreetMap</a> contributors"
             />
+            <Markers />
           </MapContainer>
         </div>
       </div>
