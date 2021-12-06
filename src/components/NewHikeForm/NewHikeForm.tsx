@@ -102,7 +102,7 @@ const NewHikeForm = (): JSX.Element => {
     formData.append("description", userData.description);
 
     await postCurretHike(formData);
-    navigate(pathsHike.userProfile);
+    navigate(pathsHike.homePage);
   };
 
   return (
