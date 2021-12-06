@@ -6,6 +6,11 @@ import { IForm } from "../../components/NewHikeForm/NewHikeForm";
 import "./CardPageDetails.scss";
 import { FormElement } from "../../components/LoginForm/LoginForm";
 import pathsHike from "../../paths/pathsHike";
+import { MapContainer, TileLayer, Marker } from "react-leaflet";
+import "leaflet/dist/leaflet.css";
+import {} from "react-leaflet";
+import Icon from "../../assets/icon.svg";
+import L from "leaflet";
 
 const CardPageDetails = () => {
   const { userInfo, currentHike, getCurrentHike } = useUser();
@@ -15,6 +20,7 @@ const CardPageDetails = () => {
     getCurrentHike(id);
   }, [getCurrentHike, id]);
 
+  console.log(currentHike);
   const tokenUser: any = localStorage.getItem("tokenStorage");
   let token;
   let idUserHike;
@@ -84,6 +90,7 @@ const CardPageDetails = () => {
     evt.preventDefault();
     setUpdateWant(false);
     await updateCurrentHike(hikeData, id as string);
+    navigate(pathsHike.homePage);
   };
 
   const [updateWant, setUpdateWant] = useState(false);
@@ -94,6 +101,13 @@ const CardPageDetails = () => {
     await deleteCurrentHike(id as string);
     navigate(pathsHike.userProfile);
   };
+
+  const iconPerson = L.icon({
+    iconUrl: Icon,
+    iconRetinaUrl: Icon,
+    iconSize: [50, 50],
+    shadowUrl: Icon,
+  });
 
   return (
     <>
@@ -124,22 +138,45 @@ const CardPageDetails = () => {
             </p>
           </div>
           <div className="cardpage__container-stadistics-image">
-            <div className="cardpage__stadistics">
-              <p className="cardpage__stadistics-distance stadistics">
-                Distance: {currentHike.stadistics?.distance}
-              </p>
+            <div className="cardpage__stadistics-map">
+              <div className="cardpage__stadistics">
+                <p className="cardpage__stadistics-distance stadistics">
+                  Distance: {currentHike.stadistics?.distance}
+                </p>
 
-              <p className="cardpage__stadistics-time stadistics">
-                Time: {currentHike.stadistics?.time}
-              </p>
+                <p className="cardpage__stadistics-time stadistics">
+                  Time: {currentHike.stadistics?.time}
+                </p>
 
-              <p className="cardpage__stadistics-dificulty stadistics">
-                Dificulty: {currentHike.stadistics?.dificulty}
-              </p>
+                <p className="cardpage__stadistics-dificulty stadistics">
+                  Dificulty: {currentHike.stadistics?.dificulty}
+                </p>
 
-              <p className="cardpage__stadistics-elevation stadistics">
-                Elevation: {currentHike.stadistics?.elevation}
-              </p>
+                <p className="cardpage__stadistics-elevation stadistics">
+                  Elevation: {currentHike.stadistics?.elevation}
+                </p>
+              </div>
+              <div className="cardpage__stadistics-map">
+                <MapContainer
+                  center={{
+                    lat: currentHike.map?.latitude,
+                    lng: currentHike.map?.longitude,
+                  }}
+                  zoom={8}
+                >
+                  <TileLayer
+                    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                    attribution="&copy; <a href='https://www.openstreetmap.org/copyright'>OpenStreetMap</a> contributors"
+                  />
+                  <Marker
+                    position={{
+                      lat: currentHike?.map?.latitude,
+                      lng: currentHike?.map?.longitude,
+                    }}
+                    icon={iconPerson}
+                  />
+                </MapContainer>
+              </div>
             </div>
             <div className="cardpage__images">
               {currentHike.images?.map((hike: string, index: number) => (
@@ -234,20 +271,6 @@ const CardPageDetails = () => {
                 onChange={(evt) => onChangeStadistics(evt)}
               />
               <label
-                className="create-route__longitude-label"
-                htmlFor="longitude"
-              >
-                Longitude
-              </label>
-              <input
-                type="number"
-                className="create-route__longitude"
-                id="longitude"
-                placeholder="Longitude"
-                value={hikeData.map.longitude}
-                onChange={(evt) => onChangeMap(evt)}
-              />
-              <label
                 className="create-route__latitude-label"
                 htmlFor="latitude"
               >
@@ -259,6 +282,20 @@ const CardPageDetails = () => {
                 id="latitude"
                 placeholder="Latitude"
                 value={hikeData.map.latitude}
+                onChange={(evt) => onChangeMap(evt)}
+              />
+              <label
+                className="create-route__longitude-label"
+                htmlFor="longitude"
+              >
+                Longitude
+              </label>
+              <input
+                type="number"
+                className="create-route__longitude"
+                id="longitude"
+                placeholder="Longitude"
+                value={hikeData.map.longitude}
                 onChange={(evt) => onChangeMap(evt)}
               />
               <label

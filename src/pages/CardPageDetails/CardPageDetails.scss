@@ -49,12 +49,16 @@
 }
 
 .cardpage__title {
-  text-align: center;
+  color: #0c7c59;
+  font-family: "Architects Daughter", Verdana, Geneva, Tahoma, sans-serif;
   font-size: 20px;
+  text-align: center;
+  padding-top: 10px;
+  text-decoration: overline;
 }
 
 .cardpage__description {
-  background-color: #fafafa;
+  background-color: #fafafad9;
   width: 300px;
   margin: 10px auto 0 auto;
   border-radius: 20px;
@@ -67,7 +71,7 @@
 }
 
 .cardpage__stadistics {
-  background-color: #fafafa;
+  background-color: #fafafad9;
   width: 188px;
   margin: 10px auto 0 auto;
   border-radius: 20px;
@@ -87,7 +91,7 @@
 }
 
 .container__image {
-  background-color: #fafafa;
+  background-color: #fafafad9;
   width: 208px;
   margin: 10px auto 0 auto;
   border-radius: 20px;
@@ -97,6 +101,17 @@
   align-items: center;
 }
 
+.cardpage__stadistics-map {
+  height: 386px;
+}
+
 .cardpage__image {
   border-radius: 20px;
+}
+
+.leaflet-touch {
+  height: 210px;
+  width: 60vw;
+  top: 10px;
+  left: 70px;
 }
