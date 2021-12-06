@@ -102,7 +102,7 @@ const CardPageDetails = () => {
           <div className="cardpage__description-container">
             <h3 className="cardpage__description--title">Details Hike</h3>
           </div>
-          {idUserHike === idHike ? (
+          {idUserHike === idHike && (
             <div className="container__button-update-delete">
               <button
                 className="button__update"
@@ -114,8 +114,6 @@ const CardPageDetails = () => {
                 Delete
               </button>
             </div>
-          ) : (
-            ""
           )}
 
           <h4 className="cardpage__title">{currentHike.title}</h4>
@@ -145,13 +143,12 @@ const CardPageDetails = () => {
             </div>
             <div className="cardpage__images">
               {currentHike.images?.map((hike: string, index: number) => (
-                <div className="container__image">
+                <div className="container__image" key={index}>
                   {" "}
                   <img
                     src={hike}
                     alt="hike montain"
                     className="cardpage__image"
-                    key={index}
                     width="200"
                     height="150"
                   />
