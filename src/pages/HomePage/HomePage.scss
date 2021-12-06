@@ -36,13 +36,14 @@
 
 .homepage__card {
   margin-top: 50px;
+  padding-bottom: 25px;
 }
 
 @media (min-width: 992px) {
   .homepage__card {
     display: flex;
     justify-content: space-between;
-    width: 100vw;
+
     flex-wrap: wrap;
   }
 
