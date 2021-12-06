@@ -8,7 +8,7 @@ const HeaderHike = (): JSX.Element => {
     logoutUser();
     localStorage.removeItem("tokenStorage");
   };
-  console.log(userInfo);
+
   return (
     <header className="container__header">
       <div className="header__icon">
