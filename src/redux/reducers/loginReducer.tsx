@@ -22,6 +22,9 @@ const loginReducer = (
     case actionsTypes.registerUser:
       newUser = { ...user, isAuthenticated: false, user: action.user };
       break;
+    case actionsTypes.logout:
+      newUser = { user: {}, isAuthenticated: false };
+      break;
     default:
       newUser = user;
   }
