@@ -1,11 +1,16 @@
+import { useNavigate } from "react-router";
 import useUser from "../../hooks/useUser";
 import "./HeaderHike.scss";
+import pathsHike from "../../paths/pathsHike";
 
 const HeaderHike = (): JSX.Element => {
   const { userInfo, logoutUser } = useUser();
 
+  let navigate = useNavigate();
+
   const clickLogoutUser = () => {
     logoutUser();
+    navigate(pathsHike.homePage);
     localStorage.removeItem("tokenStorage");
   };
 

@@ -25,29 +25,27 @@
 
 .container__button-update-delete {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
   padding: 10px;
 }
 
-.button__delete {
+.button__delete,
+.button__update {
+  border: 1px solid #0c7c59;
   background: bottom;
-  border: aliceblue;
   color: #0c7c59;
   font-size: 22px;
   padding: 5px;
   font-family: "Architects Daughter", "Gill Sans", "Gill Sans MT", Calibri,
     "Trebuchet MS", sans-serif;
+  margin-left: 10px;
+  cursor: pointer;
 }
 
-.button__update {
-  background: bottom;
-  border: aliceblue;
-  color: #0c7c59;
-  font-size: 22px;
-  padding: 5px;
-  font-family: "Architects Daughter", "Gill Sans", "Gill Sans MT", Calibri,
-    "Trebuchet MS", sans-serif;
+.button__update:hover,
+.button__delete:hover {
+  text-decoration: underline;
+  transition: color 0.5s ease-in-out, background-color 0.5s ease-in-out;
+  background: #020e0a48;
 }
 
 .cardpage__title {

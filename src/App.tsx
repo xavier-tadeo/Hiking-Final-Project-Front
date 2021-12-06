@@ -18,8 +18,8 @@ function App(): JSX.Element {
   return (
     <>
       <Toaster position="bottom-center" reverseOrder={false} />
-      <HeaderHike />
       <BrowserRouter>
+        <HeaderHike />
         <LinkComponent />
         <Routes>
           <Route path={pathsHike.homePage} element={<HomePage />}></Route>
