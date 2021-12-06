@@ -52,3 +52,7 @@ export const deleteHikeAction = (id: string) => ({
   type: actionTypes.deleteHike,
   id,
 });
+
+export const logoutUserAction = () => ({
+  type: actionTypes.logout,
+});

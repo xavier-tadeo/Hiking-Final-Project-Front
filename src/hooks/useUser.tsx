@@ -1,5 +1,6 @@
 import { useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { logoutUserAction } from "../redux/actions/actionCreator";
 import {
   deleteHikeThunk,
   getCurrentHikeThunk,
@@ -63,6 +64,11 @@ const useUser = () => {
     },
     [dispatch]
   );
+
+  const logoutUser = useCallback(() => {
+    dispatch(logoutUserAction());
+  }, [dispatch]);
+
   return {
     user,
     userInfo,
@@ -76,6 +82,7 @@ const useUser = () => {
     updateCurrentHike,
     deleteCurrentHike,
     getUser,
+    logoutUser,
   };
 };
 
