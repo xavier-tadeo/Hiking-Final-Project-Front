@@ -1,5 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import { Provider } from "react-redux";
+import { BrowserRouter } from "react-router-dom";
 import configureStore from "../../redux/store";
 import HeaderHike from "./HeaderHike";
 
@@ -12,7 +13,9 @@ describe("Given a HeaderHike component", () => {
 
       render(
         <Provider store={store}>
-          <HeaderHike />
+          <BrowserRouter>
+            <HeaderHike />
+          </BrowserRouter>
         </Provider>
       );
       const titleh1 = screen.getByText(title);
