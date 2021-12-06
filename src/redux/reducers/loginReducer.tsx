@@ -23,6 +23,7 @@ const loginReducer = (
       newUser = { ...user, isAuthenticated: false, user: action.user };
       break;
     case actionsTypes.logout:
+      console.log("TTTTTTTT");
       newUser = { user: {}, isAuthenticated: false };
       break;
     default:
