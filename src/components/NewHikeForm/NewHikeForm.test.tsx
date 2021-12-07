@@ -3,6 +3,7 @@ import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import configureStore from "../../redux/store";
 import NewHikeForm from "./NewHikeForm";
+import userEvent from "@testing-library/user-event";
 
 const store = configureStore();
 
@@ -63,6 +64,79 @@ describe("Given a NewHikeForm component", () => {
       });
 
       expect(addButton).toBeDisabled();
+    });
+  });
+
+  describe("When the user type in inputs", () => {
+    test("Then it should change a value", () => {
+      render(
+        <Provider store={store}>
+          <BrowserRouter>
+            <NewHikeForm />
+          </BrowserRouter>
+        </Provider>
+      );
+
+      userEvent.type(
+        screen.getByRole("textbox", { name: "Title" }),
+        `Hello, formigal`
+      );
+      expect(screen.getByRole("textbox", { name: "Title" })).toHaveValue(
+        "Hello, formigal"
+      );
+    });
+  });
+
+  describe("When function onChangeStadistics it s called", () => {
+    test("It should called the setUserData", () => {
+      render(
+        <Provider store={store}>
+          <BrowserRouter>
+            <NewHikeForm />
+          </BrowserRouter>
+        </Provider>
+      );
+
+      userEvent.type(screen.getByRole("textbox", { name: "Distance" }), `100m`);
+      expect(screen.getByRole("textbox", { name: "Distance" })).toHaveValue(
+        "100m"
+      );
+    });
+  });
+  describe("When function onChangeMap it s called", () => {
+    test("It should called the setUserData", () => {
+      render(
+        <Provider store={store}>
+          <BrowserRouter>
+            <NewHikeForm />
+          </BrowserRouter>
+        </Provider>
+      );
+
+      userEvent.type(
+        screen.getByRole("spinbutton", { name: "Latitude" }),
+        `1.12121`
+      );
+      expect(screen.getByRole("spinbutton", { name: "Latitude" })).toHaveValue(
+        1.12121
+      );
+    });
+  });
+
+  describe("When the user writte in all inputs", () => {
+    test("It should button enabled", () => {
+      render(
+        <Provider store={store}>
+          <BrowserRouter>
+            <NewHikeForm />
+          </BrowserRouter>
+        </Provider>
+      );
+
+      userEvent.type(
+        screen.getByRole("spinbutton", { name: "Latitude" }),
+        `1.12121`
+      );
     });
   });
 });
