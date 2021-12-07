@@ -6,11 +6,6 @@ import { IForm } from "../../components/NewHikeForm/NewHikeForm";
 import "./CardPageDetails.scss";
 import { FormElement } from "../../components/LoginForm/LoginForm";
 import pathsHike from "../../paths/pathsHike";
-import { MapContainer, TileLayer, Marker } from "react-leaflet";
-import "leaflet/dist/leaflet.css";
-import {} from "react-leaflet";
-import Icon from "../../assets/icon.svg";
-import L from "leaflet";
 
 const CardPageDetails = () => {
   const { userInfo, currentHike, getCurrentHike } = useUser();
@@ -20,7 +15,6 @@ const CardPageDetails = () => {
     getCurrentHike(id);
   }, [getCurrentHike, id]);
 
-  console.log(currentHike);
   const tokenUser: any = localStorage.getItem("tokenStorage");
   let token;
   let idUserHike;
@@ -102,18 +96,6 @@ const CardPageDetails = () => {
     navigate(pathsHike.userProfile);
   };
 
-  const iconPerson = L.icon({
-    iconUrl: Icon,
-    iconRetinaUrl: Icon,
-    iconSize: [50, 50],
-    shadowUrl: Icon,
-  });
-
-  const coordinate = {
-    lat: currentHike.map?.latitude,
-    lng: currentHike.map?.longitude,
-  };
-  console.log(coordinate);
   return (
     <>
       {updateWant === false ? (
@@ -164,13 +146,13 @@ const CardPageDetails = () => {
               <div className="cardpage__stadistics-map">
                 <iframe
                   title="map"
-                  width="425"
-                  height="350"
+                  width="405"
+                  height="300"
                   frameBorder="0"
                   scrolling="no"
                   marginHeight={0}
                   marginWidth={0}
-                  src={`https://www.openstreetmap.org/export/embed.html?bbox=${currentHike.map?.longitude}%2C${currentHike.map?.latitude}%2C${currentHike.map?.longitude}%2C${currentHike.map?.latitude}&amp;layer=cyclosm`}
+                  src={`https://www.openstreetmap.org/export/embed.html?bbox=${currentHike.map?.longitude}%2C${currentHike.map?.latitude}%2C${currentHike.map?.longitude}%2C${currentHike.map?.latitude}&amp=8;layer=cyclosm`}
                 ></iframe>
                 <br />
                 <small>
@@ -180,25 +162,6 @@ const CardPageDetails = () => {
                     View Larger Map
                   </a>
                 </small>
-                {/* <MapContainer
-                  center={{
-                    lat: currentHike.map?.latitude,
-                    lng: currentHike.map?.longitude,
-                  }}
-                  zoom={8}
-                >
-                  <TileLayer
-                    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                    attribution="&copy; <a href='https://www.openstreetmap.org/copyright'>OpenStreetMap</a> contributors"
-                  />
-                  <Marker
-                    position={{
-                      lat: currentHike.map?.latitude,
-                      lng: currentHike.map?.longitude,
-                    }}
-                    icon={iconPerson}
-                  />
-                </MapContainer> */}
               </div>
             </div>
             <div className="cardpage__images">

@@ -5,7 +5,6 @@ import LinkComponent from "./components/LinkComponent/LinkComponent";
 
 import HomePage from "./pages/HomePage/HomePage";
 import LoginPage from "./pages/LoginPage/LoginPage";
-import MapPage from "./pages/MapPage/MapPage";
 
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
 import pathsHike from "./paths/pathsHike";
@@ -28,7 +27,7 @@ function App(): JSX.Element {
             element={<RegisterPage />}
           ></Route>
           <Route path={pathsHike.loginFormPage} element={<LoginPage />}></Route>
-          <Route path={pathsHike.mapPage} element={<MapPage />}></Route>
+
           <Route
             path={pathsHike.hikeCard}
             element={<CardPageDetails />}
