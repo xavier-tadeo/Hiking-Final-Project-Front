@@ -109,6 +109,11 @@ const CardPageDetails = () => {
     shadowUrl: Icon,
   });
 
+  const coordinate = {
+    lat: currentHike.map?.latitude,
+    lng: currentHike.map?.longitude,
+  };
+  console.log(coordinate);
   return (
     <>
       {updateWant === false ? (
@@ -157,7 +162,25 @@ const CardPageDetails = () => {
                 </p>
               </div>
               <div className="cardpage__stadistics-map">
-                <MapContainer
+                <iframe
+                  title="map"
+                  width="425"
+                  height="350"
+                  frameBorder="0"
+                  scrolling="no"
+                  marginHeight={0}
+                  marginWidth={0}
+                  src={`https://www.openstreetmap.org/export/embed.html?bbox=${currentHike.map?.longitude}%2C${currentHike.map?.latitude}%2C${currentHike.map?.longitude}%2C${currentHike.map?.latitude}&amp;layer=cyclosm`}
+                ></iframe>
+                <br />
+                <small>
+                  <a
+                    href={`https://www.openstreetmap.org/#map=8/${currentHike.map?.latitude}/${currentHike.map?.longitude}&amp;layers=Y`}
+                  >
+                    View Larger Map
+                  </a>
+                </small>
+                {/* <MapContainer
                   center={{
                     lat: currentHike.map?.latitude,
                     lng: currentHike.map?.longitude,
@@ -170,12 +193,12 @@ const CardPageDetails = () => {
                   />
                   <Marker
                     position={{
-                      lat: currentHike?.map?.latitude,
-                      lng: currentHike?.map?.longitude,
+                      lat: currentHike.map?.latitude,
+                      lng: currentHike.map?.longitude,
                     }}
                     icon={iconPerson}
                   />
-                </MapContainer>
+                </MapContainer> */}
               </div>
             </div>
             <div className="cardpage__images">
