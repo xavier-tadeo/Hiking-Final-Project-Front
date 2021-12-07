@@ -161,7 +161,7 @@ const CardPageDetails = () => {
                     lat: currentHike.map?.latitude,
                     lng: currentHike.map?.longitude,
                   }}
-                  zoom={6}
+                  zoom={6.5}
                 >
                   <TileLayer
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
