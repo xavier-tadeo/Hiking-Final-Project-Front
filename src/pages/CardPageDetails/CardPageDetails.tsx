@@ -125,45 +125,32 @@ const CardPageDetails = () => {
             </p>
           </div>
           <div className="cardpage__container-stadistics-image">
-            <div className="cardpage__stadistics-map">
-              <div className="cardpage__stadistics">
-                <p className="cardpage__stadistics-distance stadistics">
-                  Distance: {currentHike.stadistics?.distance}
-                </p>
+            <div className="cardpage__stadistics">
+              <p className="cardpage__stadistics-distance stadistics">
+                Distance: {currentHike.stadistics?.distance}
+              </p>
 
-                <p className="cardpage__stadistics-time stadistics">
-                  Time: {currentHike.stadistics?.time}
-                </p>
+              <p className="cardpage__stadistics-time stadistics">
+                Time: {currentHike.stadistics?.time}
+              </p>
 
-                <p className="cardpage__stadistics-dificulty stadistics">
-                  Dificulty: {currentHike.stadistics?.dificulty}
-                </p>
+              <p className="cardpage__stadistics-dificulty stadistics">
+                Dificulty: {currentHike.stadistics?.dificulty}
+              </p>
 
-                <p className="cardpage__stadistics-elevation stadistics">
-                  Elevation: {currentHike.stadistics?.elevation}
-                </p>
-              </div>
-              <div className="cardpage__stadistics-map">
-                <iframe
-                  title="map"
-                  width="405"
-                  height="300"
-                  frameBorder="0"
-                  scrolling="no"
-                  marginHeight={0}
-                  marginWidth={0}
-                  src={`https://www.openstreetmap.org/export/embed.html?bbox=${currentHike.map?.longitude}%2C${currentHike.map?.latitude}%2C${currentHike.map?.longitude}%2C${currentHike.map?.latitude}&amp=8;layer=cyclosm`}
-                ></iframe>
-                <br />
-                <small>
-                  <a
-                    href={`https://www.openstreetmap.org/#map=8/${currentHike.map?.latitude}/${currentHike.map?.longitude}&amp;layers=Y`}
-                  >
-                    View Larger Map
-                  </a>
-                </small>
-              </div>
+              <p className="cardpage__stadistics-elevation stadistics">
+                Elevation: {currentHike.stadistics?.elevation}
+              </p>
             </div>
+            <div className="cardpage__stadistics-map">
+              <iframe
+                title="map"
+                width="250"
+                height="250"
+                src={`https://www.openstreetmap.org/export/embed.html?bbox=${currentHike.map?.longitude}%2C${currentHike.map?.latitude}%2C${currentHike.map?.longitude}%2C${currentHike.map?.latitude}&amp=8;layer=cyclosm`}
+              ></iframe>
+            </div>
+
             <div className="cardpage__images">
               {currentHike.images?.map((hike: string, index: number) => (
                 <div className="container__image" key={index}>
