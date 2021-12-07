@@ -5,6 +5,7 @@ import configureStore from "../../redux/store";
 import CardPageDetails from "./CardPageDetails";
 
 const store = configureStore();
+// jest.mock("../../hooks/useUser");
 describe("Given a HeaderHike component", () => {
   describe("When it render", () => {
     test("It should render h1 with name 'hiking' and one image", () => {
