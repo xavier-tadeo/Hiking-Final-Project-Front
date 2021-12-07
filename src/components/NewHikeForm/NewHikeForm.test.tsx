@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import configureStore from "../../redux/store";
@@ -132,11 +132,42 @@ describe("Given a NewHikeForm component", () => {
           </BrowserRouter>
         </Provider>
       );
+      const addButton = screen.getByRole("button", {
+        name: "Create",
+      });
+      fireEvent.click(addButton);
+
+      userEvent.type(
+        screen.getByRole("textbox", { name: "Title" }),
+        `Canigo les valls`
+      );
+      userEvent.type(screen.getByRole("textbox", { name: "Distance" }), `100m`);
+      userEvent.type(
+        screen.getByRole("textbox", { name: "Description" }),
+        `Todo muy cool`
+      );
+      userEvent.type(
+        screen.getByRole("textbox", { name: "Elevation" }),
+        `1000m`
+      );
+
+      userEvent.type(screen.getByRole("textbox", { name: "Time" }), `1h`);
 
       userEvent.type(
         screen.getByRole("spinbutton", { name: "Latitude" }),
         `1.12121`
       );
+      userEvent.type(
+        screen.getByRole("spinbutton", { name: "Longitude" }),
+        `1.12121`
+      );
+      userEvent.type(
+        screen.getByRole("spinbutton", { name: "Dificulty" }),
+        `1`
+      );
+
+      expect(addButton).not.toBeDisabled();
+      // expect(addButton).toHaveBeenCalled();
     });
   });
 });
