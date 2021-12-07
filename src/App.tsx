@@ -12,6 +12,7 @@ import { Toaster } from "react-hot-toast";
 import CardPageDetails from "./pages/CardPageDetails/CardPageDetails";
 import CreateHikePage from "./pages/CreateHikePage/CreateHikePage";
 import ProfilePage from "./pages/ProfilePage/ProfilePage";
+import Footer from "./components/Footer/Footer";
 
 function App(): JSX.Element {
   return (
@@ -38,6 +39,7 @@ function App(): JSX.Element {
           ></Route>
           <Route path={pathsHike.userProfile} element={<ProfilePage />}></Route>
         </Routes>
+        <Footer />
       </BrowserRouter>
     </>
   );
