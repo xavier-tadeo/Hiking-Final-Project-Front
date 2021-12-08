@@ -89,7 +89,7 @@ const CardPageDetails = () => {
     evt.preventDefault();
     setUpdateWant(false);
     await updateCurrentHike(hikeData, id as string);
-    navigate(pathsHike.homePage);
+    navigate(pathsHike.createHike);
   };
 
   const [updateWant, setUpdateWant] = useState(false);
