@@ -105,7 +105,6 @@ const CardPageDetails = () => {
     iconUrl: Icon,
     iconRetinaUrl: Icon,
     iconSize: [50, 50],
-    shadowUrl: Icon,
   });
 
   return (

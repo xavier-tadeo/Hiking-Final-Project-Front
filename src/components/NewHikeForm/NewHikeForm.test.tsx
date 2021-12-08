@@ -167,7 +167,6 @@ describe("Given a NewHikeForm component", () => {
       );
 
       expect(addButton).not.toBeDisabled();
-      // expect(addButton).toHaveBeenCalled();
     });
   });
 });

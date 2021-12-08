@@ -15,8 +15,6 @@ describe("Given a loginReducer", () => {
       };
 
       loginReducer(initial, action);
-
-      // expect(result).toEqual(userTest);
     });
   });
 
@@ -34,8 +32,6 @@ describe("Given a loginReducer", () => {
       };
 
       loginReducer(initial, action);
-
-      // expect(result).toEqual(userTest);
     });
   });
 });
