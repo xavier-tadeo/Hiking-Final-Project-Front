@@ -45,7 +45,6 @@ export const getHikeThunks = () => async (dispatch: any) => {
 
 export const getCurrentHikeThunk = (id: string) => async (dispatch: any) => {
   const currentHike = await axios.get(`${urlApi}hike/get/${id}`);
-
   dispatch(currentHikeAction(currentHike.data));
 };
 
