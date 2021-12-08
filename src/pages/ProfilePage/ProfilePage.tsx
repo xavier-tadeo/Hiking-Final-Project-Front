@@ -7,7 +7,6 @@ const ProfilePage = (): JSX.Element => {
   const { user, getUser } = useUser();
 
   const tokenUser: any = localStorage.getItem("tokenStorage");
-  console.log(tokenUser);
 
   const userToken = JSON.parse(tokenUser);
 

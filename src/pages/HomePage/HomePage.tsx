@@ -1,10 +1,10 @@
 import { useEffect } from "react";
 import CardHike from "../../components/CardHike/CardHike";
 import useUser from "../../hooks/useUser";
+import { Spinner } from "reactstrap";
 import "./HomePage.scss";
 import "@fontsource/architects-daughter";
 import "@fontsource/roboto";
-
 const HomePage = (): JSX.Element => {
   const { hikingInfo, getHiking } = useUser();
 
@@ -21,11 +21,17 @@ const HomePage = (): JSX.Element => {
           </h3>
         </div>
         <h3 className="homepage__title">The best routes</h3>
-        <div className="homepage__card">
-          {hikingInfo.map((hike: any) => (
-            <CardHike hike={hike} key={hike.id} />
-          ))}
-        </div>
+        {hikingInfo.length === 0 ? (
+          <div className="container_spinner">
+            <Spinner color="primary" />
+          </div>
+        ) : (
+          <div className="homepage__card">
+            {hikingInfo.map((hike: any) => (
+              <CardHike hike={hike} key={hike.id} />
+            ))}
+          </div>
+        )}
       </section>
     </>
   );
