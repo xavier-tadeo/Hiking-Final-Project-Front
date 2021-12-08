@@ -90,6 +90,7 @@ const CardPageDetails = () => {
     setUpdateWant(false);
     await updateCurrentHike(hikeData, id as string);
     navigate(pathsHike.createHike);
+    window.scroll(0, 0);
   };
 
   const [updateWant, setUpdateWant] = useState(false);
