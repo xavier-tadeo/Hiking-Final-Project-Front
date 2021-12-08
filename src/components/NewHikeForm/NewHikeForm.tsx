@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { useNavigate } from "react-router";
+
 import "./NewHikeForm.scss";
 import useUser from "../../hooks/useUser";
-import pathsHike from "../../paths/pathsHike";
+import toast from "react-hot-toast";
 
 type FormElement = React.FormEvent<HTMLFormElement>;
 
@@ -86,7 +86,6 @@ const NewHikeForm = (): JSX.Element => {
   };
 
   const { postCurretHike } = useUser();
-  let navigate = useNavigate();
 
   const newHikeCreate = async (evt: FormElement) => {
     evt.preventDefault();
@@ -102,8 +101,9 @@ const NewHikeForm = (): JSX.Element => {
     formData.append("description", userData.description);
 
     await postCurretHike(formData);
-    navigate(pathsHike.homePage);
+    setUserData(initialData);
     window.scroll(0, 0);
+    toast.success("Successfully Create YouRoute!!!");
   };
 
   return (
