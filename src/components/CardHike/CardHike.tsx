@@ -9,6 +9,7 @@ const CardHike = ({ hike }: IHike): JSX.Element => {
 
   const onClick = (hikeId: any) => {
     navigate(`/hike/get/${hikeId.id}`);
+    window.scroll(0, 0);
   };
 
   return (
