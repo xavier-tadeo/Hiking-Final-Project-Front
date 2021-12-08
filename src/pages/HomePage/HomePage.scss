@@ -39,6 +39,14 @@
   padding-bottom: 50px;
 }
 
+.container_spinner {
+  justify-content: center;
+  display: flex;
+  font-size: 40px;
+  padding-bottom: 182px;
+  color: #0c7c59;
+}
+
 @media (min-width: 992px) {
   .homepage__card {
     display: flex;
