@@ -48,31 +48,29 @@ const currentHike = {
 
 export const handlers = [
   rest.post(
-    "https://proyecto-final-xavi-back.herokuapp.com/user/login",
+    "https://hiking-back-xavi-tadeo.herokuapp.com/user/login",
     async (req, res, ctx) => {
       const respons = res(ctx.json(mockToken));
       return respons;
     }
   ),
   rest.post(
-    "https://proyecto-final-xavi-back.herokuapp.com/user/register",
+    "https://hiking-back-xavi-tadeo.herokuapp.com/user/register",
     async (req, res, ctx) => {
       const respons = res(ctx.json(mockId));
       return respons;
     }
   ),
   rest.get(
-    "https://proyecto-final-cavi-back.herokuapp.com/hike/get",
+    "https://hiking-back-xavi-tadeo.herokuapp.com/hike/get",
     async (req, res, ctx) => {
       const respons = res(ctx.json(mockHikes));
       return respons;
     }
   ),
   rest.get(
-    "https://proyecto-final-cavi-back.herokuapp.com/hike/get/",
+    "https://hiking-back-xavi-tadeo.herokuapp.com/hike/get/:id",
     async (req, res, ctx) => {
-      const query = req.url.searchParams;
-      query.append("id", "61afd910499c7f1bd9abfabe");
       const respons = res(ctx.json(currentHike));
       return respons;
     }
