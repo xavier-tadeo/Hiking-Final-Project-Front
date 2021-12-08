@@ -34,6 +34,7 @@ export const registerUserThunks = (user: any) => async (dispatch: any) => {
 
   if (response.status === 200) {
     dispatch(registerUserAction(response.data));
+    toast.success("Successfully register!");
   }
 };
 
