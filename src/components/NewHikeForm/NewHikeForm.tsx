@@ -103,6 +103,7 @@ const NewHikeForm = (): JSX.Element => {
 
     await postCurretHike(formData);
     navigate(pathsHike.homePage);
+    window.scroll(0, 0);
   };
 
   return (

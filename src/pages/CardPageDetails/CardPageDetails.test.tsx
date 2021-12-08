@@ -2,7 +2,6 @@ import { render, screen, waitFor } from "@testing-library/react";
 import { Provider } from "react-redux";
 import { useParams } from "react-router";
 import { BrowserRouter } from "react-router-dom";
-// import { BrowserRouter } from "react-router-dom";
 import { server } from "../../mocks/server";
 import configureStore from "../../redux/store";
 import CardPageDetails from "./CardPageDetails";
