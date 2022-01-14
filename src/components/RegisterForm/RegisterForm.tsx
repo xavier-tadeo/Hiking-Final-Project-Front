@@ -4,16 +4,10 @@ import "./RegisterForm.scss";
 import "@fontsource/roboto";
 import pathsHike from "../../paths/pathsHike";
 import { useNavigate } from "react-router";
-import { FormElement } from "../../interfaces/interfaces";
-
-interface IForm {
-  name: string;
-  password: string;
-  email: string;
-}
+import { FormElement, IFormRegister } from "../../interfaces/interfaces";
 
 const RegisterForm = (): JSX.Element => {
-  const initialData: IForm = {
+  const initialData: IFormRegister = {
     name: "",
     password: "",
     email: "",

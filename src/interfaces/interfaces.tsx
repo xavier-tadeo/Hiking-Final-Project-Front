@@ -24,3 +24,9 @@ export interface IFormHike {
   stadistics: Stadistics;
   images?: any;
 }
+
+export interface IFormRegister {
+  name: string;
+  password: string;
+  email: string;
+}
