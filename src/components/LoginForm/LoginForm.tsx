@@ -1,50 +1,11 @@
-import { useState } from "react";
-import useUser from "../../hooks/useUser";
 import "./LoginForm.scss";
-import pathsHike from "../../paths/pathsHike";
-import { useNavigate } from "react-router";
+
+import { useFormLogin } from "../../hooks/useFormLogin";
 
 export type FormElement = React.FormEvent<HTMLFormElement>;
 
-interface IForm {
-  name: string;
-  password: string;
-}
-
 const LoginForm = (): JSX.Element => {
-  const initialData: IForm = {
-    name: "",
-    password: "",
-  };
-
-  const { loginUser } = useUser();
-
-  const [userData, setUserData] = useState(initialData);
-  const [isDisable, setIsDisable] = useState(true);
-
-  const checkForm = () => {
-    if (userData.name !== "" && userData.password !== "") {
-      setIsDisable(false);
-    }
-  };
-
-  const onChange = (evt: any) => {
-    setUserData({
-      ...userData,
-      [evt.target.id]: evt.target.value,
-    });
-    checkForm();
-  };
-
-  let navigate = useNavigate();
-
-  const onLoginUp = (evt: FormElement) => {
-    evt.preventDefault();
-    loginUser(userData);
-    setUserData(initialData);
-    navigate(pathsHike.homePage);
-  };
-
+  const { isDisable, onChange, onLoginUp, userData } = useFormLogin();
   return (
     <>
       <form
