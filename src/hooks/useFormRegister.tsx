@@ -1,22 +1,26 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import useUser from "./useUser";
-import { IForm, FormElement } from "../interfaces/interfaces";
+import { FormElement, IFormRegister } from "../interfaces/interfaces";
 import pathsHike from "../paths/pathsHike";
+import useUser from "./useUser";
 
-export const useFormLogin = () => {
-  const initialData: IForm = {
+export const useFormRegister = () => {
+  const initialData: IFormRegister = {
     name: "",
     password: "",
+    email: "",
   };
-
-  const { loginUser } = useUser();
+  const { registerUser } = useUser();
 
   const [userData, setUserData] = useState(initialData);
   const [isDisable, setIsDisable] = useState(true);
 
   const checkForm = () => {
-    if (userData.name !== "" && userData.password !== "") {
+    if (
+      userData.name !== "" &&
+      userData.email !== "" &&
+      userData.password !== ""
+    ) {
       setIsDisable(false);
     }
   };
@@ -31,17 +35,16 @@ export const useFormLogin = () => {
 
   let navigate = useNavigate();
 
-  const onLoginUp = (evt: FormElement) => {
+  const onSignUp = (evt: FormElement) => {
     evt.preventDefault();
-    loginUser(userData);
+    registerUser(userData);
     setUserData(initialData);
-    navigate(pathsHike.homePage);
+    navigate(pathsHike.loginFormPage);
   };
-
   return {
-    onLoginUp,
+    onSignUp,
     onChange,
-    userData,
     isDisable,
+    userData,
   };
 };

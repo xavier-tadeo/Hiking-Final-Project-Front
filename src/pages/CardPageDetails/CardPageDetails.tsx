@@ -1,18 +1,27 @@
-import { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router";
+import { useEffect } from "react";
+import { useParams } from "react-router-dom";
 import jwtDecode from "jwt-decode";
 import { MapContainer, TileLayer, Marker } from "react-leaflet";
-import Icon from "../../assets/icon.svg";
 import L from "leaflet";
+import Icon from "../../assets/icon.svg";
 import useUser from "../../hooks/useUser";
-import pathsHike from "../../paths/pathsHike";
-import { FormElement, IFormHike } from "../../interfaces/interfaces";
+import { useCardPage } from "../../hooks/useCardPage";
 import "leaflet/dist/leaflet.css";
 import "./CardPageDetails.scss";
 
 const CardPageDetails = () => {
   const { userInfo, currentHike, getCurrentHike } = useUser();
   const { id } = useParams();
+  const {
+    deleteActionHike,
+    hikeData,
+    newHikeCreate,
+    onChange,
+    onChangeMap,
+    onChangeStadistics,
+    updateWant,
+    setUpdateWant,
+  } = useCardPage();
 
   useEffect(() => {
     getCurrentHike(id);
@@ -29,76 +38,6 @@ const CardPageDetails = () => {
     idUserHike = tokenDecode.id;
     idHike = currentHike.user;
   }
-
-  let initialHike: IFormHike = {
-    title: currentHike.title,
-    stadistics: {
-      distance: currentHike.stadistics?.distance,
-      time: currentHike.stadistics?.time,
-      elevation: currentHike.stadistics?.elevation,
-      dificulty: currentHike.stadistics?.dificulty,
-    },
-    map: {
-      latitude: currentHike.map?.latitude,
-      longitude: currentHike.map?.longitude,
-    },
-
-    description: currentHike.description,
-  };
-
-  const [hikeData, setHikeData] = useState(initialHike);
-
-  useEffect(() => {
-    setHikeData(currentHike);
-  }, [currentHike]);
-
-  const onChange = (evt: any) => {
-    setHikeData({
-      ...hikeData,
-      [evt.target.id]:
-        evt.target.type === "file" ? evt.target.files[0] : evt.target.value,
-    });
-  };
-
-  const onChangeStadistics = (evt: any) => {
-    setHikeData({
-      ...hikeData,
-      stadistics: {
-        ...hikeData.stadistics,
-        [evt.target.id]: evt.target.value,
-      },
-    });
-  };
-
-  const onChangeMap = (evt: any) => {
-    setHikeData({
-      ...hikeData,
-      map: {
-        ...hikeData.map,
-        [evt.target.id]: evt.target.value,
-      },
-    });
-  };
-
-  const { updateCurrentHike } = useUser();
-  let navigate = useNavigate();
-
-  const newHikeCreate = async (evt: FormElement) => {
-    evt.preventDefault();
-    setUpdateWant(false);
-    await updateCurrentHike(hikeData, id as string);
-    navigate(pathsHike.createHike);
-    window.scroll(0, 0);
-  };
-
-  const [updateWant, setUpdateWant] = useState(false);
-
-  const { deleteCurrentHike } = useUser();
-
-  const deleteActionHike = async () => {
-    await deleteCurrentHike(id as string);
-    navigate(pathsHike.userProfile);
-  };
 
   const iconPerson = L.icon({
     iconUrl: Icon,
@@ -153,7 +92,7 @@ const CardPageDetails = () => {
               </p>
             </div>
             <div className="cardpage__stadistics-map">
-              {currentHike.map?.latitude !== undefined ? (
+              {currentHike.map?.latitude !== undefined && (
                 <MapContainer
                   center={{
                     lat: currentHike.map?.latitude,
@@ -173,8 +112,6 @@ const CardPageDetails = () => {
                     icon={iconPerson}
                   />
                 </MapContainer>
-              ) : (
-                ""
               )}
             </div>
 
