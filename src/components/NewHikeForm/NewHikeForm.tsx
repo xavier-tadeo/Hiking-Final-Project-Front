@@ -1,9 +1,8 @@
 import { useState } from "react";
-
-import "./NewHikeForm.scss";
-import useUser from "../../hooks/useUser";
 import toast from "react-hot-toast";
+import useUser from "../../hooks/useUser";
 import { FormElement, IFormHike } from "../../interfaces/interfaces";
+import "./NewHikeForm.scss";
 
 const NewHikeForm = (): JSX.Element => {
   const initialData: IFormHike = {

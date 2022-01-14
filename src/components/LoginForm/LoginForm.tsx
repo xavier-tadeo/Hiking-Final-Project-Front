@@ -1,8 +1,5 @@
-import "./LoginForm.scss";
-
 import { useFormLogin } from "../../hooks/useFormLogin";
-
-export type FormElement = React.FormEvent<HTMLFormElement>;
+import "./LoginForm.scss";
 
 const LoginForm = (): JSX.Element => {
   const { isDisable, onChange, onLoginUp, userData } = useFormLogin();
