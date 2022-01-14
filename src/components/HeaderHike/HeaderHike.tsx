@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router";
 import useUser from "../../hooks/useUser";
-import "./HeaderHike.scss";
 import pathsHike from "../../paths/pathsHike";
+import "./HeaderHike.scss";
 
 const HeaderHike = (): JSX.Element => {
   const { userInfo, logoutUser } = useUser();

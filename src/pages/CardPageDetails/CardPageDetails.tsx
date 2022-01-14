@@ -1,16 +1,14 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router";
 import jwtDecode from "jwt-decode";
-import useUser from "../../hooks/useUser";
-import { IForm } from "../../components/NewHikeForm/NewHikeForm";
-import "./CardPageDetails.scss";
-import { FormElement } from "../../components/LoginForm/LoginForm";
-import pathsHike from "../../paths/pathsHike";
 import { MapContainer, TileLayer, Marker } from "react-leaflet";
-import "leaflet/dist/leaflet.css";
-
 import Icon from "../../assets/icon.svg";
 import L from "leaflet";
+import useUser from "../../hooks/useUser";
+import pathsHike from "../../paths/pathsHike";
+import { FormElement, IFormHike } from "../../interfaces/interfaces";
+import "leaflet/dist/leaflet.css";
+import "./CardPageDetails.scss";
 
 const CardPageDetails = () => {
   const { userInfo, currentHike, getCurrentHike } = useUser();
@@ -32,7 +30,7 @@ const CardPageDetails = () => {
     idHike = currentHike.user;
   }
 
-  let initialHike: IForm = {
+  let initialHike: IFormHike = {
     title: currentHike.title,
     stadistics: {
       distance: currentHike.stadistics?.distance,
