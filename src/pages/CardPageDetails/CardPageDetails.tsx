@@ -1,24 +1,18 @@
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import jwtDecode from "jwt-decode";
-import { MapContainer, TileLayer, Marker } from "react-leaflet";
-import L from "leaflet";
-import Icon from "../../assets/icon.svg";
 import useUser from "../../hooks/useUser";
 import { useCardPage } from "../../hooks/useCardPage";
+import { UpdateForm } from "../../components/UpdateForm/UpdateForm";
+import { MapHike } from "../../components/MapHike/MapHike";
 import "leaflet/dist/leaflet.css";
 import "./CardPageDetails.scss";
-import { UpdateForm } from "../../components/UpdateForm/UpdateForm";
+import { Buttons } from "../../components/Buttons/Buttons";
 
 const CardPageDetails = () => {
   const { userInfo, currentHike, getCurrentHike } = useUser();
   const { id } = useParams();
-  const {
-    deleteActionHike,
-
-    updateWant,
-    setUpdateWant,
-  } = useCardPage();
+  const { updateWant } = useCardPage();
 
   useEffect(() => {
     getCurrentHike(id);
@@ -36,12 +30,6 @@ const CardPageDetails = () => {
     idHike = currentHike.user;
   }
 
-  const iconPerson = L.icon({
-    iconUrl: Icon,
-    iconRetinaUrl: Icon,
-    iconSize: [50, 50],
-  });
-
   return (
     <>
       {updateWant === false ? (
@@ -50,21 +38,9 @@ const CardPageDetails = () => {
             <h3 className="cardpage__description--title">Details Hike</h3>
           </div>
           {idUserHike === idHike && userInfo.isAuthenticated === true && (
-            <div className="container__button-update-delete">
-              <button
-                className="button__update"
-                onClick={() => setUpdateWant(true)}
-              >
-                Update
-              </button>
-              <button className="button__delete" onClick={deleteActionHike}>
-                Delete
-              </button>
-            </div>
+            <Buttons />
           )}
-
           <h4 className="cardpage__title">{currentHike.title}</h4>
-
           <div className="cardpage__description">
             <p className="cardpage__description--paragraph">
               {currentHike.description}
@@ -90,25 +66,7 @@ const CardPageDetails = () => {
             </div>
             <div className="cardpage__stadistics-map">
               {currentHike.map?.latitude !== undefined && (
-                <MapContainer
-                  center={{
-                    lat: currentHike.map?.latitude,
-                    lng: currentHike.map?.longitude,
-                  }}
-                  zoom={6.5}
-                >
-                  <TileLayer
-                    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                    attribution="&copy; <a href='https://www.openstreetmap.org/copyright'>OpenStreetMap</a> contributors"
-                  />
-                  <Marker
-                    position={{
-                      lat: currentHike.map?.latitude,
-                      lng: currentHike.map?.longitude,
-                    }}
-                    icon={iconPerson}
-                  />
-                </MapContainer>
+                <MapHike currentHike={currentHike} />
               )}
             </div>
 
