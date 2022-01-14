@@ -3,31 +3,10 @@ import { useState } from "react";
 import "./NewHikeForm.scss";
 import useUser from "../../hooks/useUser";
 import toast from "react-hot-toast";
-
-type FormElement = React.FormEvent<HTMLFormElement>;
-
-interface Maping {
-  latitude: number | any;
-  longitude: number | any;
-}
-
-interface Stadistics {
-  distance: string;
-  time: string;
-  elevation: string;
-  dificulty: number | any;
-}
-
-export interface IForm {
-  title: string;
-  description: string;
-  map: Maping;
-  stadistics: Stadistics;
-  images?: any;
-}
+import { FormElement, IFormHike } from "../../interfaces/interfaces";
 
 const NewHikeForm = (): JSX.Element => {
-  const initialData: IForm = {
+  const initialData: IFormHike = {
     title: "",
     stadistics: { distance: "", time: "", elevation: "", dificulty: 0 },
     map: { latitude: 0, longitude: 0 },
@@ -35,7 +14,7 @@ const NewHikeForm = (): JSX.Element => {
     description: "",
   };
 
-  const [userData, setUserData] = useState<IForm>(initialData);
+  const [userData, setUserData] = useState<IFormHike>(initialData);
   const [isDisable, setIsDisable] = useState(true);
 
   const checkForm = () => {

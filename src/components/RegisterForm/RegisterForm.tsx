@@ -4,8 +4,7 @@ import "./RegisterForm.scss";
 import "@fontsource/roboto";
 import pathsHike from "../../paths/pathsHike";
 import { useNavigate } from "react-router";
-
-type FormElement = React.FormEvent<HTMLFormElement>;
+import { FormElement } from "../../interfaces/interfaces";
 
 interface IForm {
   name: string;
