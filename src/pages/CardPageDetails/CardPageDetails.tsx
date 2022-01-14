@@ -9,6 +9,7 @@ import { useCardPage } from "../../hooks/useCardPage";
 import "leaflet/dist/leaflet.css";
 import "./CardPageDetails.scss";
 import { UpdateForm } from "../../components/UpdateForm/UpdateForm";
+import { MapHike } from "../../components/MapHike/MapHike";
 
 const CardPageDetails = () => {
   const { userInfo, currentHike, getCurrentHike } = useUser();
@@ -90,25 +91,7 @@ const CardPageDetails = () => {
             </div>
             <div className="cardpage__stadistics-map">
               {currentHike.map?.latitude !== undefined && (
-                <MapContainer
-                  center={{
-                    lat: currentHike.map?.latitude,
-                    lng: currentHike.map?.longitude,
-                  }}
-                  zoom={6.5}
-                >
-                  <TileLayer
-                    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                    attribution="&copy; <a href='https://www.openstreetmap.org/copyright'>OpenStreetMap</a> contributors"
-                  />
-                  <Marker
-                    position={{
-                      lat: currentHike.map?.latitude,
-                      lng: currentHike.map?.longitude,
-                    }}
-                    icon={iconPerson}
-                  />
-                </MapContainer>
+                <MapHike currentHike={currentHike} />
               )}
             </div>
 
