@@ -1,9 +1,8 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { FormElement } from "../components/LoginForm/LoginForm";
-import { IForm } from "../interfaces/interfaces";
-import pathsHike from "../paths/pathsHike";
 import useUser from "./useUser";
+import { IForm, FormElement } from "../interfaces/interfaces";
+import pathsHike from "../paths/pathsHike";
 
 export const useFormLogin = () => {
   const initialData: IForm = {
