@@ -1,13 +1,13 @@
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
-import jwtDecode from "jwt-decode";
 import useUser from "../../hooks/useUser";
 import { useCardPage } from "../../hooks/useCardPage";
 import { UpdateForm } from "../../components/UpdateForm/UpdateForm";
-import { MapHike } from "../../components/MapHike/MapHike";
+import { Buttons } from "../../components/Buttons/Buttons";
+import { lookLocalStorage } from "../../helpers/lookLocalStorage";
+import { CardDetails } from "../../components/CardDetails/CardDetails";
 import "leaflet/dist/leaflet.css";
 import "./CardPageDetails.scss";
-import { Buttons } from "../../components/Buttons/Buttons";
 
 const CardPageDetails = () => {
   const { userInfo, currentHike, getCurrentHike } = useUser();
@@ -18,17 +18,7 @@ const CardPageDetails = () => {
     getCurrentHike(id);
   }, [getCurrentHike, id]);
 
-  const tokenUser: any = localStorage.getItem("tokenStorage");
-  let token;
-  let idUserHike;
-  let idHike;
-  if (tokenUser) {
-    const userToken = JSON.parse(tokenUser);
-    token = userToken.token;
-    const tokenDecode: any = jwtDecode(token);
-    idUserHike = tokenDecode.id;
-    idHike = currentHike.user;
-  }
+  const { tokenDecode } = lookLocalStorage();
 
   return (
     <>
@@ -37,54 +27,9 @@ const CardPageDetails = () => {
           <div className="cardpage__description-container">
             <h3 className="cardpage__description--title">Details Hike</h3>
           </div>
-          {idUserHike === idHike && userInfo.isAuthenticated === true && (
-            <Buttons />
-          )}
-          <h4 className="cardpage__title">{currentHike.title}</h4>
-          <div className="cardpage__description">
-            <p className="cardpage__description--paragraph">
-              {currentHike.description}
-            </p>
-          </div>
-          <div className="cardpage__container-stadistics-image">
-            <div className="cardpage__stadistics">
-              <p className="cardpage__stadistics-distance stadistics">
-                Distance: {currentHike.stadistics?.distance}
-              </p>
-
-              <p className="cardpage__stadistics-time stadistics">
-                Time: {currentHike.stadistics?.time}
-              </p>
-
-              <p className="cardpage__stadistics-dificulty stadistics">
-                Dificulty: {currentHike.stadistics?.dificulty}
-              </p>
-
-              <p className="cardpage__stadistics-elevation stadistics">
-                Elevation: {currentHike.stadistics?.elevation}
-              </p>
-            </div>
-            <div className="cardpage__stadistics-map">
-              {currentHike.map?.latitude !== undefined && (
-                <MapHike currentHike={currentHike} />
-              )}
-            </div>
-
-            <div className="cardpage__images">
-              {currentHike.images?.map((hike: string, index: number) => (
-                <div className="container__image" key={index}>
-                  {" "}
-                  <img
-                    src={hike}
-                    alt="hike montain"
-                    className="cardpage__image"
-                    width="200"
-                    height="150"
-                  />
-                </div>
-              ))}
-            </div>
-          </div>
+          {tokenDecode.id === currentHike.user &&
+            userInfo.isAuthenticated === true && <Buttons />}
+          <CardDetails currentHike={currentHike} />
         </section>
       ) : (
         <UpdateForm />
