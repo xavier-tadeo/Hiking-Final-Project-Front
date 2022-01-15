@@ -29,15 +29,7 @@ const CardPageDetails = () => {
           </div>
           {tokenDecode.id === currentHike.user &&
             userInfo.isAuthenticated === true && <Buttons />}
-          <h4 className="cardpage__title">{currentHike.title}</h4>
-          <div className="cardpage__description">
-            <p className="cardpage__description--paragraph">
-              {currentHike.description}
-            </p>
-          </div>
-          <div className="cardpage__container-stadistics-image">
-            <CardDetails currentHike={currentHike} />
-          </div>
+          <CardDetails currentHike={currentHike} />
         </section>
       ) : (
         <UpdateForm />
