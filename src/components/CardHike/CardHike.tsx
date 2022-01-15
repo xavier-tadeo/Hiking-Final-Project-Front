@@ -4,14 +4,14 @@ import "./CardHike.scss";
 
 const CardHike = ({ hike }: IHike): JSX.Element => {
   let navigate = useNavigate();
-
-  const onClick = (hikeId: any) => {
-    navigate(`/hike/get/${hikeId.id}`);
+  const { id } = hike;
+  const onClick = (id: string) => {
+    navigate(`/hike/get/${id}`);
     window.scroll(0, 0);
   };
 
   return (
-    <section className="constainer__hike" onClick={() => onClick(hike)}>
+    <section className="constainer__hike" onClick={() => onClick(id)}>
       <div className="cardHike">
         <h4 className="cardHike__title">{hike.title}</h4>
         <div className="cardHike__info">

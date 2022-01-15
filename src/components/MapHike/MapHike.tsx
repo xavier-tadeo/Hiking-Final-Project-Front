@@ -2,8 +2,9 @@ import React from "react";
 import { MapContainer, Marker, TileLayer } from "react-leaflet";
 import L from "leaflet";
 import Icon from "../../assets/icon.svg";
+import { ICurrentHikeObject } from "../../interfaces/interfaces";
 
-export const MapHike = ({ currentHike }: any) => {
+export const MapHike = ({ currentHike }: ICurrentHikeObject) => {
   const iconPerson = L.icon({
     iconUrl: Icon,
     iconRetinaUrl: Icon,

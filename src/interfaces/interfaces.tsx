@@ -30,3 +30,30 @@ export interface IFormRegister {
   password: string;
   email: string;
 }
+
+interface IProfile {
+  email: string;
+  favorite: Array<string>;
+  id: string;
+  name: string;
+  password: string;
+  yourRoutes: Array<string>;
+}
+
+export interface IProfileObject {
+  user: IProfile;
+}
+
+interface ICurrentHike {
+  description: string;
+  id: string;
+  images: Array<string>;
+  map: Maping;
+  stadistics: Stadistics;
+  title: string;
+  user: string;
+}
+
+export interface ICurrentHikeObject {
+  currentHike: ICurrentHike;
+}

@@ -1,7 +1,8 @@
 import React from "react";
+import { ICurrentHikeObject } from "../../interfaces/interfaces";
 import { MapHike } from "../MapHike/MapHike";
 
-export const CardDetails = ({ currentHike }: any) => {
+export const CardDetails = ({ currentHike }: ICurrentHikeObject) => {
   return (
     <>
       <h4 className="cardpage__title">{currentHike.title}</h4>
