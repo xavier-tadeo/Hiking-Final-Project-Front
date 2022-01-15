@@ -1,22 +1,16 @@
-import jwtDecode from "jwt-decode";
 import { useEffect } from "react";
+import { lookLocalStorage } from "../../helpers/lookLocalStorage";
 import useUser from "../../hooks/useUser";
 import "./ProfilePage.scss";
 
 const ProfilePage = (): JSX.Element => {
   const { user, getUser } = useUser();
 
-  const tokenUser: any = localStorage.getItem("tokenStorage");
-
-  const userToken = JSON.parse(tokenUser);
-
-  const token = userToken.token;
-  const tokenDecode: any = jwtDecode(token);
-  const idUser = tokenDecode.id;
+  const { tokenDecode } = lookLocalStorage();
 
   useEffect(() => {
-    getUser(idUser);
-  }, [getUser, idUser]);
+    getUser(tokenDecode.id);
+  }, [getUser, tokenDecode.id]);
 
   return (
     <div className="container__yourprofile">
