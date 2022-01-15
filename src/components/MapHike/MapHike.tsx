@@ -5,7 +5,6 @@ import Icon from "../../assets/icon.svg";
 import { ICurrentHikeObject } from "../../interfaces/interfaces";
 
 export const MapHike = ({ currentHike }: ICurrentHikeObject) => {
-  console.log(currentHike);
   const iconPerson = L.icon({
     iconUrl: Icon,
     iconRetinaUrl: Icon,
