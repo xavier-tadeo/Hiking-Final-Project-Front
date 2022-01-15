@@ -43,3 +43,17 @@ interface IProfile {
 export interface IProfileObject {
   user: IProfile;
 }
+
+interface ICurrentHike {
+  description: string;
+  id: string;
+  images: Array<string>;
+  map: Maping;
+  stadistics: Stadistics;
+  title: string;
+  user: string;
+}
+
+export interface ICurrentHikeObject {
+  currentHike: ICurrentHike;
+}
