@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
-import jwtDecode from "jwt-decode";
 import useUser from "../../hooks/useUser";
 import { useCardPage } from "../../hooks/useCardPage";
 import { UpdateForm } from "../../components/UpdateForm/UpdateForm";
@@ -8,6 +7,7 @@ import { MapHike } from "../../components/MapHike/MapHike";
 import "leaflet/dist/leaflet.css";
 import "./CardPageDetails.scss";
 import { Buttons } from "../../components/Buttons/Buttons";
+import { lookLocalStorage } from "../../helpers/lookLocalStorage";
 
 const CardPageDetails = () => {
   const { userInfo, currentHike, getCurrentHike } = useUser();
@@ -18,17 +18,7 @@ const CardPageDetails = () => {
     getCurrentHike(id);
   }, [getCurrentHike, id]);
 
-  const tokenUser: any = localStorage.getItem("tokenStorage");
-  let token;
-  let idUserHike;
-  let idHike;
-  if (tokenUser) {
-    const userToken = JSON.parse(tokenUser);
-    token = userToken.token;
-    const tokenDecode: any = jwtDecode(token);
-    idUserHike = tokenDecode.id;
-    idHike = currentHike.user;
-  }
+  const { tokenDecode } = lookLocalStorage();
 
   return (
     <>
@@ -37,9 +27,8 @@ const CardPageDetails = () => {
           <div className="cardpage__description-container">
             <h3 className="cardpage__description--title">Details Hike</h3>
           </div>
-          {idUserHike === idHike && userInfo.isAuthenticated === true && (
-            <Buttons />
-          )}
+          {tokenDecode.id === currentHike.user &&
+            userInfo.isAuthenticated === true && <Buttons />}
           <h4 className="cardpage__title">{currentHike.title}</h4>
           <div className="cardpage__description">
             <p className="cardpage__description--paragraph">
