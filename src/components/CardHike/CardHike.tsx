@@ -4,7 +4,13 @@ import "./CardHike.scss";
 
 const CardHike = ({ hike }: IHike): JSX.Element => {
   let navigate = useNavigate();
-  const { id } = hike;
+
+  const { id, title, images, stadistics, user } = hike;
+
+  const { distance, time, dificulty, elevation } = stadistics;
+
+  const { name } = user;
+
   const onClick = (id: string) => {
     navigate(`/hike/get/${id}`);
     window.scroll(0, 0);
@@ -13,10 +19,10 @@ const CardHike = ({ hike }: IHike): JSX.Element => {
   return (
     <section className="constainer__hike" onClick={() => onClick(id)}>
       <div className="cardHike">
-        <h4 className="cardHike__title">{hike.title}</h4>
+        <h4 className="cardHike__title">{title}</h4>
         <div className="cardHike__info">
           <img
-            src={hike.images[0]}
+            src={images[0]}
             alt="hike montain"
             className="cardHike__images"
             width="200"
@@ -25,23 +31,21 @@ const CardHike = ({ hike }: IHike): JSX.Element => {
           <span className="cardHike__stadistics">
             <p className="cardHike__stadistics-title">Distance</p>
             <p className="cardHike__stadistics-distance stadistics">
-              {hike.stadistics.distance}
+              {distance}
             </p>
             <p className="cardHike__stadistics-title">Time</p>
-            <p className="cardHike__stadistics-time stadistics">
-              {hike.stadistics.time}
-            </p>
+            <p className="cardHike__stadistics-time stadistics">{time}</p>
             <p className="cardHike__stadistics-title">Dificulty</p>
             <p className="cardHike__stadistics-dificulty stadistics">
-              {hike.stadistics.dificulty}
+              {dificulty}
             </p>
             <p className="cardHike__stadistics-title">Elevation</p>
             <p className="cardHike__stadistics-elevation stadistics">
-              {hike.stadistics.elevation}
+              {elevation}
             </p>
           </span>
         </div>
-        <p className="cardHike__author">Author: {hike.user.name}</p>
+        <p className="cardHike__author">Author: {name}</p>
       </div>
     </section>
   );
