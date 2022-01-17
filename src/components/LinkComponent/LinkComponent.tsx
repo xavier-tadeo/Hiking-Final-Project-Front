@@ -5,14 +5,17 @@ import "./LinkComponent.scss";
 
 const LinkComponent = (): JSX.Element => {
   const { userInfo } = useUser();
-  const tokenUser: any = localStorage.getItem("tokenStorage");
+  const { isAuthenticated } = userInfo;
+
+  const tokenUser = localStorage.getItem("tokenStorage");
+
   if (tokenUser) {
     userInfo.isAuthenticated = true;
   }
 
   return (
     <nav className="links__container">
-      {userInfo.isAuthenticated ? (
+      {isAuthenticated ? (
         <>
           <Link className="nav-link" to={pathsHike.homePage}>
             Home

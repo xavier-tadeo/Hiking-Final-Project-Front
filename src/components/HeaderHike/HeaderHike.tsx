@@ -4,9 +4,10 @@ import pathsHike from "../../paths/pathsHike";
 import "./HeaderHike.scss";
 
 const HeaderHike = (): JSX.Element => {
+  let navigate = useNavigate();
   const { userInfo, logoutUser } = useUser();
 
-  let navigate = useNavigate();
+  const { isAuthenticated } = userInfo;
 
   const clickLogoutUser = () => {
     logoutUser();
@@ -24,7 +25,7 @@ const HeaderHike = (): JSX.Element => {
         />
       </div>
       <h1 className="header__title">hiKing</h1>
-      {userInfo.isAuthenticated === true ? (
+      {isAuthenticated === true ? (
         <button className="button__logout" onClick={clickLogoutUser}>
           Logout
         </button>
