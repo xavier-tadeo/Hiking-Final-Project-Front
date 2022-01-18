@@ -26,6 +26,12 @@ const LinkComponent = (): JSX.Element => {
           <Link className="nav-link" to={pathsHike.createHike}>
             Create
           </Link>
+          <Link className="nav-link" to={pathsHike.homePage}>
+            Favorite
+          </Link>
+          <Link className="nav-link" to={pathsHike.mapPage}>
+            Map
+          </Link>
         </>
       ) : (
         <>
@@ -37,6 +43,9 @@ const LinkComponent = (): JSX.Element => {
           </Link>
           <Link className="nav-link" to={pathsHike.loginFormPage}>
             Login
+          </Link>
+          <Link className="nav-link" to={pathsHike.mapPage}>
+            Map
           </Link>
         </>
       )}
