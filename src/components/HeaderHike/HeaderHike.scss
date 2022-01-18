@@ -22,15 +22,16 @@
   }
 
   &__title {
-    font-size: $font-title-mobile;
+    font-size: 40px;
     font-family: "Satisfy", Verdana, Geneva, Tahoma, sans-serif;
     color: #4e73b9;
-    font-weight: 400;
+    font-weight: 1000;
     font-style: normal;
-    letter-spacing: 27px;
+    letter-spacing: 35px;
     padding-top: 30px;
-    width: 70%;
+    width: 90%;
     margin: 0;
+    z-index: 1;
   }
 
   &__icon-logoout {
@@ -40,9 +41,9 @@
 
 .button__logout {
   padding: 2px;
-  border: 1px solid #f2c617;
+  border: 0;
   border-radius: 0.25rem;
-  color: #ea472c;
+
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out;
   cursor: pointer;
   width: 50px;
