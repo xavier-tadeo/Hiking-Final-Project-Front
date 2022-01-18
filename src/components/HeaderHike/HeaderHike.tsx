@@ -16,15 +16,20 @@ const HeaderHike = (): JSX.Element => {
   };
 
   return (
-    <header className="container__header">
+    <header className="header">
       <div className="header__icon">
         <img
-          src="hikingIcon.png"
+          src="pablo-811.png"
           alt="logo hiking"
           className="header__icon-logo"
         />
       </div>
       <h1 className="header__title">hiKing</h1>
+      <img
+        src="icons8-signpost-48.png"
+        alt="logo hiking"
+        className="header__icon-logoout"
+      />
       {isAuthenticated === true ? (
         <button className="button__logout" onClick={clickLogoutUser}>
           Logout

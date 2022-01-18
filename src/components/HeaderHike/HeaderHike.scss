@@ -1,39 +1,48 @@
 @import "../../styles/variables";
+@import url("https://fonts.googleapis.com/css2?family=Satisfy&display=swap");
 
-.container__header {
-  background-color: #b5cbbf;
+.header {
+  background-color: #e9f0ec;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   height: 90px;
-
+  width: 100%;
   overflow-x: hidden;
-}
 
-.header__icon {
-  padding-top: 30px;
-  padding-right: 20px;
-}
+  &__icon {
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
-.header__icon-logo {
-  height: 20px;
-  width: 25px;
-}
+  &__icon-logo {
+    height: 86px;
+    width: 133px;
+  }
 
-.header__title {
-  font-size: $font-title-mobile;
-  font-family: "Source Code Pro", Verdana, Geneva, Tahoma, sans-serif;
-  color: #0c7c59;
-  font-weight: 400;
-  font-style: normal;
-  letter-spacing: 0.15em;
-  padding-top: 10px;
+  &__title {
+    font-size: $font-title-mobile;
+    font-family: "Satisfy", Verdana, Geneva, Tahoma, sans-serif;
+    color: #4e73b9;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: 27px;
+    padding-top: 30px;
+    width: 70%;
+    margin: 0;
+  }
+
+  &__icon-logoout {
+    display: none;
+  }
 }
 
 .button__logout {
   padding: 2px;
-  border: 1px solid #0c7c59;
+  border: 1px solid #f2c617;
   border-radius: 0.25rem;
-  color: #0c7c59;
+  color: #ea472c;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out;
   cursor: pointer;
   width: 50px;
@@ -50,15 +59,19 @@
 @media (min-width: 992px) {
   .header__title {
     font-size: 45px;
-    padding-top: 0;
+    padding-top: 12px;
+    letter-spacing: 100px;
   }
-
-  .header__icon {
-    padding-top: 30px;
-    padding-right: 20px;
-  }
-
   .header__icon-logo {
-    height: 30px;
+    height: 90px;
+    width: 250px;
+  }
+
+  .header__icon-logoout {
+    display: block;
+    height: 40px;
+    position: absolute;
+    right: 30px;
+    top: 47px;
   }
 }
