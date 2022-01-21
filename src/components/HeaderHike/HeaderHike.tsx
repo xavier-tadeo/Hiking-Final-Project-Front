@@ -19,10 +19,12 @@ const HeaderHike = (): JSX.Element => {
     <header className="header">
       <div className="header__icon">
         <img
-          src="pablo-811.png"
+          src="treeAllow.png"
           alt="logo hiking"
           className="header__icon-logo"
         />
+        <img src="tree3.png" alt="logo hiking" className="header__icon-logo" />
+        <img src="treeB.png" alt="logo hiking" className="header__icon-logo" />
       </div>
       <h1 className="header__title">hiKing</h1>
       <img
@@ -30,13 +32,16 @@ const HeaderHike = (): JSX.Element => {
         alt="logo hiking"
         className="header__icon-logoout"
       />
-      {isAuthenticated === true ? (
-        <button className="button__logout" onClick={clickLogoutUser}>
-          Logout
-        </button>
-      ) : (
-        ""
-      )}
+      <div className="header__container-logout">
+        {isAuthenticated === true && (
+          <img
+            src="logout.png"
+            alt="logout door"
+            className="header__icon-door"
+            onClick={clickLogoutUser}
+          />
+        )}
+      </div>
     </header>
   );
 };

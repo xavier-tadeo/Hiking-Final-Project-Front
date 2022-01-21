@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Satisfy&display=swap");
 
 .header {
-  background-color: #e9f0ec;
+  background-color: #fff;
   display: flex;
   justify-content: space-evenly;
   height: 90px;
@@ -10,53 +10,41 @@
   overflow-x: hidden;
 
   &__icon {
-    width: 30%;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    padding: 0 20px;
   }
 
   &__icon-logo {
-    height: 86px;
-    width: 133px;
+    height: 30px;
   }
 
   &__title {
     font-size: 40px;
     font-family: "Satisfy", Verdana, Geneva, Tahoma, sans-serif;
-    color: #4e73b9;
-    font-weight: 1000;
+    color: #000;
+    font-weight: 400;
     font-style: normal;
     letter-spacing: 35px;
     padding-top: 30px;
-    width: 90%;
+    width: 70%;
     margin: 0;
     z-index: 1;
+  }
+  &__container-logout {
+    width: 40px;
   }
 
   &__icon-logoout {
     display: none;
   }
+  &__icon-door {
+    cursor: pointer;
+    width: 45px;
+    height: 45px;
+  }
 }
 
-.button__logout {
-  padding: 2px;
-  border: 0;
-  border-radius: 0.25rem;
-
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out;
-  cursor: pointer;
-  width: 50px;
-  height: 30px;
-  background: bottom;
-  position: absolute;
-  top: 17px;
-  right: 22px;
-}
-
-.button__logout:hover {
-  background-color: #cfeae8b8;
-}
 @media (min-width: 992px) {
   .header__title {
     font-size: 45px;
