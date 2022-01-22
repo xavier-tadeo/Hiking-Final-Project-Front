@@ -1,0 +1,14 @@
+.burguer {
+  height: 24px;
+  margin-top: 10px;
+  padding-left: 21px;
+  background: #ddb8ff;
+
+  &__button {
+    height: 5px;
+    background-color: green;
+    padding: 0px;
+    margin-top: 4px;
+    width: 38px;
+  }
+}
