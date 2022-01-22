@@ -18,13 +18,7 @@ const HeaderHike = (): JSX.Element => {
   return (
     <header className="header">
       <div className="header__icon">
-        <img
-          src="treeAllow.png"
-          alt="logo hiking"
-          className="header__icon-logo"
-        />
         <img src="tree3.png" alt="logo hiking" className="header__icon-logo" />
-        <img src="treeB.png" alt="logo hiking" className="header__icon-logo" />
       </div>
       <h1 className="header__title">hiKing</h1>
       <img

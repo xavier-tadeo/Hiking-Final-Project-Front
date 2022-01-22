@@ -26,27 +26,43 @@ const LinkComponent = (): JSX.Element => {
       className={openModal ? "links__container" : "nolinks"}
       onClick={handleCloseModal}
     >
+      <h3 className="link__title">Menu</h3>
       {isAuthenticated ? (
         <>
-          <Link
-            className="nav-link"
-            to={pathsHike.homePage}
-            onClick={handleCloseModal}
-          >
-            Home
-          </Link>
-          <Link className="nav-link" to={pathsHike.userProfile}>
-            Profile
-          </Link>
-          <Link className="nav-link" to={pathsHike.createHike}>
-            Create
-          </Link>
-          <Link className="nav-link" to={pathsHike.homePage}>
-            Favorite
-          </Link>
-          <Link className="nav-link" to={pathsHike.mapPage}>
-            Map
-          </Link>
+          <div className="link__container">
+            <img src="home2.png" alt="" className="link__image" />
+            <Link
+              className="nav-link"
+              to={pathsHike.homePage}
+              onClick={handleCloseModal}
+            >
+              Home
+            </Link>
+          </div>
+          <div className="link__container">
+            <img src="profile.png" alt="" className="link__image" />
+            <Link className="nav-link" to={pathsHike.userProfile}>
+              Profile
+            </Link>
+          </div>
+          <div className="link__container">
+            <img src="create.png" alt="" className="link__image" />
+            <Link className="nav-link" to={pathsHike.createHike}>
+              Create
+            </Link>
+          </div>
+          <div className="link__container">
+            <img src="favorite.png" alt="" className="link__image" />
+            <Link className="nav-link" to={pathsHike.homePage}>
+              Favorite
+            </Link>
+          </div>
+          <div className="link__container">
+            <img src="map.png" alt="" className="link__image" />
+            <Link className="nav-link" to={pathsHike.mapPage}>
+              Map
+            </Link>
+          </div>
         </>
       ) : (
         <>
