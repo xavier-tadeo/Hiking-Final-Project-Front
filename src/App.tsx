@@ -20,7 +20,7 @@ function App(): JSX.Element {
       <Toaster position="bottom-center" reverseOrder={false} />
       <BrowserRouter>
         <HeaderHike />
-        <LinkComponent />
+        {/* <LinkComponent /> */}
         <Routes>
           <Route path={pathsHike.homePage} element={<HomePage />}></Route>
           <Route

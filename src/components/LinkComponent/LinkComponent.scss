@@ -1,5 +1,15 @@
 .links__container {
-  background-color: #e9f0ec;
+  position: fixed;
+  height: 170vw;
+  width: 100vw;
+  z-index: 3;
+  top: 0px;
+  left: 0;
+  background: rgb(0, 0, 0, 0.75);
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  justify-content: center;
 }
 
 .nav-link {
