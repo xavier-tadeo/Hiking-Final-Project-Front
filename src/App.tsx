@@ -22,7 +22,6 @@ function App(): JSX.Element {
       <BrowserRouter>
         <HeaderHike />
         <Modal />
-        {/* <LinkComponent /> */}
         <Routes>
           <Route path={pathsHike.homePage} element={<HomePage />}></Route>
           <Route

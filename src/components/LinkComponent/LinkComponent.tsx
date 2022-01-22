@@ -26,6 +26,7 @@ const LinkComponent = (): JSX.Element => {
       className={openModal ? "links__container" : "nolinks"}
       onClick={handleCloseModal}
     >
+      <h3 className="link__title">Menu</h3>
       {isAuthenticated ? (
         <>
           <Link
