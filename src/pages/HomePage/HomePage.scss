@@ -1,20 +1,24 @@
-.homepage__container {
-  background-image: url("https://i.ibb.co/tzvf5vV/Background.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-}
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap");
 
+// .homepage__container {
+//   // background-image: url("https://i.ibb.co/tzvf5vV/Background.jpg");
+//   // background-repeat: no-repeat;
+//   // background-size: cover;
+//   // background-attachment: fixed;
+// }
 .homepage__description-container {
-  padding: 10px;
-  height: 53px;
+  display: flex;
+  padding: 5px;
 }
 
-.homepage__description {
-  font-size: 18px;
-  font-family: "Roboto", Verdana, Geneva, Tahoma, sans-serif;
+.homepage__description-title {
+  font-size: 22px;
+  font-family: "Dancing Script", Verdana, Geneva, Tahoma, sans-serif;
   padding: 5px;
   text-align: center;
+
+  box-shadow: 2px 2px 1px;
+  border-radius: 5px 0px 48px 0px;
 }
 
 .homepage__button {
@@ -25,13 +29,19 @@
   right: 10px;
 }
 
+.homepage__container-title {
+  background-color: #4568d7;
+  height: 5px;
+}
+
 .homepage__title {
+  background-color: #00000030;
   font-family: "Architects Daughter", Verdana, Geneva, Tahoma, sans-serif;
   font-size: 30px;
   text-align: center;
   padding-top: 10px;
-  text-decoration: overline;
-  color: #0c7c59;
+  color: #4165d5;
+  text-transform: capitalize;
 }
 
 .homepage__card {

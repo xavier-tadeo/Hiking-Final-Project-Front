@@ -16,11 +16,16 @@ const HomePage = (): JSX.Element => {
     <>
       <section className="homepage__container">
         <div className="homepage__description-container">
-          <h3 className="homepage__description">
+          <h3 className="homepage__description-title animate__animated animate__backInLeft">
             Welcome to the best walking routes, where you can enjoy nature.
           </h3>
+          <h3 className="homepage__description-title  animate__animated animate__backInRight">
+            You want to create your own routes. Register and start your way.
+          </h3>
         </div>
-        <h3 className="homepage__title">The best routes</h3>
+        <div className="homepage__container-title">
+          <h3 className="homepage__title ">The best routes</h3>
+        </div>
         {hikingInfo.length === 0 ? (
           <div className="container_spinner">
             <Spinner color="primary" />
