@@ -1,11 +1,8 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import HeaderHike from "./components/HeaderHike/HeaderHike";
-import LinkComponent from "./components/LinkComponent/LinkComponent";
-
 import HomePage from "./pages/HomePage/HomePage";
 import LoginPage from "./pages/LoginPage/LoginPage";
-
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
 import pathsHike from "./paths/pathsHike";
 import { Toaster } from "react-hot-toast";
@@ -20,8 +17,8 @@ function App(): JSX.Element {
     <>
       <Toaster position="bottom-center" reverseOrder={false} />
       <BrowserRouter>
-        <HeaderHike />
         <Modal />
+        <HeaderHike />
         <Routes>
           <Route path={pathsHike.homePage} element={<HomePage />}></Route>
           <Route

@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useModal } from "../../hooks/useModal";
 import useUser from "../../hooks/useUser";
@@ -14,7 +13,6 @@ const LinkComponent = (): JSX.Element => {
 
   const handleCloseModal = () => {
     setOpenModal(false);
-    console.log(openModal);
   };
 
   if (tokenUser) {
