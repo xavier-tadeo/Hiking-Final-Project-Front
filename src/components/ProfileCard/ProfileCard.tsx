@@ -2,7 +2,6 @@ import React from "react";
 import { IProfileObject } from "../../interfaces/interfaces";
 
 export const ProfileCard = ({ user }: IProfileObject) => {
-  console.log(user);
   return (
     <div className="yourprofile__container-info">
       <h6 className="yourprofile__name info title">NAME</h6>

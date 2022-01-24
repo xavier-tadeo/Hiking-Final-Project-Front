@@ -23,11 +23,7 @@ const HeaderHike = (): JSX.Element => {
       <h1 className="header__title animate__animated animate__bounce">
         hiKing
       </h1>
-      <img
-        src="icons8-signpost-48.png"
-        alt="logo hiking"
-        className="header__icon-logoout"
-      />
+
       <div className="header__container-logout">
         {isAuthenticated === true && (
           <img
