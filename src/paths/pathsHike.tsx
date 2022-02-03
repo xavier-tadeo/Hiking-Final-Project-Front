@@ -1,4 +1,5 @@
 const pathsHike = {
+  headerPage: "/",
   bestRoutes: "/best",
   loginFormPage: "/login",
   registerFormPage: "/register",

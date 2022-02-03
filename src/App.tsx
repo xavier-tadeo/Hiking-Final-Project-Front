@@ -10,11 +10,12 @@ import CardPageDetails from "./pages/CardPageDetails/CardPageDetails";
 import CreateHikePage from "./pages/CreateHikePage/CreateHikePage";
 import ProfilePage from "./pages/ProfilePage/ProfilePage";
 import Footer from "./components/Footer/Footer";
+import { AppRouter } from "./routers/AppRouter";
 
 function App(): JSX.Element {
   return (
     <>
-      <Toaster position="bottom-center" reverseOrder={false} />
+      {/* <Toaster position="bottom-center" reverseOrder={false} />
       <BrowserRouter>
         <HeaderHike />
         <Routes>
@@ -36,7 +37,8 @@ function App(): JSX.Element {
           <Route path={pathsHike.userProfile} element={<ProfilePage />}></Route>
         </Routes>
         <Footer />
-      </BrowserRouter>
+      </BrowserRouter> */}
+      <AppRouter />
     </>
   );
 }
