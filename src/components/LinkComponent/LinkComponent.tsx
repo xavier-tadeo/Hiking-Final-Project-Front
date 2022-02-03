@@ -31,7 +31,7 @@ const LinkComponent = (): JSX.Element => {
             <img src="home2.png" alt="" className="link__image" />
             <Link
               className="nav-link"
-              to={pathsHike.homePage}
+              to={pathsHike.bestRoutes}
               onClick={handleCloseModal}
             >
               Home
@@ -51,7 +51,7 @@ const LinkComponent = (): JSX.Element => {
           </div>
           <div className="link__container">
             <img src="favorite.png" alt="" className="link__image" />
-            <Link className="nav-link" to={pathsHike.homePage}>
+            <Link className="nav-link" to={pathsHike.bestRoutes}>
               Favorite
             </Link>
           </div>
@@ -64,7 +64,7 @@ const LinkComponent = (): JSX.Element => {
         </>
       ) : (
         <>
-          <Link className="nav-link" to={pathsHike.homePage}>
+          <Link className="nav-link" to={pathsHike.bestRoutes}>
             Home
           </Link>
           <Link className="nav-link" to={pathsHike.registerFormPage}>

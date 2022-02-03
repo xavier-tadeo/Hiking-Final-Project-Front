@@ -1,5 +1,5 @@
 const pathsHike = {
-  homePage: "/",
+  bestRoutes: "/best",
   loginFormPage: "/login",
   registerFormPage: "/register",
   mapPage: "/map",

@@ -1,13 +1,15 @@
-.container__footer {
+@import "/src/styles/variables";
+
+.footer {
   height: 60px;
-  background-color: #b5cbbf;
+  background-color: $gold;
   display: flex;
   justify-content: center;
   align-items: center;
-}
 
-.footer__info {
-  margin: 0;
-  font-family: "Roboto", Verdana, Geneva, Tahoma, sans-serif;
-  color: #fefdfa;
+  .footer__info {
+    margin: 0;
+    font-family: "Roboto", Verdana, Geneva, Tahoma, sans-serif;
+    color: #fefdfa;
+  }
 }

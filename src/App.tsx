@@ -10,17 +10,15 @@ import CardPageDetails from "./pages/CardPageDetails/CardPageDetails";
 import CreateHikePage from "./pages/CreateHikePage/CreateHikePage";
 import ProfilePage from "./pages/ProfilePage/ProfilePage";
 import Footer from "./components/Footer/Footer";
-import { Modal } from "./components/Modal/Modal";
 
 function App(): JSX.Element {
   return (
     <>
       <Toaster position="bottom-center" reverseOrder={false} />
       <BrowserRouter>
-        <Modal />
         <HeaderHike />
         <Routes>
-          <Route path={pathsHike.homePage} element={<HomePage />}></Route>
+          <Route path={pathsHike.bestRoutes} element={<HomePage />}></Route>
           <Route
             path={pathsHike.registerFormPage}
             element={<RegisterPage />}
