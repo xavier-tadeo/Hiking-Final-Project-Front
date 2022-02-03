@@ -35,7 +35,7 @@ export const useFormLogin = () => {
     evt.preventDefault();
     loginUser(userData);
     setUserData(initialData);
-    navigate(pathsHike.homePage);
+    navigate(pathsHike.bestRoutes);
   };
 
   return {
