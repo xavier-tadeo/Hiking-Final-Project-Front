@@ -19,4 +19,28 @@
     border-radius: 20px;
     height: 600px;
   }
+
+  &__link {
+    color: $gray;
+    padding: 10px;
+    text-decoration: none;
+    font-size: 23px;
+    border: 2px solid $gold;
+    border-radius: 20px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    margin-top: 20px;
+  }
+
+  &__link:hover {
+    color: $gold;
+  }
+
+  &__container-link {
+    @extend %flex-column-center;
+    margin-top: 100px;
+  }
 }
