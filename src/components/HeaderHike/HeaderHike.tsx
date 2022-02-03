@@ -1,19 +1,19 @@
-import { useNavigate } from "react-router";
-import useUser from "../../hooks/useUser";
-import pathsHike from "../../paths/pathsHike";
+// import { useNavigate } from "react-router";
+// import useUser from "../../hooks/useUser";
+// import pathsHike from "../../paths/pathsHike";
 import "./HeaderHike.scss";
 
 const HeaderHike = (): JSX.Element => {
-  let navigate = useNavigate();
-  const { userInfo, logoutUser } = useUser();
+  // let navigate = useNavigate();
+  // const { userInfo, logoutUser } = useUser();
 
-  const { isAuthenticated } = userInfo;
+  // const { isAuthenticated } = userInfo;
 
-  const clickLogoutUser = () => {
-    logoutUser();
-    navigate(pathsHike.homePage);
-    localStorage.removeItem("tokenStorage");
-  };
+  // const clickLogoutUser = () => {
+  //   logoutUser();
+  //   navigate(pathsHike.bestRoutes);
+  //   localStorage.removeItem("tokenStorage");
+  // };
 
   return (
     <header className="header">
@@ -27,7 +27,7 @@ const HeaderHike = (): JSX.Element => {
       <h1 className="header__title animate__animated animate__bounce">
         hiKing
       </h1>
-
+      {/* 
       <div className="header__container-logout">
         {isAuthenticated === true && (
           <img
@@ -37,7 +37,7 @@ const HeaderHike = (): JSX.Element => {
             onClick={clickLogoutUser}
           />
         )}
-      </div>
+      </div> */}
     </header>
   );
 };
