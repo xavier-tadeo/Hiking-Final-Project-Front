@@ -7,14 +7,16 @@
 
   &__title {
     font-size: 70px;
-    padding: 20px;
+
     letter-spacing: 100px;
     font-family: $fontTitle;
     color: $gold;
+    margin: 0;
   }
 
   &__icon-logo {
     margin: 20px;
     border-radius: 20px;
+    height: 600px;
   }
 }
