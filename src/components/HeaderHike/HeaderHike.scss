@@ -1,68 +1,19 @@
-@import "../../styles/variables";
-@import url("https://fonts.googleapis.com/css2?family=Satisfy&display=swap");
+@import "/src/styles/extends";
+@import "/src/styles/variables";
 
 .header {
-  background-color: #fff;
-  display: flex;
-  justify-content: space-evenly;
-  height: 90px;
-  width: 100%;
-  overflow-x: hidden;
-  margin-top: 10px;
+  @extend %flex-center;
+  margin-top: 30px;
 
-  &__icon {
-    display: flex;
-
-    justify-content: center;
-    align-items: center;
+  &__title {
+    font-size: 70px;
+    padding: 20px;
+    letter-spacing: 100px;
+    font-family: $fontTitle;
   }
 
   &__icon-logo {
-    height: 60px;
-  }
-
-  &__title {
-    font-size: 40px;
-    font-family: "Satisfy", Verdana, Geneva, Tahoma, sans-serif;
-    color: #000;
-    font-weight: 400;
-    font-style: normal;
-    letter-spacing: 35px;
-    padding-top: 30px;
-    width: 70%;
-    margin: 0;
-    z-index: 1;
-  }
-  &__container-logout {
-    width: 40px;
-  }
-
-  &__icon-logoout {
-    display: none;
-  }
-  &__icon-door {
-    cursor: pointer;
-    width: 45px;
-    height: 45px;
-  }
-}
-
-@media (min-width: 992px) {
-  .header__title {
-    font-size: 45px;
-    padding-top: 12px;
-    letter-spacing: 100px;
-  }
-  .header__icon-logo {
-    height: 90px;
-    width: 250px;
-  }
-
-  .header__icon-logoout {
-    display: block;
-    height: 40px;
-    position: absolute;
-    right: 30px;
-    top: 47px;
+    margin-top: 20px;
+    border-radius: 20px;
   }
 }

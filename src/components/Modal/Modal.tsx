@@ -12,9 +12,9 @@ export const Modal = () => {
   return (
     <div className="burguer" onClick={handleChange}>
       <>
-        <div className="burguer__button"></div>
-        <div className="burguer__button"></div>
-        <div className="burguer__button"></div>
+        <div className="burguer__button disable"></div>
+        <div className="burguer__button disable"></div>
+        <div className="burguer__button disable"></div>
       </>
       {!openModal && <LinkComponent />}
     </div>
