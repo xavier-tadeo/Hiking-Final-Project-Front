@@ -1,17 +1,31 @@
-.container__registerform {
-  background-image: url("https://i.ibb.co/tzvf5vV/Background.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-  height: 600px;
-}
+@import "/src/styles/extends";
+@import "/src/styles/variables";
 
-.register__title {
-  font-family: "Architects Daughter", Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 22px;
-  text-align: center;
-  padding-top: 10px;
-  text-decoration: overline;
-  color: #0c7c59;
-  margin: 0;
+.registerform {
+  &__title {
+    font-size: 50px;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+    font-family: $fontTitle;
+    color: $gold;
+    letter-spacing: 100px;
+    margin-top: 20px;
+    border-bottom: 2px solid $gold;
+  }
+
+  &__container {
+    height: 700px;
+    display: flex;
+  }
+
+  &__image-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__image {
+    height: 250px;
+    width: 250px;
+  }
 }
