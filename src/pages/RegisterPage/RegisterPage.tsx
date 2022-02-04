@@ -5,9 +5,40 @@ import "@fontsource/architects-daughter";
 const RegisterPage = (): JSX.Element => {
   return (
     <>
-      <div className="container__registerform">
-        <h3 className="register__title">Register</h3>
-        <div className="register__form">
+      <div className="registerform">
+        <h2 className="registerform__title animate__animated animate__bounceInDown">
+          hiKing
+        </h2>
+        <h3 className="registerform__subtitle animate__animated animate__bounceInDown">
+          Register
+        </h3>
+        <div className="registerform__container">
+          <div className="registerform__image-container">
+            <div className="registerform__images">
+              <img
+                src="hiking1.jpg"
+                className="registerform__image"
+                alt="route hiking three"
+              />
+              <img
+                src="hiking2.jpg"
+                className="registerform__image"
+                alt="route hiking three"
+              />
+            </div>
+            <div className="registerform__images">
+              <img
+                src="hiking3.jpg"
+                className="registerform__image"
+                alt="route hiking three"
+              />
+              <img
+                src="hiking4.jpg"
+                className="registerform__image"
+                alt="route hiking three"
+              />
+            </div>
+          </div>
           <RegisterForm />
         </div>
       </div>
