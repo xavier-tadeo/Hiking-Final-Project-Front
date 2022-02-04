@@ -7,19 +7,30 @@ import useUser from "./useUser";
 export const useFormRegister = () => {
   const initialData: IFormRegister = {
     name: "",
+    lastName: "",
+    userName: "",
     password: "",
     email: "",
+    age: "",
+    birthday: "",
   };
   const { registerUser } = useUser();
 
   const [userData, setUserData] = useState(initialData);
   const [isDisable, setIsDisable] = useState(true);
 
+  const { name, lastName, userName, password, email, age, birthday } = userData;
+
   const checkForm = () => {
     if (
-      userData.name !== "" &&
-      userData.email !== "" &&
-      userData.password !== ""
+      name !== "" &&
+      lastName !== "" &&
+      userName !== "" &&
+      email !== "" &&
+      password !== "" &&
+      email !== "" &&
+      age !== "" &&
+      birthday !== ""
     ) {
       setIsDisable(false);
     }

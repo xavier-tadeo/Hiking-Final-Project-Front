@@ -27,8 +27,12 @@ export interface IFormHike {
 
 export interface IFormRegister {
   name: string;
+  lastName: string;
+  userName: string;
   password: string;
   email: string;
+  age: string;
+  birthday: string;
 }
 
 interface IProfile {
