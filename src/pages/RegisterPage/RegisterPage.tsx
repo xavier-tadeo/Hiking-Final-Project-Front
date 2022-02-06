@@ -12,6 +12,10 @@ const RegisterPage = (): JSX.Element => {
         <h3 className="registerform__subtitle animate__animated animate__bounceInDown">
           Register
         </h3>
+        <p className="registerform__text animate__animated animate__backInLeft">
+          Welcome to the best walking routes, where you can enjoy nature.You
+          want to create your own routes. Register and start your way.
+        </p>
         <div className="registerform__container">
           <div className="registerform__image-container">
             <div className="registerform__images">
